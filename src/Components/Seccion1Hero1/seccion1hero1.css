@@ -2,7 +2,7 @@
     background-image: url(../../../public/backgroundHero.png);
     background-size: cover;
     background-position: top;
-    height: 604px;
+    height: 65vh;
     width: 100%;
 }
 
@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 150px;
+    height: 70%;
     text-align: center;
     color: rgb(255, 255, 255);
 }
@@ -21,7 +21,6 @@
     .seccionHero-1{
         background-image: url(../../../public/backgroundmobile.png);
         height: 100vh;
-
     }
 
     .text-seccionHero-1 p{

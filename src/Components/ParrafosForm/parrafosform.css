@@ -1,0 +1,20 @@
+.parrafos-form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.parrafos-form p{
+    padding: 0;
+    font-size: 14px;
+    line-height: 2vh;
+    letter-spacing: 0.05em;
+    color: black;
+    font-weight: 500;
+}
+.parrafos-form span{
+    margin-left: 5px;
+    color: #4338CA;
+    font-weight: 600;
+}
