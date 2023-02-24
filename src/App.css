@@ -38,8 +38,10 @@ header {
 .text-seccionHero-1 h2{
     font-size: 48px;
     line-height: 56px;
+    margin: 0;
 }
 .text-seccionHero-1 p{
+    margin: 0;
     padding: 20px;
     display: flex;
     width: 500px;
@@ -47,15 +49,18 @@ header {
     line-height: 28px;
 }
 .text-seccionHero-1 a{
-    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
     background: linear-gradient(87.46deg, #4338CA 0%, #5E52F3 100%);
     border-radius: 6px;
     width: 240px;
-    height: 55px;
+    height: 45px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 29px;
     line-height: 95.19%;
 }
 
@@ -75,18 +80,21 @@ header {
     color: #fff;  
     gap: 10px;
     width: 486px;
-    padding: 35px;
+    padding: 45px;
 }
 .text-seccionHero-2 h3{
+    margin: 0;
     width: 235px;
     height: 23px;
     font-size: 27px;
     line-height: 95.19%;
 }
 .text-seccionHero-2 p{
+    margin: 0;
     color: darkgrey;
 }
 .text-seccionHero-2 .p2{
+    width: 400px;
     color: rgb(255, 255, 255);
 }
 

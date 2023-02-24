@@ -1,25 +1,20 @@
 import React from 'react'
 import './App.css'
-import NavIndex from './Components/NavIndex/NavIndex'
+
 import NavButton from './Components/NavButton/NavButton'
-import { useState } from 'react'
+
 
 export default function App() {
 
-  const [render, setRender] = useState(false)
-
-  const handleRender = () =>{
-    setRender(!render)
-    console.log(render)
-  }
+  
 
   return (
 
   <div className="hero">
     <div className='seccionHero-1'>
       <header>
-        <NavButton onClick={handleRender}/>
-        {render && <NavIndex/>}
+        <NavButton/>
+        
         <img src="./LogoM.png" alt="Logo" />
       </header>
 

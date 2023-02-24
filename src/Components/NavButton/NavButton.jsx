@@ -1,9 +1,9 @@
 import React from 'react'
 import './navbutton.css'
 
-export default function NavButton(props) {
+export default function NavButton() {
   return (
-    <i onClick={props.onClick}>
+    <i>
         <img src="./menu.png" alt="" />
     </i>
   )
