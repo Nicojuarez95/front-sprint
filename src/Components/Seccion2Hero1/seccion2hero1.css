@@ -1,10 +1,10 @@
 .seccionHero-2{
     display: flex;
     width: 100rem;
-    height: 31vh;
+    height: 25vh;
     background: linear-gradient(87.46deg, #4338CA 0%, #5E52F3 100%);
     border-radius: 6px;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 7px;
 }
 
@@ -23,6 +23,7 @@
     height: 2.9vh;
     font-size: 27px;
     line-height: 95.19%;
+    font-weight: 500;
 }
 .text-seccionHero-2 p{
     font-size: 1rem;
@@ -45,18 +46,18 @@
     position: relative;
 }
 .img1-seccionHero-2{
-    height: 110%;
+    height: 115%;
     width: 300px;
     position: absolute;
     left: 70px;
     bottom: 0px;
 }
 .img2-seccionHero-2{
-    height: 95%;
+    height: 103%;
     width: 190px;
     position: absolute;
     right: 100px;
-    bottom: 30px;
+    bottom: 20px;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -75,21 +76,22 @@
         gap: 0;
     }
     .img1-seccionHero-2{
-        height: 34vh;
+        height: 30vh;
         left: 5%;
-        width: 45%;
+        width: 35%;
     }
     .img2-seccionHero-2{
-        height: 30vh;
-        width: 40%;
-        right: 5%;
+        height: 25vh;
+        width: 30%;
+        right: 15%;
     }
     .text-seccionHero-2{  
         width: 320px;
-        padding: 0px;
+        padding: 10px;
     }
     .text-seccionHero-2 .p2{
-        width: 320px;
+        width: 300px;
+        font-size: .7rem;
     }
 }
 @media (min-width: 1025px) and (max-width: 1700px) {
@@ -99,16 +101,16 @@
     .img-seccionHero-2{
         position: relative;
         gap: 0;
-        width: 70%;
+        width: 60%;
     }
     .img1-seccionHero-2{
-        height: 34vh;
+        height: 30vh;
         left: 12%;
-        width: 250px;
+        width: 200px;
     }
     .img2-seccionHero-2{
-        height: 30vh;
-        width: 200px;
+        height: 26vh;
+        width: 170px;
         right: 12%;
     }
     .text-seccionHero-2{  
@@ -117,6 +119,6 @@
         width: 30%;
     }
     .text-seccionHero-2 .p2{
-        width: 250px;
+        width: 370px;
     }
 }

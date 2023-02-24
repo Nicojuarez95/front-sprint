@@ -3,6 +3,6 @@ import './botonseccion1hero1.css'
 
 export default function BotonSeccion1Hero1(props) {
   return (
-    <a href="#">{props.text || props.children}</a>
+    <a id="botonHero" href="#">{props.text || props.children}</a>
   )
 }

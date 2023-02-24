@@ -6,25 +6,30 @@ import axios from 'axios';
 export default function FormRegister() {
 
     let name = useRef()
-  let detail = useRef()
-  let admin_id = useRef()
+    let email = useRef()
+    let password = useRef()
+    let passwordrepeat = useRef()
 
   async function handleSubmit(e){
     e.preventDefault()
 
     let data = {
       [name.current.name]: name.current.value,
-      [detail.current.name]: detail.current.value,
-      [admin_id.current.name]: admin_id.current.value
+      [email.current.name]: email.current.value,
+      [password.current.name]: password.current.value,
     }
 
     console.log(data)
-    let url = 'http://localhost:8080/users'
-    try{
+    let url = 'http://localhost:8000/users'
+    if(password.current.value == passwordrepeat.current.value){
+      try{
       await axios.post(url,data)
-    }catch(error){
+      }catch(error){
       console.log(error)
       console.log("ocurrio un error")
+      }
+    }else {
+      alert("Contraseñas no coinciden")
     }
   }
 
@@ -38,19 +43,19 @@ export default function FormRegister() {
             
             <fieldset>
               <legend>Email</legend>
-              <input ref={detail} type="text" id='' name='' required />
+              <input ref={email} type="email" id='mail' name='mail' required />
               <img src="./@.png" alt="" />
             </fieldset>
             
             <fieldset>
               <legend>Password</legend>
-              <input ref={admin_id} type="password" id='' name='' required />
+              <input ref={password} type="password" id='password' name='password' required />
               <img src="./lock1.png" alt="" />
             </fieldset>
 
             <fieldset>
               <legend>Confirm password</legend>
-              <input ref={admin_id} type="password" id='' name='' required />
+              <input ref={passwordrepeat} type="password" id='passwordrepeat' name='passwordrepeat' required />
               <img src="./lock1.png" alt="" />
             </fieldset>
             
