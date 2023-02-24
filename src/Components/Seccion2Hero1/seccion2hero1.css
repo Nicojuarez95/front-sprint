@@ -1,0 +1,121 @@
+.seccionHero-2{
+    margin-top: 60px;
+    display: flex;
+    width: 100rem;
+    height: 255px;
+    background: linear-gradient(87.46deg, #4338CA 0%, #5E52F3 100%);
+    border-radius: 6px;
+}
+
+.text-seccionHero-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;  
+    width: 570px;
+    padding: 45px;
+    gap: 5px;
+}
+.text-seccionHero-2 h3{
+    margin: 0;
+    width: 235px;
+    height: 23px;
+    font-size: 27px;
+    line-height: 95.19%;
+}
+.text-seccionHero-2 p{
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    color: darkgrey;
+}
+.text-seccionHero-2 .p2{
+    font-size: .9rem;
+    padding: 0;
+    width: 380px;
+    color: rgb(255, 255, 255);
+    line-height: normal;
+}
+
+.img-seccionHero-2{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    position: relative;
+}
+.img1-seccionHero-2{
+    height: 310px;
+    width: 300px;
+    position: absolute;
+    left: 70px;
+    bottom: 0px;
+}
+.img2-seccionHero-2{
+    height: 270px;
+    width: 190px;
+    position: absolute;
+    right: 100px;
+    bottom: 30px;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .seccionHero-2{
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .seccionHero-2{
+      width: 90%;
+    }
+    .img-seccionHero-2{
+        width: 60%;
+        position: relative;
+        gap: 0;
+    }
+    .img1-seccionHero-2{
+        height: 280px;
+        left: 5%;
+        width: 45%;
+    }
+    .img2-seccionHero-2{
+        height: 250px;
+        width: 40%;
+        right: 5%;
+    }
+    .text-seccionHero-2{  
+        width: 320px;
+        padding: 0px;
+    }
+    .text-seccionHero-2 .p2{
+        width: 320px;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1700px) {
+    .seccionHero-2{
+      width: 90%;
+    }
+    .img-seccionHero-2{
+        position: relative;
+        gap: 0;
+        width: 70%;
+    }
+    .img1-seccionHero-2{
+        height: 280px;
+        left: 12%;
+        width: 250px;
+    }
+    .img2-seccionHero-2{
+        height: 250px;
+        width: 200px;
+        right: 12%;
+    }
+    .text-seccionHero-2{  
+        width: 320px;
+        padding-right: 50px;
+        width: 30%;
+    }
+    .text-seccionHero-2 .p2{
+        width: 250px;
+    }
+}
