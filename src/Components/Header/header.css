@@ -1,0 +1,13 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 40px 25px 40px;
+    position: relative;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    header img{
+        width: 50px;
+        height: 40px;
+    }
+}

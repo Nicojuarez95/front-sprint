@@ -1,0 +1,34 @@
+.seccionHero-1{
+    background-image: url(../../../public/backgroundHero.png);
+    background-size: cover;
+    background-position: top;
+    height: 604px;
+    width: 100%;
+}
+
+.text-seccionHero-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .seccionHero-1{
+        background-image: url(../../../public/backgroundmobile.png);
+        height: 100vh;
+
+    }
+
+    .text-seccionHero-1 p{
+        font-size: 15px;
+    }
+    .text-seccionHero-1 h2{
+        font-size: 30px;
+        margin: 0;
+    }
+}
