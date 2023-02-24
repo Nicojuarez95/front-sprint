@@ -1,10 +1,11 @@
 .seccionHero-2{
-    margin-top: 60px;
     display: flex;
     width: 100rem;
-    height: 255px;
+    height: 31vh;
     background: linear-gradient(87.46deg, #4338CA 0%, #5E52F3 100%);
     border-radius: 6px;
+    margin-top: 30px;
+    margin-bottom: 7px;
 }
 
 .text-seccionHero-2{
@@ -19,7 +20,7 @@
 .text-seccionHero-2 h3{
     margin: 0;
     width: 235px;
-    height: 23px;
+    height: 2.9vh;
     font-size: 27px;
     line-height: 95.19%;
 }
@@ -44,14 +45,14 @@
     position: relative;
 }
 .img1-seccionHero-2{
-    height: 310px;
+    height: 110%;
     width: 300px;
     position: absolute;
     left: 70px;
     bottom: 0px;
 }
 .img2-seccionHero-2{
-    height: 270px;
+    height: 95%;
     width: 190px;
     position: absolute;
     right: 100px;
@@ -74,12 +75,12 @@
         gap: 0;
     }
     .img1-seccionHero-2{
-        height: 280px;
+        height: 34vh;
         left: 5%;
         width: 45%;
     }
     .img2-seccionHero-2{
-        height: 250px;
+        height: 30vh;
         width: 40%;
         right: 5%;
     }
@@ -101,12 +102,12 @@
         width: 70%;
     }
     .img1-seccionHero-2{
-        height: 280px;
+        height: 34vh;
         left: 12%;
         width: 250px;
     }
     .img2-seccionHero-2{
-        height: 250px;
+        height: 30vh;
         width: 200px;
         right: 12%;
     }

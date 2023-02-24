@@ -8,6 +8,6 @@ header {
 @media (min-width: 320px) and (max-width: 767px) {
     header img{
         width: 50px;
-        height: 40px;
+        height: 5.1vh;
     }
 }
