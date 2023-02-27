@@ -8,15 +8,16 @@ form{
 fieldset{
     display: flex;
     align-items: center;
-    width: 384px;
-    height: 5vh;
+    width: 410px;
+    height: 6vh;
     border-radius: 10px;
     background: #EBEBEB;
     border: 1px solid rgba(31, 31, 31, 0.5);
 }
 legend{
+    margin-left: 10px;
     font-size: 12px;
-    line-height: 1.7vh;
+    line-height: 1.5vh;
     letter-spacing: 0.05em;
     font-weight: 500;
     color: #4338CA;
@@ -27,16 +28,19 @@ fieldset input{
     background-color: transparent;
     border: none;
     height: 3.8vh;
-    font-size: 20px;
+    font-size: 15px;
+    padding: 11px;
+    border-radius: 5px;
 }
 
 .div-check{
     display: flex;
     align-items: center;
     font-size: 12px;    
-    line-height: 1.7vh;
+    line-height: 1vh;
     letter-spacing: 0.05em;
     color: #1F1F1F;
+    gap: 5px;
 }
 #sign-up{
     width: 408px;
@@ -72,10 +76,13 @@ fieldset input{
 
 @media (min-width: 320px) and (max-width: 767px) {
     fieldset{
-        width: 284px;
+        width: 310px;
     }
     .div-google{
         width: 314px;
+    }
+    .div-google input{
+        width: 124px;
     }
     #sign-up{
         width: 308px;
