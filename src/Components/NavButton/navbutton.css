@@ -8,8 +8,9 @@ i img{
   }
 
   @media (min-width: 320px) and (max-width: 767px) {
-    /* i img{
-      width: 50px;
-    } */
+    #hamburguesa{
+      width: 40px;
+      height: 40px;
+    }
 
 }

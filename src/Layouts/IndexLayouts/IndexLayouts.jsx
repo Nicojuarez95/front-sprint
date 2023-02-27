@@ -1,8 +1,14 @@
 import React from 'react'
-import Index from '../../Components/Index/Index'
+import Header from '../../Components/Header/Header'
 
-export default function IndexLayouts() {
+export default function IndexLayouts(props) {
+
+  const {children} = props
+
   return (
-    <Index/>
+    <>
+    <Header/>
+    {children}
+    </>
   )
 }
