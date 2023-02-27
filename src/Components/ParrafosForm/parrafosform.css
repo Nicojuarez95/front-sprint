@@ -1,10 +1,11 @@
 .parrafos-form{
-    margin-top: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 17px;
+    width: 320px;
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
 }
 .parrafos-form p{
     padding: 0;
@@ -19,3 +20,4 @@
     color: #4338CA;
     font-weight: 600;
 }
+ 

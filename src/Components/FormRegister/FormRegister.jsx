@@ -9,9 +9,11 @@ export default function FormRegister() {
     let email = useRef()
     let password = useRef()
     let passwordrepeat = useRef()
+    let form= document.querySelector("form")
 
   async function handleSubmit(e){
     e.preventDefault()
+
 
     let data = {
       [name.current.name]: name.current.value,
@@ -19,11 +21,12 @@ export default function FormRegister() {
       [password.current.name]: password.current.value,
     }
 
-    console.log(data)
+    
     let url = 'http://localhost:8000/users'
     if(password.current.value == passwordrepeat.current.value){
       try{
       await axios.post(url,data)
+      form.reset()
       }catch(error){
       console.log(error)
       console.log("ocurrio un error")
@@ -31,6 +34,7 @@ export default function FormRegister() {
     }else {
       alert("Contraseñas no coinciden")
     }
+    
   }
 
   return (
@@ -61,15 +65,15 @@ export default function FormRegister() {
             
             <div className='div-check'>
               <input id='check' type="checkbox"/>
-              <label>Sendnotification to my email</label>
+              <label>Send notification to my email</label>
             </div>
 
-            <input id='sign-up' type="submit" value="Sing up" />
+            <input id='sign-up' type="submit" value="Sign up" />
 
             <div className='div-google'>
               <img src="./Google.png" alt="" />
-              <input type="submit" value="Sing up with Google" />
+              <input type="submit" value="Sign up with Google" />
             </div>
-          </form>
+      </form>
   )
 }

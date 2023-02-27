@@ -1,10 +1,113 @@
-/* footer{
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 50vh;
+    position: relative;
+    background-color: rgb(250, 249, 249);
 }
 
 .rectangulo-img-foother{
     background-image: url(../../../public/rectangle.png);
     background-size: cover;
-    height: 30vh;
-    border-radius: 0 0px 1000px 1000px;
-} */
+    height: 18vh;
+    width: 100%;
+    border-radius: 0 0px 400px 400px;
+}
+
+.suscribe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+    background-color: rgb(248, 248, 248);
+    width: 80%;
+    height: 18vh;
+    padding: 30px 80px 0 80px;
+    top: 15vh;
+    gap: 20px;
+    box-shadow: 0px 85px 45px rgb(240, 240, 240);
+}
+
+#suscribeId{
+    color: black;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.input-button{
+    display: flex;
+    padding: 10px;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 8px;
+    gap: 15px;
+    width: 445px;
+    justify-content: space-between;
+}
+
+.input-button input{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 190px;
+    height: 5vh;
+}
+
+.ultimo-cont{
+    margin-top: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    border-bottom:1px solid rgb(212, 212, 212) ;
+    height: 14vh;
+    width: 80vw;
+    flex-wrap: wrap;
+}
+
+a{
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+    margin-left: 20px;
+}
+
+#img-footer{
+    width: 200px;
+    height: 50px;
+}
+
+.cont-icono-boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 13vh;
+    margin: 0;
+    width: 300px;
+}
+
+.iconos-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 320px) and (max-width: 867px) {
+    .suscribe{
+        display: none;
+    }
+    .ultimo-cont{
+        position: absolute;
+        background-color: white;
+        top: -20px;
+        height: 30vh;
+        border-radius: 10px;
+        justify-content: center;
+        gap: 20px;
+        padding: 15px;
+    }
+}

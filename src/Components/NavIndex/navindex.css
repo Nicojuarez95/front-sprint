@@ -24,7 +24,7 @@
 
 nav{
     background: #4338CA;
-    border-radius: 10px;
+    border-radius:  0  10px 10px 0;
     height: 100vh;
     width: 430px;
     padding: 15px;
@@ -37,9 +37,11 @@ nav{
     display: flex;
     gap: 15px;
     align-items: center;
+    width: 200px;
 }
 .perfil1 h4{
     font-weight: 500;
+    width: 200px;
 }
 
 .perfil1 p{
