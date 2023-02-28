@@ -1,0 +1,11 @@
+.contFormLogin{
+    display: flex;
+    gap: 2vh;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #FAFCFC;
+}
+

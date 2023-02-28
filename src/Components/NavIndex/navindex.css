@@ -1,5 +1,4 @@
 *{
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
@@ -42,6 +41,7 @@ nav{
 .perfil1 h4{
     font-weight: 500;
     width: 200px;
+    margin: 0;
 }
 
 .perfil1 p{
