@@ -1,14 +1,11 @@
 import React from 'react'
 import './App.css'
-import Index from './Components/Index/Index'
-import IndexLayouts from './Layouts/IndexLayouts/IndexLayouts'
-
+import {router} from './Pages/index.js'
+import { RouterProvider } from 'react-router-dom'
 
 export default function App() {
-  
+  console.log(router)
   return (
-    <IndexLayouts>
-      <Index/>
-    </IndexLayouts>
+    <RouterProvider router={router}/>
   )
 }

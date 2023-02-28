@@ -2,6 +2,7 @@ import React from 'react'
 import './formregister.css'
 import { useRef } from 'react';
 import axios from 'axios';
+// import {Link as Anchor} from 'react-router-dom'
 
 export default function FormRegister() {
 
@@ -23,7 +24,7 @@ export default function FormRegister() {
 
     
     let url = 'http://localhost:8000/users'
-    if(password.current.value == passwordrepeat.current.value){
+    if(password.current.value === passwordrepeat.current.value){
       try{
       await axios.post(url,data)
       form.reset()
@@ -67,9 +68,9 @@ export default function FormRegister() {
               <input id='check' type="checkbox"/>
               <label>Send notification to my email</label>
             </div>
-
-            <input id='sign-up' type="submit" value="Sign up" />
-
+            {/* <Anchor to={`/notfound/${Math.random()}`}> */}
+              <input id='sign-up' type="submit" value="Sign up" />
+            {/* </Anchor> */}
             <div className='div-google'>
               <img src="./Google.png" alt="" />
               <input type="submit" value="Sign up with Google" />

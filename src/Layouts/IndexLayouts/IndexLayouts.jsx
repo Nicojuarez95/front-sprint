@@ -1,14 +1,14 @@
 import React from 'react'
 import Header from '../../Components/Header/Header'
+import { Outlet } from 'react-router-dom'
 
-export default function IndexLayouts(props) {
-
-  const {children} = props
+export default function IndexLayouts() {
 
   return (
     <>
     <Header/>
-    {children}
+    <Outlet/> 
     </>
   )
 }
+//Oulet seria el children
