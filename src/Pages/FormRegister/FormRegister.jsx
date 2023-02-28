@@ -59,7 +59,7 @@ export default function FormRegister() {
             </fieldset>
 
             <fieldset>
-              <legend>Confirm password</legend>
+              <legend>Confirm Password</legend>
               <input ref={passwordrepeat} type="password" id='passwordrepeat' name='passwordrepeat' required />
               <img src="./lock1.png" alt="" />
             </fieldset>
