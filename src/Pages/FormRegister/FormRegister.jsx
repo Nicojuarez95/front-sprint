@@ -23,7 +23,7 @@ export default function FormRegister() {
     }
 
     
-    let url = 'http://localhost:8000/users'
+    let url = 'http://localhost:8000/signup'
     if(password.current.value === passwordrepeat.current.value){
       try{
       await axios.post(url,data)
