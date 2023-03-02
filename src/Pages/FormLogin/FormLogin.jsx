@@ -16,10 +16,12 @@ export default function FormLogin() {
       [email.current.name]: email.current.value,
       [password.current.name]: password.current.value,
     }
-
-    let url = 'http://localhost:8000/signin'
+    let url = `http://localhost:8000/auth/signin`
+    let token = localStorage.getItem('token')
+    let headers = {headers:{'Authorization':`Bearer ${token}`}}
+    
     try{
-      await axios.post(url,data)
+      await axios.post(url,data,headers)
       (res => {localStorage.setItem(`token`, res.data.token)})
     }catch(error){
       console.log(error)
@@ -47,7 +49,7 @@ export default function FormLogin() {
               <label>Send notification to my email</label>
             </div>
             {/* <Anchor to={`/notfound/${Math.random()}`}> */}
-              <input id='sign-up' type="submit" value="Sign in" />
+            <input id='sign-up' type="submit" value="Sign in" />
             {/* </Anchor> */}
             <div className='div-google'>
               <img src="./Google.png" alt="" />

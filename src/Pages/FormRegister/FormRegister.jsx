@@ -48,7 +48,7 @@ export default function FormRegister() {
             
             <fieldset>
               <legend>Email</legend>
-              <input ref={email} type="email" id='mail' name='mail' required />
+              <input ref={email} type="email" id='email' name='email' required />
               <img src="./@.png" alt="" />
             </fieldset>
             
