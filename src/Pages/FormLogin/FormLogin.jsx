@@ -28,6 +28,11 @@ export default function FormLogin({handleRender}) {
       await axios.post(url,data,headers)
       let res = await axios.post(url,data,headers)
       localStorage.setItem(`token`, res.data.token)
+      localStorage.setItem(`user`, JSON.stringify({
+        name: res.data.user.name,
+        email: res.data.user.email,
+        photo: res.data.user.photo,
+      }))
     }catch(error){
       console.log(error)
       Swal.fire(error.response.data.message)

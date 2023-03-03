@@ -16,6 +16,19 @@ export default function FormRegister(props) {
   let location = useLocation();
   let { pathname } = location;
 
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -30,7 +43,10 @@ export default function FormRegister(props) {
 
     try {
       await axios.post(url, data);
-      Swal.fire("User created successfully", "success");
+      Toast.fire({
+        icon: "success",
+        title: "Signed in successfully",
+      });
       formregister.current.reset();
       navigate("/signin");
     } catch (error) {

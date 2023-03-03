@@ -20,23 +20,39 @@ export const router = createBrowserRouter([
         path: "/", 
         element: <IndexLayout/>,
         children: [
-            {path: "/", element:<Index/>},
-            {path: "/hero", element:<Hero1/>},
-            
-            {path: "/signup", element:<MainLayout/>,
-                children: [
-                    {path: "/signup", element: <Hero2Register/>}
-                ]
+        {
+            index: true, 
+            element:<Index/>
+        },
+        {
+            path: "/*",
+            element: <NotFound/>
+        },
+        ]
+    },
+    {
+        path: "/",
+        element:<MainLayout/>,
+        children: [
+            {
+                path: "/signup", 
+                element: <Hero2Register/>
             },
-            {path: "/signin", element:<MainLayout/>,
-                children: [
-                    {path: "/signin", element: <Auth/>},
-                ]
+            {
+                path:"/signin",
+                element:<Auth/>
             },
+            {
+                path:"/*",
+                element:<NotFound/>  
+            },             
         ],
     },
-        {path: "/*", element:<NotFound/>},
-])
+    {
+        path: "/*", 
+        element:<NotFound/>
+    },
+]);
 
 
 

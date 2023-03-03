@@ -67,6 +67,13 @@ nav{
     color: #fff;
 }
 
+#imagen-nav{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 49%;
+}
+
 .ancors-nav{
     margin-top: 30px;
     display: flex;
