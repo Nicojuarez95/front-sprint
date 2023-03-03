@@ -2,14 +2,12 @@ import React from 'react'
 import './contformregister.css'
 import BienvenidaRegister from '../BienvenidaRegister/BienvenidaRegister'
 import FormRegister from '../../Pages/FormRegister/FormRegister'
-import ParrafosForm from '../ParrafosForm/ParrafosForm'
 
-export default function ContFormRegister() {
+export default function ContFormRegister({handleRender}) {
   return (
     <div className='form-register'>
-          <BienvenidaRegister/>
-          <FormRegister/>
-          <ParrafosForm/>
+          <BienvenidaRegister text="Welcome!"/>
+          <FormRegister handleRender={handleRender}/>
       </div>
   )
 }

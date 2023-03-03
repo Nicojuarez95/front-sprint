@@ -3,11 +3,11 @@ import ImagenRegister from '../../Components/Imagen-register/ImagenRegister'
 import ContFormLogin from '../ContFormLogin/ContFormLogin'
 import './auth.css'
 
-export default function Auth() {
+export default function Auth({handleRender}) {
   return (
     <div className='auth'>
-        <ImagenRegister/>
-        <ContFormLogin/>
+        <ImagenRegister image="./backgroundlogin.png"/>
+        <ContFormLogin handleRender={handleRender}/>
     </div>
   )
 }

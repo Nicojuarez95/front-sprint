@@ -1,15 +1,13 @@
 import React from 'react'
 import BienvenidaRegister from '../../Components/BienvenidaRegister/BienvenidaRegister'
-import ParrafosForm from '../../Components/ParrafosForm/ParrafosForm'
 import FormLogin from '../FormLogin/FormLogin'
 import './contformlogin.css'
 
-export default function formlogin() {
+export default function formlogin({handleRender}) {
   return (
     <div className='contFormLogin'>
-    <BienvenidaRegister/>
-    <FormLogin/>
-    <ParrafosForm/>
+    <BienvenidaRegister text="Welcome" text2="back" />
+    <FormLogin handleRender={handleRender}/>
     </div>
   )
 }

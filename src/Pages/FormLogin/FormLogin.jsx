@@ -1,13 +1,17 @@
 import React from 'react'
 import './formlogin.css'
-import { useRef } from 'react'
+import { useRef} from 'react'
 import axios from 'axios';
+import {Link as Anchor, useLocation, useNavigate} from 'react-router-dom'
+import Swal from 'sweetalert2';
 
-export default function FormLogin() {
+export default function FormLogin({handleRender}) {
 
   const email = useRef();
   const password = useRef();
-  
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { pathname } = location;
 
   async function handleSubmit(e){
     e.preventDefault()
@@ -22,10 +26,11 @@ export default function FormLogin() {
     
     try{
       await axios.post(url,data,headers)
-      (res => {localStorage.setItem(`token`, res.data.token)})
+      let res = await axios.post(url,data,headers)
+      localStorage.setItem(`token`, res.data.token)
     }catch(error){
       console.log(error)
-      console.log("Ocurrio un error")
+      Swal.fire(error.response.data.message)
     }
   }
 
@@ -44,16 +49,28 @@ export default function FormLogin() {
               <img src="./lock1.png" alt="" />
             </fieldset>
 
-            <div className='div-check'>
-              <input id='check' type="checkbox"/>
-              <label>Send notification to my email</label>
-            </div>
-            {/* <Anchor to={`/notfound/${Math.random()}`}> */}
+            {/* <Anchor to={`/signin`}> */}
             <input id='sign-up' type="submit" value="Sign in" />
             {/* </Anchor> */}
             <div className='div-google'>
               <img src="./Google.png" alt="" />
               <input type="submit" value="Sign in with Google" />
+            </div>
+
+            <div className='parrafos-form'>
+              <p>You don't have an account yet?
+                <span
+              onClick={() => {
+                if (pathname === "/signin") {
+                  navigate("/signup");
+                } else {
+                  handleRender();
+                }
+            }}
+          >
+            Sign up
+          </span></p>
+              <p>Go back to <Anchor to={`/`}><span>home page</span></Anchor></p>
             </div>
       </form>
   )

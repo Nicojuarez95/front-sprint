@@ -4,6 +4,7 @@ import Index from "./Index/Index";
 import NotFound from "./NotFound/NotFound"
 import IndexLayout from "../Layouts/IndexLayouts/IndexLayouts"
 import Auth from "./Auth/Auth";
+import MainLayout from '../Layouts/MainLayouts/MainLayouts'
 
 
 import { createBrowserRouter } from "react-router-dom";
@@ -21,9 +22,21 @@ export const router = createBrowserRouter([
         children: [
             {path: "/", element:<Index/>},
             {path: "/hero", element:<Hero1/>},
-            {path: "/register", element:<Hero2Register/>},
-            {path: "/signin", element:<Auth/>}
             
-        ]},
-        {path: "/*", element:<NotFound/>}
+            {path: "/signup", element:<MainLayout/>,
+                children: [
+                    {path: "/signup", element: <Hero2Register/>}
+                ]
+            },
+            {path: "/signin", element:<MainLayout/>,
+                children: [
+                    {path: "/signin", element: <Auth/>},
+                ]
+            },
+        ],
+    },
+        {path: "/*", element:<NotFound/>},
 ])
+
+
+

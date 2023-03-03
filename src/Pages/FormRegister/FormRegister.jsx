@@ -1,80 +1,98 @@
-import React from 'react'
-import './formregister.css'
-import { useRef } from 'react';
-import axios from 'axios';
-// import {Link as Anchor} from 'react-router-dom'
+import React from "react";
+import "./formregister.css";
+import { useRef } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { Link as Anchor, useLocation } from "react-router-dom";
+import Swal from "sweetalert2";
 
-export default function FormRegister() {
+export default function FormRegister(props) {
+  let name = useRef();
+  let email = useRef();
+  let password = useRef();
+  let photo = useRef();
+  let formregister = useRef();
+  let navigate = useNavigate();
+  let location = useLocation();
+  let { pathname } = location;
 
-    let name = useRef()
-    let email = useRef()
-    let password = useRef()
-    let passwordrepeat = useRef()
-    let form= document.querySelector("form")
-
-  async function handleSubmit(e){
-    e.preventDefault()
-
+  async function handleSubmit(e) {
+    e.preventDefault();
 
     let data = {
       [name.current.name]: name.current.value,
       [email.current.name]: email.current.value,
       [password.current.name]: password.current.value,
-    }
+      [photo.current.name]: photo.current.value,
+    };
 
-    
-    let url = 'http://localhost:8000/signup'
-    if(password.current.value === passwordrepeat.current.value){
-      try{
-      await axios.post(url,data)
-      form.reset()
-      }catch(error){
-      console.log(error)
-      console.log("ocurrio un error")
-      }
-    }else {
-      alert("Contraseñas no coinciden")
+    let url = "http://localhost:8000/auth/signup";
+
+    try {
+      await axios.post(url, data);
+      Swal.fire("User created successfully", "success");
+      formregister.current.reset();
+      navigate("/signin");
+    } catch (error) {
+      console.log(error);
+      Swal.fire(error.response.data.message[0]);
     }
-    
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-            <fieldset>
-              <legend>Name</legend>
-              <input ref={name} type="text" id='name' name='name' required />
-              <img src="./Profile.png" alt="" />
-            </fieldset>
-            
-            <fieldset>
-              <legend>Email</legend>
-              <input ref={email} type="email" id='email' name='email' required />
-              <img src="./@.png" alt="" />
-            </fieldset>
-            
-            <fieldset>
-              <legend>Password</legend>
-              <input ref={password} type="password" id='password' name='password' required />
-              <img src="./lock1.png" alt="" />
-            </fieldset>
+    <form ref={formregister} onSubmit={handleSubmit}>
+      <fieldset>
+        <legend>Name</legend>
+        <input ref={name} type="text" id="name" name="name" required />
+        <img src="./Profile.png" alt="" />
+      </fieldset>
 
-            <fieldset>
-              <legend>Confirm Password</legend>
-              <input ref={passwordrepeat} type="password" id='passwordrepeat' name='passwordrepeat' required />
-              <img src="./lock1.png" alt="" />
-            </fieldset>
-            
-            <div className='div-check'>
-              <input id='check' type="checkbox"/>
-              <label>Send notification to my email</label>
-            </div>
-            {/* <Anchor to={`/notfound/${Math.random()}`}> */}
-              <input id='sign-up' type="submit" value="Sign up" />
-            {/* </Anchor> */}
-            <div className='div-google'>
-              <img src="./Google.png" alt="" />
-              <input type="submit" value="Sign up with Google" />
-            </div>
-      </form>
-  )
+      <fieldset>
+        <legend>Email</legend>
+        <input ref={email} type="email" id="email" name="email" required />
+        <img src="./@.png" alt="" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Photo</legend>
+        <input ref={photo} type="text" id="photo" name="photo" required />
+        <img src="./camera.png" alt="" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Password</legend>
+        <input
+          ref={password}
+          type="password"
+          id="password"
+          name="password"
+          required
+        />
+        <img src="./lock1.png" alt="" />
+      </fieldset>
+
+      <div className="div-check">
+        <input id="check" type="checkbox" required />
+        <label>Send notification to my email</label>
+      </div>
+
+      <input id="sign-up" type="submit" value="Sign up" />
+
+      <div className="div-google">
+        <img src="./Google.png" alt="" />
+        <input type="submit" value="Sign up with Google" />
+      </div>
+
+      <div className="parrafos-form">
+        <p>Already have an account?<span onClick={() => {
+            if (pathname === "/signup") {
+              navigate("/signin");
+            } else {
+              props.handleRender();
+            }
+          }}>Log in</span></p>
+        <p>Go back to<Anchor to={`/`}><span>home page</span></Anchor></p>
+      </div>
+    </form>
+  );
 }
