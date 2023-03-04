@@ -23,7 +23,7 @@ h1 {
 
 }
 
-fieldset {
+.fieldsetMove {
     border: none;
     display: flex;
     width: 70vw;

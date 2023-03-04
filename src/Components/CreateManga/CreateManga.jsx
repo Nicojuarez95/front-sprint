@@ -48,10 +48,10 @@ export default function CreateManga() {
         <div className='content-form'>
             <h1>New Manga</h1>
             <form onSubmit={handleSubmit}>
-                <fieldset>
+                <fieldset className='fieldsetMove'>
                     <input className='inputMove' type='text' placeholder='Insert title' ref={title} />
                 </fieldset>
-                <fieldset>
+                <fieldset className='fieldsetMove'>
                     <select className='inputMove' id='selectMove' ref={category} onChange={handleSelectChange}>
                         <option value=''>Select a category</option>  
                         { categories.length > 0 && categories.map(category => (
@@ -62,10 +62,10 @@ export default function CreateManga() {
                     </select>
                 </fieldset>
 
-                <fieldset>
+                <fieldset className='fieldsetMove'>
                     <input className='inputMove' type='text' placeholder='Insert description' ref={description} />
                 </fieldset>
-                <fieldset>
+                <fieldset className='fieldsetMove'>
                     <input className='inputMove' type='text' placeholder='Insert cover photo' ref={coverPhoto} />
                 </fieldset>
                 <button className='btn-manga' type='submit'>
