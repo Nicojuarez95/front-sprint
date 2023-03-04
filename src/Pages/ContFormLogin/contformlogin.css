@@ -1,0 +1,16 @@
+.contFormLogin{
+    display: flex;
+    gap: 2vh;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #EBEBEB;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+    .contFormLogin{
+        width: 100%;
+    }
+}
