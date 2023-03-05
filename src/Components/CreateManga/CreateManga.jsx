@@ -14,34 +14,31 @@ export default function CreateManga() {
         e.preventDefault();
         let manga = {
             title: title.current.value,
-            category: category.current.value,
+            // category: category.current.value,
             description: description.current.value,
             coverPhoto: coverPhoto.current.value,
+            category_id: "63fe8112f09373806fd89fe5"
         };
-        
-        console.log(manga);
+
+        // console.log(manga);
         const url = 'http://localhost:8000/mangas';
-    
+        let token = localStorage.getItem('token')
+        let headers = { headers: { 'Authorization': `Bearer ${token}` } }
+
         try {
-            await axios.post(url, manga, {
+            await axios.post(url, manga, headers, {
             });
             alert('Manga created successfully');
-            console.log(category.current.value);
+            // console.log(category.current.value);
         } catch (error) {
             console.log('ocurrio un error');
         }
     }
 
-    const handleSelectChange = (event) => {
-        // No es necesario guardar el valor del select en una variable de estado
-        console.log(event.target.value);
-    };
+    async function renderCategory() {
+        await axios.get('http://localhost:8000/mangas').then((response) => { setCategories(response.data.categories) })
+    }
 
-    useEffect(() => {
-        axios.get('http://localhost:8000/categories').then((response) => {
-            setCategories(response.data);
-        });
-    }, []);
 
 
     return (
@@ -52,14 +49,12 @@ export default function CreateManga() {
                     <input className='inputMove' type='text' placeholder='Insert title' ref={title} />
                 </fieldset>
                 <fieldset className='fieldsetMove'>
-                    <select className='inputMove' id='selectMove' ref={category} onChange={handleSelectChange}>
-                        <option value=''>Select a category</option>  
-                        { categories.length > 0 && categories.map(category => (
-                            <option key={category._id} value={category.value}>
-                                {category.name}
-                            </option>
-                        ))}
+                    <select className='inputMove' id='selectMove' ref={category} onClick ={renderCategory}>
+                        <option value=''>Select a category</option>
+                        {categories.map(categoria => <option key={categoria.name} value={categoria.name}>{categoria.name}</option>)}
+
                     </select>
+
                 </fieldset>
 
                 <fieldset className='fieldsetMove'>
@@ -72,6 +67,6 @@ export default function CreateManga() {
                     Send
                 </button>
             </form>
-        </div>
+        </div >
     );
 }
