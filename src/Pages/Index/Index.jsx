@@ -28,7 +28,6 @@ export default function Index() {
   };
 
   return (
-<<<<<<< HEAD
     <div>
         <Hero1/>
         <Hero2Register/>
@@ -39,15 +38,4 @@ export default function Index() {
 
     
   )
-=======
-    <>
-      <Hero1 />
-      {render ? (
-        <Auth handleRender={handleRender} />
-      ) : (
-        <Hero2Register handleRender={handleRender} />
-      )}
-    </>
-  );
->>>>>>> b2217f8eae3c7e580cb2168133db6252429604ef
 }
