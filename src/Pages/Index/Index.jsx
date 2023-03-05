@@ -6,10 +6,6 @@ import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import Auth from '../Auth/Auth'
 
-
-
-
-
 export default function Index() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -28,14 +24,13 @@ export default function Index() {
   };
 
   return (
-    <div>
-        <Hero1/>
-        <Hero2Register/>
-        
-    </div>
-  
-
-
-    
-  )
+    <>
+      <Hero1 />
+      {render ? (
+        <Auth handleRender={handleRender} />
+      ) : (
+        <Hero2Register handleRender={handleRender} />
+      )}
+    </>
+  );
 }
