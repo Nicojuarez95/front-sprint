@@ -5,6 +5,7 @@ import NotFound from "./NotFound/NotFound"
 import IndexLayout from "../Layouts/IndexLayouts/IndexLayouts"
 
 import { createBrowserRouter } from "react-router-dom";
+import NewChapter from "./NewChapter/NewChapter";
 
 
 /**
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
             {path: "/", element:<Index/>},
             {path: "/hero", element:<Hero1/>},
             {path: "/signup", element:<Hero2Register/>},
+            {path: "/chapters-form", element:<NewChapter/>},
             {path: "/*", element:<NotFound/>}
         ]}
 ])

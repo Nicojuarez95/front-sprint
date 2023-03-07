@@ -4,8 +4,10 @@ import {router} from './Pages/index.js'
 import { RouterProvider } from 'react-router-dom'
 
 export default function App() {
-  console.log(router)
+  // console.log(router)
   return (
+    <div>
     <RouterProvider router={router}/>
+    </div>
   )
 }
