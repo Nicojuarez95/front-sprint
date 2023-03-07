@@ -1,4 +1,3 @@
-import Hero1 from "./Hero1/Hero1";
 import Hero2Register from "./Hero2Register/Hero2Register";
 import Index from "./Index/Index";
 import NotFound from "./NotFound/NotFound"
