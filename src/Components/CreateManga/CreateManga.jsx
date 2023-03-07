@@ -1,37 +1,59 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useRef } from 'react';
 import './CreateManga.css';
 import axios from 'axios';
+import Swal from 'sweetalert2'
 
 export default function CreateManga() {
     const [categories, setCategories] = useState([]);
+    const [categoria, setCategoria] = useState(null);
     let title = useRef();
     let category = useRef();
     let description = useRef();
-    let coverPhoto = useRef();
+    let cover_photo = useRef();
+    const isDisabled = categoria == null;
 
     async function handleSubmit(e) {
         e.preventDefault();
+        const filteredCategory = categories.find((category) => (category.name == categoria))
         let manga = {
             title: title.current.value,
-            // category: category.current.value,
             description: description.current.value,
-            coverPhoto: coverPhoto.current.value,
-            category_id: "63fe8112f09373806fd89fe5"
+            cover_photo: cover_photo.current.value,
+            category_id: filteredCategory._id,
+
         };
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+            },
+        });
 
         // console.log(manga);
         const url = 'http://localhost:8000/mangas';
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
-
+        
         try {
             await axios.post(url, manga, headers, {
             });
-            alert('Manga created successfully');
-            // console.log(category.current.value);
+            Toast.fire({
+                icon: "success",
+                title: "Manga created successfully",
+            });
+            
         } catch (error) {
-            console.log('ocurrio un error');
+            Toast.fire ({
+                icon: "error",
+                title: "This title already exist"
+            });
+              // console.log('ocurrio un error');
         }
     }
 
@@ -49,7 +71,7 @@ export default function CreateManga() {
                     <input className='inputMove' type='text' placeholder='Insert title' ref={title} />
                 </fieldset>
                 <fieldset className='fieldsetMove'>
-                    <select className='inputMove' id='selectMove' ref={category} onClick ={renderCategory}>
+                    <select className='inputMove' id='selectMove' ref={category} onClick ={renderCategory} onChange={(e)=> setCategoria(e.target.value)}>
                         <option value=''>Select a category</option>
                         {categories.map(categoria => <option key={categoria.name} value={categoria.name}>{categoria.name}</option>)}
 
@@ -61,7 +83,7 @@ export default function CreateManga() {
                     <input className='inputMove' type='text' placeholder='Insert description' ref={description} />
                 </fieldset>
                 <fieldset className='fieldsetMove'>
-                    <input className='inputMove' type='text' placeholder='Insert cover photo' ref={coverPhoto} />
+                    <input className='inputMove' type='text' placeholder='Insert cover photo' ref={cover_photo} />
                 </fieldset>
                 <button className='btn-manga' type='submit'>
                     Send
