@@ -1,43 +1,58 @@
 import React, { Fragment } from 'react'
-import Header from '../Header/Header'
 import { useRef } from 'react';
 import axios from 'axios';
 import './contnewchapter.css'
+import Swal from 'sweetalert2';
 
 export default function ContNewChapter(e) {
 
-    let title = useRef()
-    let order = useRef()
-    let pages = useRef()
-    let form = document.querySelector("form")
+  let title = useRef()
+  let order = useRef()
+  let pages = useRef()
+  let form = document.querySelector("form")
 
-    async function handleSubmit(e){
-        e.preventDefault()   
+  async function handleSubmit(e){
+    e.preventDefault()   
     
-        let data = {
-          [title.current.name]: title.current.value,
-          [order.current.name]: order.current.value,
-          [pages.current.name]: pages.current.value,
-        }
-        console.log(data)
+    let data = {
+      [title.current.name]: title.current.value,
+      [order.current.name]: order.current.value,
+      [pages.current.name]: pages.current.value,
+    }
+    console.log(data)
         
-        let url = 'http://localhost:8000/chapters'
-          try{
-          await axios.post(url,data)
-          // form.reset()
-          }catch(error){
-          console.log(error)
-          console.log("ocurrio un error")
-          }
-          e.target.reset()
-        }
+        
+        
+    let url = 'http://localhost:8000/chapters'
+    try{
+      await axios.post(url,data)
+      Swal.fire({
+        icon: 'success',
+        title: 'EXITO',
+        text: 'Capítulo creado correctamente',
+        })
+      // form.reset()
+    }
+    catch(err){
+      console.log(err)
+      console.log("ocurrio un error")
+
+      let error = err.response.data.message
+      Swal.fire({
+        icon: 'error',
+        title: 'No se pudo crear el capitulo',
+        text: error,
+      })
+
+      }
+      e.target.reset()
+    }
         
 
 
 
   return (
-    <Fragment>
-    <Header/>
+    <>
       <div className='cont-dad-chapter'>
         <div className='cont-new-chapter'>
           <h1>New Chapter</h1>
@@ -52,6 +67,6 @@ export default function ContNewChapter(e) {
           </form>
         </div>
       </div>
-    </Fragment>
+    </>
   )
 }
