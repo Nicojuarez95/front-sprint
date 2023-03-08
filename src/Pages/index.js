@@ -5,9 +5,10 @@ import IndexLayout from "../Layouts/IndexLayouts/IndexLayouts"
 import Auth from "./Auth/Auth";
 import MainLayout from '../Layouts/MainLayouts/MainLayouts'
 import CreateManga from '../Components/CreateManga/CreateManga'
-
+import NewChapter from "./NewChapter/NewChapter";
 
 import { createBrowserRouter } from "react-router-dom";
+
 
 
 /**
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
             {
                 path:"/createmanga",
                 element:<CreateManga/>
+            },
+            {
+                path: "/chapters-form", 
+                element:<NewChapter/>
             },
             {
                 path:"/*",
