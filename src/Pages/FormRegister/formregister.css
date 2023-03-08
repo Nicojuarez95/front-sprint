@@ -74,6 +74,37 @@ fieldset input{
     font-size: .8rem;
 }
 
+.parrafos-form{
+    display: flex;
+    gap: 17px;
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-align: center;
+}
+.parrafos-form p{
+    padding: 0;
+    font-size: 14px;
+    line-height: 2vh;
+    letter-spacing: 0.05em;
+    color: black;
+    font-weight: 500;
+    margin: 0;
+}
+.parrafos-form span{
+    margin-left: 3px;
+    color: #4338CA;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.parrafos-form p a{
+    margin-left: 0px;
+}
+
+
 @media (min-width: 320px) and (max-width: 767px) {
     fieldset{
         width: 310px;
@@ -86,5 +117,8 @@ fieldset input{
     }
     #sign-up{
         width: 308px;
+    }
+    .parrafos-form{
+        width: 310px;
     }
 }

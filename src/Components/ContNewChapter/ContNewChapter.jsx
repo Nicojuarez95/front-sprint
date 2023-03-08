@@ -4,7 +4,7 @@ import axios from 'axios';
 import './contnewchapter.css'
 import Swal from 'sweetalert2';
 
-export default function ContNewChapter(e) {
+export default function ContNewChapter() {
 
   let title = useRef()
   let order = useRef()
@@ -17,10 +17,7 @@ export default function ContNewChapter(e) {
       [title.current.name]: title.current.value,
       [order.current.name]: order.current.value,
       [pages.current.name]: pages.current.value,
-    }
-    console.log(data)
-        
-        
+    }   
         
     let url = 'http://localhost:8000/chapters'
     try{
