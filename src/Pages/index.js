@@ -1,20 +1,19 @@
 import Hero2Register from "./Hero2Register/Hero2Register";
 import Index from "./Index/Index";
 import NotFound from "./NotFound/NotFound"
+import MainLayouts from '../Layouts/MainLayouts/MainLayouts'
+import CreateManga from '../Components/CreateManga/CreateManga'
 import IndexLayout from "../Layouts/IndexLayouts/IndexLayouts"
 import Auth from "./Auth/Auth";
-import MainLayout from '../Layouts/MainLayouts/MainLayouts'
+
 
 
 import { createBrowserRouter } from "react-router-dom";
 
 
-/**
- * @createBrouserRouter recibe un array de objetos cada objeto tiene 2 propiedades..
- * @path la ruta
- * @element el elemento (componenete de pagina q se renderizara en esa ruta)
- */
+
 export const router = createBrowserRouter([
+
     {
         path: "/", 
         element: <IndexLayout/>,
@@ -31,7 +30,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/",
-        element:<MainLayout/>,
+        element:<MainLayouts/>,
         children: [
             {
                 path: "/signup", 
@@ -40,6 +39,10 @@ export const router = createBrowserRouter([
             {
                 path:"/signin",
                 element:<Auth/>
+            },
+            {
+                path: '/createmanga',
+                element:<CreateManga/>,
             },
             {
                 path:"/*",
