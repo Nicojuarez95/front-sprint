@@ -9,9 +9,22 @@ export default function FormLogin({handleRender}) {
 
   const email = useRef();
   const password = useRef();
+  const form = useRef()
   const navigate = useNavigate();
   const location = useLocation();
   const { pathname } = location;
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
 
   async function handleSubmit(e){
     e.preventDefault()
@@ -24,15 +37,22 @@ export default function FormLogin({handleRender}) {
     let token = localStorage.getItem('token')
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
     
+  
     try{
       await axios.post(url,data,headers)
       let res = await axios.post(url,data,headers)
+      Toast.fire({
+        icon: "success",
+        title: "LogIn Successfully",
+      });
       localStorage.setItem(`token`, res.data.token)
       localStorage.setItem(`user`, JSON.stringify({
         name: res.data.user.name,
         email: res.data.user.email,
         photo: res.data.user.photo,
       }))
+      form.current.reset()
+      navigate("/")
     }catch(error){
       console.log(error)
       Swal.fire(error.response.data.message)
@@ -41,7 +61,7 @@ export default function FormLogin({handleRender}) {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form ref={form} onSubmit={handleSubmit}>
             <fieldset>
               <legend>Email</legend>
               <input ref={email} type="email" id='email' name='email' required />

@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 export default function NavIndex({handleRender}) {
     let token = localStorage.getItem(`token`)
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
-    let url = "http://localhost:8000/auth/signintoken"
+    let url = "http://localhost:8000/auth/signout"
 
     if(!token){
         localStorage.setItem(`user`, JSON.stringify({
