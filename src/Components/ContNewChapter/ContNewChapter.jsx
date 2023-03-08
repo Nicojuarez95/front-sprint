@@ -9,7 +9,6 @@ export default function ContNewChapter(e) {
   let title = useRef()
   let order = useRef()
   let pages = useRef()
-  let form = document.querySelector("form")
 
   async function handleSubmit(e){
     e.preventDefault()   
