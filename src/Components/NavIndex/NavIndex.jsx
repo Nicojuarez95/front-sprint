@@ -10,18 +10,19 @@ export default function NavIndex({handleRender}) {
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
     let url = "http://localhost:8000/auth/signout"
 
-    if(!token){
-        localStorage.setItem(`user`, JSON.stringify({
-            name: "",
-            email: "",
-            photo: "",
-        }))
-    }
+    // if(!token){
+    //     localStorage.setItem(`user`, JSON.stringify({
+    //         name: "",
+    //         email: "",
+    //         photo: "",
+    //     }))
+    // }
 
     let user= JSON.parse(localStorage.getItem(`user`))
     let name= user.name
     let email= user.email
     let photo= user.photo
+    console.log(JSON.parse(localStorage.getItem(`user`)))
 
     useEffect(()=>{
         let url= "http://localhost:8000/auth/signintoken"
