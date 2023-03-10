@@ -6,8 +6,9 @@ import Auth from "./Auth/Auth";
 import MainLayout from '../Layouts/MainLayouts/MainLayouts'
 import CreateManga from '../Components/CreateManga/CreateManga'
 import NewChapter from "./NewChapter/NewChapter";
-
+import Mangas from "../Pages/Mangas/Mangas"
 import { createBrowserRouter } from "react-router-dom";
+import AuthorForm from "./AuthorFrom/AuthorForm";
 
 
 
@@ -48,8 +49,16 @@ export const router = createBrowserRouter([
                 element:<CreateManga/>
             },
             {
+                path:"/mangas",
+                element:<Mangas/>
+            },
+            {
                 path: "/chapters-form", 
                 element:<NewChapter/>
+            },
+            {
+                path: "/author",
+                element: <AuthorForm/>
             },
             {
                 path:"/*",

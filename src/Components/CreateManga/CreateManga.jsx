@@ -11,6 +11,7 @@ export default function CreateManga() {
     let category = useRef();
     let description = useRef();
     let cover_photo = useRef();
+    const form = useRef();
     const isDisabled = categoria == null;
 
     async function handleSubmit(e) {
@@ -21,8 +22,9 @@ export default function CreateManga() {
             description: description.current.value,
             cover_photo: cover_photo.current.value,
             category_id: filteredCategory._id,
-
+            author_id: "640b33c55b1f46e6dfc8b91c"
         };
+        console.log(manga)
         const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -36,7 +38,7 @@ export default function CreateManga() {
         });
 
         // console.log(manga);
-        const url = 'http://localhost:8000/mangas';
+        const url = 'http://localhost:8000/createmanga';
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
         
@@ -47,26 +49,31 @@ export default function CreateManga() {
                 icon: "success",
                 title: "Manga created successfully",
             });
-            
+            form.current.reset()
         } catch (error) {
             Toast.fire ({
                 icon: "error",
-                title: "This title already exist"
+                title: "Opss"
             });
               // console.log('ocurrio un error');
         }
     }
 
     async function renderCategory() {
-        await axios.get('http://localhost:8000/mangas').then((response) => { setCategories(response.data.categories) })
-    }
+        try {
+          const response = await axios.get("http://localhost:8000/createmanga");
+          setCategories(response.data.categories);
+        } catch (error) {
+          console.log(error);
+        }
+      }
 
 
 
     return (
         <div className='content-form'>
             <h1>New Manga</h1>
-            <form onSubmit={handleSubmit}>
+            <form ref={form} onSubmit={handleSubmit}>
                 <fieldset className='fieldsetMove'>
                     <input className='inputMove' type='text' placeholder='Insert title' ref={title} />
                 </fieldset>
