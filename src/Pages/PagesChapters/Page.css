@@ -1,0 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.chapterOne {
+    font-size: 14px;
+}
+
+.imgMover img {
+    max-width: 100%;
+    height: auto;
+}
+
+.button {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+@media (max-width: 320px) {
+    .chapterOne {
+        font-size: 12px;
+    }
+
+    .imgMover {
+        margin: 0 auto;
+        max-width: 320px;
+        overflow-x: scroll;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}

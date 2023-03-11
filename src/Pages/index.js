@@ -6,6 +6,7 @@ import Auth from "./Auth/Auth";
 import MainLayout from '../Layouts/MainLayouts/MainLayouts'
 import CreateManga from '../Components/CreateManga/CreateManga'
 import NewChapter from "./NewChapter/NewChapter";
+import PagesChapter from "./PagesChapters/Page"
 
 import { createBrowserRouter } from "react-router-dom";
 
@@ -50,6 +51,11 @@ export const router = createBrowserRouter([
             {
                 path: "/chapters-form", 
                 element:<NewChapter/>
+            },
+            {
+                path: "/chapters/:id/:page",
+                element: <PagesChapter/>
+
             },
             {
                 path:"/*",

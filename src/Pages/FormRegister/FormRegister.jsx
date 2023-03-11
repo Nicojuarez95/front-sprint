@@ -65,7 +65,7 @@ export default function FormRegister(props) {
 
       <fieldset>
         <legend>Email</legend>
-        <input ref={email} type="email" id="email" name="email" required />
+        <input ref={email} type="email" id="email" name="mail" required />
         <img src="./@.png" alt="" />
       </fieldset>
 

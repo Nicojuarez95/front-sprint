@@ -10,13 +10,13 @@ export default function NavIndex({handleRender}) {
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
     let url = "http://localhost:8000/auth/signout"
 
-    // if(!token){
-    //     localStorage.setItem(`user`, JSON.stringify({
-    //         name: "",
-    //         email: "",
-    //         photo: "",
-    //     }))
-    // }
+    if(!token){
+        localStorage.setItem(`user`, JSON.stringify({
+            name: "",
+            email: "",
+            photo: "",
+        }))
+    }
 
     let user= JSON.parse(localStorage.getItem(`user`))
     let name= user.name
@@ -89,7 +89,7 @@ export default function NavIndex({handleRender}) {
                             : ""
                 }
 
-                <img className='equis' src="./union.png" alt="" onClick={handleRender}/>  
+                <img className='equis' src="/union.png" alt="" onClick={handleRender}/>  
             </div>
 
             <div className='ancors-nav'>
