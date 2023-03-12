@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useRef } from 'react';
 import './CreateManga.css';
 import axios from 'axios';
-import Swal from 'sweetalert2'
+import {useDispatch, useSelector} from 'react-redux'
+import alertActions from "../../store/Alert/actions";
+const {open} = alertActions
 
 export default function CreateManga() {
     const [categories, setCategories] = useState([]);
@@ -12,7 +14,9 @@ export default function CreateManga() {
     let description = useRef();
     let cover_photo = useRef();
     const form = useRef();
-    const isDisabled = categoria == null;
+    const store = useSelector(store=>store)
+    let dispatch = useDispatch()
+
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -24,20 +28,8 @@ export default function CreateManga() {
             category_id: filteredCategory._id,
             author_id: "640b33c55b1f46e6dfc8b91c"
         };
-        console.log(manga)
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-            toast.addEventListener("mouseenter", Swal.stopTimer);
-            toast.addEventListener("mouseleave", Swal.resumeTimer);
-            },
-        });
+        
 
-        // console.log(manga);
         const url = 'http://localhost:8000/createmanga';
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
@@ -45,17 +37,18 @@ export default function CreateManga() {
         try {
             await axios.post(url, manga, headers, {
             });
-            Toast.fire({
-                icon: "success",
-                title: "Manga created successfully",
-            });
+            let dataAlert = {
+                icon: 'success',
+                title: "Manga created successfully"
+              }
+              dispatch(open(dataAlert))
             form.current.reset()
         } catch (error) {
-            Toast.fire ({
-                icon: "error",
-                title: "Opss"
-            });
-              // console.log('ocurrio un error');
+            let dataAlert = {
+                icon: 'error',
+                title: error.response.data.message
+              }
+              dispatch(open(dataAlert))
         }
     }
 

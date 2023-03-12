@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import "./authorform.css";
 import axios from "axios";
-import swal from "sweetalert";
+import {useDispatch, useSelector} from 'react-redux'
+import alertActions from "../../store/Alert/actions";
+const {open} = alertActions
 
 export default function AuthorForm() {
   const firstName = useRef();
@@ -10,6 +12,9 @@ export default function AuthorForm() {
   const date = useRef();
   const urlProfile = useRef();
   const formRef = useRef();
+  const store = useSelector(store=>store)
+  let dispatch = useDispatch()
+
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -30,32 +35,53 @@ export default function AuthorForm() {
       let url = "http://localhost:8000/authors";
       try {
         await axios.post(url, data, headers);
+        let dataAlert = {
+          icon: 'success',
+          title: "Author created successfully"
+        }
+        dispatch(open(dataAlert))
         formRef.current.reset();
-        swal({
-          title: "Great!",
-          text: "Author created successfully.",
-          icon: "success",
-          button: "Accept",
-          timer: "10000",
-        });
       } catch (error) {
-        console.log(error);
-        swal({
-          title: "Erro",
-          text: error.response.data.message[0],
-          icon: "error",
-          button: "Go Back",
-          timer: "10000",
-        });
+        console.log(error)
+        if (typeof error.response.data.message === "string") {
+          console.log(error)
+          let dataAlert = {
+            icon: 'error',
+            title: error.response.data.message
+          }
+          dispatch(open(dataAlert))
+          console.log(dataAlert)
+        } else {
+          console.log(error)
+          let dataAlert = {
+            icon: 'error',
+            title: "",
+          }
+          error.response.data.message.forEach((err) => {
+            dataAlert.title += err + '\n'
+          });
+          dispatch(open(dataAlert));
+        }
       }
-    } else {
-      swal({
-        title: "Upss!",
-        text: "The city and the country must be separated by a comma.",
-        icon: "warning",
-        button: "Go Back",
-        timer: "10000",
-      });
+      // } catch (error) {
+      //   console.log(error);
+      //   let dataAlert = {
+      //     icon: 'error',
+      //     title: "Error"
+      //   }
+      //   dispatch(open(dataAlert))
+      
+      // } else {
+      //   let dataAlert = {
+      //     icon: 'error',
+      //     title: "The city and the country must be separated by a comma."
+      //   }
+      //   dispatch(open(dataAlert))
+      //   // Toast.fire({
+      //   //   icon: "error",
+      //   //   title: "The city and the country must be separated by a comma.",
+      //   // });
+      // }
     }
   }
   return (
