@@ -1,0 +1,30 @@
+.like-buttons {
+    display: flex;
+    gap: 12.67px;
+    width: 100%;
+    padding: 0 35px;
+    justify-content: space-between;
+}
+
+.like-buttons button {
+    width: 72px;
+    height: 72px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 36px;
+}
+
+.like-buttons img {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.like-buttons button:hover {
+    cursor: pointer;
+}
+
+.like-buttons button:active{
+    background-color: rgba(88, 86, 86, 0.498);
+    color: rgba(88, 86, 86, 0.498);
+}

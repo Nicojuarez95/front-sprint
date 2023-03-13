@@ -7,6 +7,8 @@ import MainLayout from '../Layouts/MainLayouts/MainLayouts'
 import CreateManga from '../Components/CreateManga/CreateManga'
 import NewChapter from "./NewChapter/NewChapter";
 import { createBrowserRouter } from "react-router-dom";
+import MangaDetails from "./MangaDetails/MangaDetails";
+
 
 
 
@@ -50,6 +52,10 @@ export const router = createBrowserRouter([
             {
                 path: "/chapters-form", 
                 element:<NewChapter/>
+            },
+            {
+                path: "/manga/id:/page:",
+                element: <MangaDetails/>
             },
             {
                 path:"/*",

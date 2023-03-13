@@ -20,8 +20,10 @@ export default function ContNewChapter() {
     }   
         
     let url = 'http://localhost:8000/chapters'
+    let token = localStorage.getItem('token')
+    let headers = { headers: { 'Authorization': `Bearer ${token}` } }
     try{
-      await axios.post(url,data)
+      await axios.post(url,data,headers)
       Swal.fire({
         icon: 'success',
         title: 'EXITO',
