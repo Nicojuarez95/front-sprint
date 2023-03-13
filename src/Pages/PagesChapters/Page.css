@@ -10,6 +10,10 @@
     align-content: center;
     justify-content: center;
 }
+.imgChapter {
+    height: 70vh;
+    width: 50vw;
+}
 
 .div-chapter2 {
     background-color: #4338CA;
@@ -56,8 +60,8 @@
 
 .posi {
     position: absolute;
-    height: 67vh;
-    width: 40vw;
+    height: 50vh;
+    width: 50vw;
 }
 
 .div-chapter3 {
