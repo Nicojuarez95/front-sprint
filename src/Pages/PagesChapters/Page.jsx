@@ -31,7 +31,7 @@ export default function Page() {
     setIndex(index - 1)
     navigate(`/chapters/${id}/${index - 1}`)
     if (index <= 0) {
-        navigate(`/manga/${chapter.manga_id}/`)
+        navigate(`/mangas/${chapter.manga_id}/`)
     }
 }
 

@@ -4,7 +4,7 @@ import { useRef} from 'react'
 import axios from 'axios';
 import {Link as Anchor, useLocation, useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from '../../Store/Alert/actions';
+import alertActions from '../../store/Alert/actions.js';
 const {open} = alertActions
 
 export default function FormLogin({handleRender}) {
