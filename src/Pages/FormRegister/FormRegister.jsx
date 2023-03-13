@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link as Anchor, useLocation } from "react-router-dom";
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from "../../store/Alert/actions";
+import alertActions from "../../Store/Alert/actions";
 const {open} = alertActions
 
 export default function FormRegister(props) {
@@ -50,7 +50,6 @@ export default function FormRegister(props) {
           title: error.response.data.message
         }
         dispatch(open(dataAlert))
-        console.log(dataAlert)
       } else {
         let dataAlert = {
           icon: 'error',

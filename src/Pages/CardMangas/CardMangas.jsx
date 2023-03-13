@@ -1,5 +1,6 @@
 import React from 'react'
 import './cardmangas.css'
+import { Link as Anchor } from 'react-router-dom'
 
 export default function CardMangas(props) {
   return (
@@ -10,7 +11,7 @@ export default function CardMangas(props) {
                     <h3>{props.title}</h3>
                     <span className={props?.style3}>{props?.category}</span>
                   </div>
-                  <a href="#">Read</a>
+                  <Anchor to={'/mangas/'+props.id+"/1"}> Read </Anchor>
                 </div>
 
                 <div className='img-cart'>

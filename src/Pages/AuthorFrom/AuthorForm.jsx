@@ -2,7 +2,7 @@ import { useRef } from "react";
 import "./authorform.css";
 import axios from "axios";
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from "../../store/Alert/actions";
+import alertActions from "../../Store/Alert/actions";
 const {open} = alertActions
 
 export default function AuthorForm() {
@@ -18,8 +18,10 @@ export default function AuthorForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     let token = localStorage.getItem("token");
     let headers = { headers: { Authorization: `Bearer ${token}` } };
+
     if (cityCountry.current.value.includes(",")) {
       let city = cityCountry.current.value.split(",")[0].trim();
       let country = cityCountry.current.value.split(",")[1].trim();
@@ -32,6 +34,7 @@ export default function AuthorForm() {
         [urlProfile.current.name]: urlProfile.current.value,
         ["active"]: true,
       };
+      
       let url = "http://localhost:8000/authors";
       try {
         await axios.post(url, data, headers);
@@ -63,25 +66,6 @@ export default function AuthorForm() {
           dispatch(open(dataAlert));
         }
       }
-      // } catch (error) {
-      //   console.log(error);
-      //   let dataAlert = {
-      //     icon: 'error',
-      //     title: "Error"
-      //   }
-      //   dispatch(open(dataAlert))
-      
-      // } else {
-      //   let dataAlert = {
-      //     icon: 'error',
-      //     title: "The city and the country must be separated by a comma."
-      //   }
-      //   dispatch(open(dataAlert))
-      //   // Toast.fire({
-      //   //   icon: "error",
-      //   //   title: "The city and the country must be separated by a comma.",
-      //   // });
-      // }
     }
   }
   return (

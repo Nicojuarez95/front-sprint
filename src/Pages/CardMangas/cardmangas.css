@@ -64,6 +64,11 @@
     margin-left: 0px;
     margin-bottom: -40px;
   }
+  .text a:hover{
+    background-color: #9cd8c8;
+    color: #ffffff;
+    box-shadow: 0 0 10px black;
+  }
   .img-cart{
     width: 50%;
   }

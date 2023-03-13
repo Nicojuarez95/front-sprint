@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import './CreateManga.css';
 import axios from 'axios';
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from "../../store/Alert/actions";
+import alertActions from "../../Store/Alert/actions";
 const {open} = alertActions
 
 export default function CreateManga() {
