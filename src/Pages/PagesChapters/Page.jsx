@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import  './Page.css';
+
 
 export default function Page() {
   const [chapter, setChapter] = useState(null);
   const { id, page } = useParams();
   const navigate = useNavigate();
   const pageNumber = parseFloat(page);
+  
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/chapters/${id}`)
+      .get(`http://localhost:8000/chapters/`+ id)
       .then((response) => setChapter(response.data.Chapter))
       .catch((error) => console.error(error));
   }, [id]);
@@ -32,17 +35,33 @@ export default function Page() {
   };
 
   return (
-    <div className="chapterOne">
-      <h3 className="nombreCap">Nombre del Capitulo </h3>
-      <button onClick={goBack}>Back</button>
-      <div className="imgMover">
-      {chapter ? (
-        <img src={chapter.pages[pageNumber - 1]} alt="chapter page" />
-      ) : (
-        "no existe el capitulo"
-      )}
+    <div className="mover">
+      <div className="div-chapter2">
+          <p className="parrafo-chapter2"> Cap N° {chapter.order} - {chapter.title} </p>
       </div>
-      <button onClick={goNext}>Next</button>
+      <div className="contenedor-capitulos">
+        <button className="boton-back" onClick={goBack}>
+          <img className="flecha" src='/flecha-izquierda.png' alt="" />
+        </button>
+
+        {chapter ? (
+          <img className="posi" src={chapter.pages[page - 1]}></img>
+        ) : (
+          "no existe el capitulo"
+        )}
+
+        <button className="boton-next" onClick={goNext}>
+          <img className="flecha" src='/flecha-correcta.png' alt="" />
+        </button>
+      </div>
+      <div className="div-chapter3">
+        <div className="chapter3">
+          <p className="parrafo-chapter3">
+            {" "}
+            <img className="comment" src='/icon_comment.png' alt="" /> numero del capítulo
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
