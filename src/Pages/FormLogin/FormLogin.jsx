@@ -4,7 +4,7 @@ import { useRef} from 'react'
 import axios from 'axios';
 import {Link as Anchor, useLocation, useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from '../../Store/Alert/actions';
+import alertActions from '../../Store/Alert/actions.js';
 const {open} = alertActions
 
 export default function FormLogin({handleRender}) {
@@ -62,7 +62,7 @@ export default function FormLogin({handleRender}) {
     <form ref={form} onSubmit={handleSubmit}>
             <fieldset>
               <legend>Email</legend>
-              <input ref={email} type="email" id='email' name='email' required />
+              <input ref={email} type="email" id='email' name='mail' required />
               <img src="./Profile.png" alt="" />
             </fieldset>
             

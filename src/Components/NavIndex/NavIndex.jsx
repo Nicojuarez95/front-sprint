@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import {Link as Anchor} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from '../../Store/Alert/actions';
+import alertActions from '../../Store/Alert/actions.js';
 const {open} = alertActions
 
 export default function NavIndex({handleRender}) {
@@ -26,6 +26,7 @@ export default function NavIndex({handleRender}) {
     let name= user.name
     let email= user.email
     let photo= user.photo
+    console.log(JSON.parse(localStorage.getItem(`user`)))
 
     useEffect(()=>{
         let url= "http://localhost:8000/auth/signintoken"
@@ -83,7 +84,7 @@ export default function NavIndex({handleRender}) {
                             : ""
                 }
 
-                <img className='equis' src="./union.png" alt="" onClick={handleRender}/>  
+                <img className='equis' src="/union.png" alt="" onClick={handleRender}/>  
             </div>
 
             <div className='ancors-nav'>
