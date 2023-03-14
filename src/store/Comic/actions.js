@@ -7,7 +7,6 @@ const read_events = createAsyncThunk(
   try {
     let response = await axios.get(
       "http://localhost:8000/createmanga/view?title="+inputText.trim()+"&category="+captureChecks+"&page="+pages,
-      
     );
     return {
       events: response.data.mangas

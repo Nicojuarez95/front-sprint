@@ -4,7 +4,7 @@ import axios from 'axios';
 import CardMangas from '../CardMangas/CardMangas'
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../Store/Text/action.js";
-import eventActions from "../../Store/Events/actions.js";
+import eventActions from "../../Store/Comic/actions.js";
 import actionsChecks from '../../Store/Checks/actions.js';
 
 const { read_events } = eventActions;
@@ -133,6 +133,22 @@ export default function Mangas() {
         </div>
 
         <div className='section-manga'>
+            
+        <h3 className="explore-mangas">Explore</h3>
+            <div className="img-mangas-mobile">
+              <span>
+                <label className="text-mobile-manga">Adventurers</label>
+                <img src="./imagen16.png" alt="" />
+              </span>
+              <span>
+                <label className="text-mobile-manga">Nostalgic</label>
+                <img src="./imagen17.png" alt="" />
+              </span>
+              <span>
+                <label className="text-mobile-manga">Popular</label>
+                <img src="./imagen18.png" alt="" />
+              </span>
+            </div>
 
             <div className="cont-checks">
               <label class="category-button2">
