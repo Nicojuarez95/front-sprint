@@ -10,6 +10,7 @@ import PagesChapter from "./PagesChapters/Page"
 import Mangas from "../Pages/Mangas/Mangas"
 import { createBrowserRouter } from "react-router-dom";
 import AuthorForm from "./AuthorFrom/AuthorForm";
+import MangaDetails from "./MangaDetails/MangaDetails";
 
 /**
  * @createBrouserRouter recibe un array de objetos cada objeto tiene 2 propiedades..
@@ -44,7 +45,7 @@ export const router = createBrowserRouter([
                 element: <Auth/>
             },
             {
-                path: "/createmanga",
+                path: "/mangas-form",
                 element: <CreateManga/>
             },
             {
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
             {
                 path: "/author",
                 element: <AuthorForm/>
+            },
+            {
+                path: "/manga/:id/:page",
+                element: <MangaDetails/>
             },
             {
                 path:"/*",
