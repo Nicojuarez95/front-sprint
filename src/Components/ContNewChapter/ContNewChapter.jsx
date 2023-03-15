@@ -4,12 +4,11 @@ import axios from 'axios';
 import './contnewchapter.css'
 import Swal from 'sweetalert2';
 
-export default function ContNewChapter(e) {
+export default function ContNewChapter() {
 
   let title = useRef()
   let order = useRef()
   let pages = useRef()
-  let form = document.querySelector("form")
 
   async function handleSubmit(e){
     e.preventDefault()   
@@ -18,14 +17,13 @@ export default function ContNewChapter(e) {
       [title.current.name]: title.current.value,
       [order.current.name]: order.current.value,
       [pages.current.name]: pages.current.value,
-    }
-    console.log(data)
-        
-        
+    }   
         
     let url = 'http://localhost:8000/chapters'
+    let token = localStorage.getItem('token')
+    let headers = { headers: { 'Authorization': `Bearer ${token}` } }
     try{
-      await axios.post(url,data)
+      await axios.post(url,data,headers)
       Swal.fire({
         icon: 'success',
         title: 'EXITO',
