@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useRef } from 'react';
-import './CreateManga.css';
+import './MangaForm.css';
 import axios from 'axios';
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import alertActions from "../../Store/Alert/actions";
-const {open} = alertActions
+const { open } = alertActions
 
 export default function CreateManga() {
     const [categories, setCategories] = useState([]);
@@ -14,7 +14,7 @@ export default function CreateManga() {
     let description = useRef();
     let cover_photo = useRef();
     const form = useRef();
-    const store = useSelector(store=>store)
+    const store = useSelector(store => store)
     let dispatch = useDispatch()
 
 
@@ -28,38 +28,38 @@ export default function CreateManga() {
             category_id: filteredCategory._id,
             author_id: "640b33c55b1f46e6dfc8b91c"
         };
-        
 
-        const url = 'http://localhost:8000/createmanga';
+
+        const url = 'http://localhost:8000/mangas-form';
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
-        
+
         try {
             await axios.post(url, manga, headers, {
             });
             let dataAlert = {
                 icon: 'success',
                 title: "Manga created successfully"
-              }
-              dispatch(open(dataAlert))
+            }
+            dispatch(open(dataAlert))
             form.current.reset()
         } catch (error) {
             let dataAlert = {
                 icon: 'error',
                 title: error.response.data.message
-              }
-              dispatch(open(dataAlert))
+            }
+            dispatch(open(dataAlert))
         }
     }
 
     async function renderCategory() {
         try {
-          const response = await axios.get("http://localhost:8000/createmanga");
-          setCategories(response.data.categories);
+            const response = await axios.get("http://localhost:8000/mangas-form");
+            setCategories(response.data.categories);
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-      }
+    }
 
 
 
@@ -71,7 +71,7 @@ export default function CreateManga() {
                     <input className='inputMove' type='text' placeholder='Insert title' ref={title} />
                 </fieldset>
                 <fieldset className='fieldsetMove'>
-                    <select className='inputMove' id='selectMove' ref={category} onClick ={renderCategory} onChange={(e)=> setCategoria(e.target.value)}>
+                    <select className='inputMove' id='selectMove' ref={category} onClick={renderCategory} onChange={(e) => setCategoria(e.target.value)}>
                         <option value=''>Select a category</option>
                         {categories.map(categoria => <option key={categoria.name} value={categoria.name}>{categoria.name}</option>)}
 

@@ -44,8 +44,6 @@ const handleNext = () => {
 }
 }
 console.log(chapter)
-console.log(id)
-console.log(page)
 
 return (
   <div className="mover">

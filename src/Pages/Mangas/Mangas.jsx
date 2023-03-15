@@ -82,7 +82,7 @@ export default function Mangas() {
   };
   
   useEffect(()=>{
-    axios.get("http://localhost:8000/createmanga")
+    axios.get("http://localhost:8000/mangas-form")
     .then(response => {
       setCate(response.data.categories)
     })
@@ -123,6 +123,7 @@ export default function Mangas() {
   }
 }
 
+console.log(data)
   
   return (
     <div className='cont-mangas'>
