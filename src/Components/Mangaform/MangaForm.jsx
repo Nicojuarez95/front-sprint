@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import alertActions from "../../store/Alert/actions";
 const { open } = alertActions
 
-export default function CreateManga() {
+export default function mangasForm() {
     const [categories, setCategories] = useState([]);
     const [categoria, setCategoria] = useState(null);
     let title = useRef();
