@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useRef } from 'react';
-import './CreateManga.css';
+import './MangaForm.css';
 import axios from 'axios';
 import {useDispatch, useSelector} from 'react-redux'
 import alertActions from "../../store/Alert/actions";
