@@ -64,9 +64,9 @@ export const router = createBrowserRouter([
                 element: <AuthorForm/>
             },
             {
-                path: "/*",
-                element: <NotFound/>  
-            }
+                path:"/*",
+                element:<NotFound/>  
+            }             
         ]
     },
     {

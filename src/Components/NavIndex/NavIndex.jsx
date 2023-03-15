@@ -5,6 +5,7 @@ import axios from 'axios';
 import {Link as Anchor} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import alertActions from '../../Store/Alert/actions.js';
+
 const {open} = alertActions
 
 export default function NavIndex({handleRender}) {
@@ -94,6 +95,7 @@ export default function NavIndex({handleRender}) {
                 <Anchor to="#">Favorites</Anchor>
                 { token ? <Anchor to="/author">Author</Anchor> : ""}
                 { token ? <Anchor onClick={handleLogout} to="/">Logout</Anchor> : ""}
+
             </div>
         </nav>
   )

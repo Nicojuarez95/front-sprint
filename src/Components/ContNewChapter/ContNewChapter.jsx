@@ -25,6 +25,7 @@ export default function ContNewChapter() {
 
     try{
       await axios.post(url,data, headers)
+
       Swal.fire({
         icon: 'success',
         title: 'EXITO',
