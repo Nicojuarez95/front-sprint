@@ -32,7 +32,7 @@
 }
 
 .prueba {
-    background: linear-gradient(153.39deg, #F9A8D4 -13.9%, #F472B6 58.69%);
+    background: linear-gradient(153.39deg, #4338CA -13.9%, #5E52F3 58.69%);
     color: #FFFFFF;
     margin: 0px;
     width: 200px;
@@ -98,7 +98,7 @@
 .btn-read {
     width: 151px;
     height: 74px;
-    background: linear-gradient(153.39deg, #F9A8D4 -13.9%, #F472B6 58.69%);
+    background: linear-gradient(153.39deg, #4338CA -13.9%, #5E52F3 58.69%);
     border-radius: 40px;
     border: none;
     color: #FFFFFF;
@@ -119,7 +119,7 @@
 .btn-chapter{
     width: 70px;
     height: 30px;
-    background: linear-gradient(153.39deg, #F9A8D4 -13.9%, #F472B6 58.69%);
+    background: linear-gradient(153.39deg, #4338CA -13.9%, #5E52F3 58.69%);
     border-radius: 40px;
     border: none;
     color: #FFFFFF;
