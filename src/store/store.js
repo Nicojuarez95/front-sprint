@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import alertReducer from './Alert/reduce'
 import textReducer from './Text/reducer'
-import eventReducer from './Events/reducer'
+import eventReducer from './Comic/reducer'
 import checksReducer from './Checks/reducer'
 
 export const store = configureStore ({
