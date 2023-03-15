@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
                 element:<NewChapter/>
             },
             {
-                path: "/manga/id:/page:",
+                path: "/manga/:id/:page",
                 element: <MangaDetails/>
             },
             {

@@ -1,30 +1,29 @@
-.like-buttons {
-    display: flex;
-    gap: 12.67px;
+.contenedor-reactions{
     width: 100%;
-    padding: 0 35px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+}
+.cont-button-reactions{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+   
+}
+.button-reaction{
+    width: 60%;
+    height: 4rem;   
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
-
-.like-buttons button {
-    width: 72px;
-    height: 72px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 36px;
-}
-
-.like-buttons img {
-    padding: 1rem;
-    width: 100%;
-    height: 100%;
-}
-
-.like-buttons button:hover {
+.buttonReac{
+    border: transparent;
     cursor: pointer;
-}
-
-.like-buttons button:active{
-    background-color: rgba(88, 86, 86, 0.498);
-    color: rgba(88, 86, 86, 0.498);
+    border-radius: 100px;
 }
