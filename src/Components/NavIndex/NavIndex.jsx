@@ -90,7 +90,7 @@ export default function NavIndex({handleRender}) {
             <div className='ancors-nav'>
                 <Anchor to="/">Home</Anchor>
                 <Anchor to="/mangas">Mangas</Anchor>
-                <Anchor to="/createmanga">My mangas</Anchor>
+                <Anchor to="/mangas-form">My mangas</Anchor>
                 <Anchor to="#">Favorites</Anchor>
                 { token ? <Anchor to="/author">Author</Anchor> : ""}
                 { token ? <Anchor onClick={handleLogout}>Logout</Anchor> : ""}
