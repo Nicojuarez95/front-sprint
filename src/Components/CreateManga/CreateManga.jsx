@@ -30,7 +30,7 @@ export default function CreateManga() {
         };
         
 
-        const url = 'http://localhost:8000/createmanga';
+        const url = 'http://localhost:8000/mangas-form';
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
         
