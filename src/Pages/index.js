@@ -69,6 +69,14 @@ export const router = createBrowserRouter([
                 element: <MangaDetails/>
             },
             {
+                path:"/createmanga",
+                element:<CreateManga/>
+            },
+            {
+                path: "/chapters-form", 
+                element:<NewChapter/>
+            },
+            {
                 path:"/*",
                 element:<NotFound/>  
             }             
