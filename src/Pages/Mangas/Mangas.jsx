@@ -3,9 +3,9 @@ import './mangas.css'
 import axios from 'axios';
 import CardMangas from '../CardMangas/CardMangas'
 import { useDispatch, useSelector } from "react-redux";
-import actions from "../../Store/Text/action.js";
-import eventActions from "../../Store/Comic/actions.js";
-import actionsChecks from '../../Store/Checks/actions.js';
+import actions from "../../store/Text/action.js";
+import eventActions from "../../store/Comic/actions.js";
+import actionsChecks from '../../store/Checks/actions.js';
 
 const { read_events } = eventActions;
 const { captureText } = actions;
@@ -18,52 +18,52 @@ export default function Mangas() {
     switch (value){
       case "640bae73ea123674b00b1a57": 
       return "kodomo";
-      break;
+      
       case "640bae73ea123674b00b1a58": 
       return "shojo";
-      break;
+      
       case "640bae73ea123674b00b1a59": 
       return "seinen";
-      break;
+      
       case "640bae73ea123674b00b1a56": return "shonen";
-      break;
+      
       default: return "";
-      break;
+      
     }
   }
   function returnStyle(value){
     switch (value){
       case "640bae73ea123674b00b1a57": 
       return "kodomoBarr";
-      break;
+  
       case "640bae73ea123674b00b1a58": 
       return "shojoBarr";
-      break;
+  
       case "640bae73ea123674b00b1a59": 
       return "seinenBarr";
-      break;
+  
       case "640bae73ea123674b00b1a56": return "shonenBarr";
-      break;
+  
       default: return "";
-      break;
+  
     }
   }
   function returnCategory(value){
     switch (value){
       case "640bae73ea123674b00b1a57": 
       return "Comic";
-      break;
+  
       case "640bae73ea123674b00b1a58": 
       return "Shojo";
-      break;
+  
       case "640bae73ea123674b00b1a59": 
       return "Seinen";
-      break;
+  
       case "640bae73ea123674b00b1a56": 
       return "Shonen";
-      break;
+  
       default: return "";
-      break;
+  
     }
   }
   
@@ -91,7 +91,7 @@ export default function Mangas() {
   
   function checks(e){
     cate.forEach(cate => {
-      if(cate.name == e.target.value){
+      if(cate.name === e.target.value){
         if(categoriasCheck.includes(cate._id)){
           categoriasCheck = categoriasCheck.filter(e => e !== cate._id)
         } else {
@@ -189,7 +189,7 @@ export default function Mangas() {
             <div className='cont-boton'>
               {pages < 2 ? "" : <button className='ancord' onClick={decreasePages} >Prev</button>}
               <p>{pages}</p>
-              {data.length == 6 || data.length == 10 ? <button className='ancord' onClick={increasePages} >Next</button> : ""  }
+              {data.length === 6 || data.length === 10 ? <button className='ancord' onClick={increasePages} >Next</button> : ""  }
               
             </div>      
         </div>

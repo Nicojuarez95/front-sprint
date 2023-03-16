@@ -8,7 +8,7 @@ import Stats from '../../Components/DetailsManga/Stats/Stats.jsx'
 import MangaChapters from '../../Components/DetailsManga/MangaChapters/MangaChapters.jsx'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router'
-import actions from '../../Store/Manga/actions'
+import actions from '../../store/Manga/actions'
 
 const {captureManga,delete_chapter} = actions
 
@@ -27,11 +27,11 @@ export default function MangaDetails() {
     <div>
       <Header/>
 
-      { manga.length!=0? <MangaPortada info={manga}/>: null }
-      { manga.length!=0? <InfoCatYCompany info={manga}/>: null}
+      { manga.length!==0? <MangaPortada info={manga}/>: null }
+      { manga.length!==0? <InfoCatYCompany info={manga}/>: null}
       <ButtonsIcons/>
       <Stats chapterCount={265}/>
-      { manga.length!=0? <MangaChapters info={manga}/> :null }
+      { manga.length!==0? <MangaChapters info={manga}/> :null }
 
       
     </div>

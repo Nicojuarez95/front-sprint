@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './mangachapters.css';
 import { Link as Anchor, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import actions from '../../../Store/Manga/actions'
-import action from '../../../Store/Capture/actions'
+import actions from '../../../store/Manga/actions'
+import action from '../../../store/Capture/actions'
 
 const { captureChapter } = actions;
 const { captureState } = action;
