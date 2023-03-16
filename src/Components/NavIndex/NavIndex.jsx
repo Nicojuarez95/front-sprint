@@ -36,7 +36,7 @@ export default function NavIndex({ handleRender }) {
         }
     })
 
-    async function handleLogout() {
+      async function handleLogout() {
         try {
           await axios.post(url, "", headers);
           let dataAlert = {

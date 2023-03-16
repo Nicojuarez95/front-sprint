@@ -191,13 +191,12 @@
     background-color: #6560bb;
   }
 
-  
 @media (min-width: 320px) and (max-width: 867px) {
     .cont-cartas{
         gap: 30px;
         justify-content: center;
     }
-    
+  
 }  
 
 @media (min-width: 320px) and (max-width: 567px) {

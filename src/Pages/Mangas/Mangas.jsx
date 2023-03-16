@@ -123,7 +123,6 @@ export default function Mangas() {
   }
 }
 
-console.log(data)
   
   return (
     <div className='cont-mangas'>

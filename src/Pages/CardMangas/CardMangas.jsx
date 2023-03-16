@@ -11,7 +11,7 @@ export default function CardMangas(props) {
                     <h3>{props.title}</h3>
                     <span className={props?.style3}>{props?.category}</span>
                   </div>
-                  <Anchor to={'/chapters/'+props.id+"/1"}> Read </Anchor>
+                  <Anchor to={'/manga/'+props.id+"/1"}> Read </Anchor>
                 </div>
 
                 <div className='img-cart'>
