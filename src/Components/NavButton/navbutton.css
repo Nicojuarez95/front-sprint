@@ -1,0 +1,16 @@
+i img{
+    width: 3.563rem;
+    height: 6.1vh;
+    z-index: 100;
+    background: transparent;
+    display: block;
+    cursor: pointer;
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    #hamburguesa{
+      width: 40px;
+      height: 40px;
+    }
+
+}

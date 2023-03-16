@@ -1,0 +1,15 @@
+#parrafo1{
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    font-size: 24px;
+    width: 500px;
+    line-height: 3.57vh;
+    font-weight: 300;
+}
+
+@media (min-width: 320px) and (max-width: 567px) {
+    #parrafo1{
+        width:320px;
+    }
+}

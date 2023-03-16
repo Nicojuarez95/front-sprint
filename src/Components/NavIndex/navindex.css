@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.equis{
+    cursor: pointer;
+}
+
+.text-nav{
+    height: px;
+    gap: 0;
+}
+.text-nav p{
+    padding: 0;
+    line-height: 1.5;
+}
+.text-nav p{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    background: #4338CA;
+    border-radius:  0  10px 10px 0;
+    height: 100vh;
+    width: 430px;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.perfil1{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 200px;
+}
+.perfil1 h4{
+    font-weight: 500;
+    width: 200px;
+    margin: 0;
+}
+
+.perfil1 p{
+    font-size: .8rem;
+    font-weight: 0;
+    color: darkgray;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 48px;
+    width: 100%;
+    height: 46px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    color: #fff;
+}
+
+#imagen-nav{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 49%;
+}
+
+.ancors-nav{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.ancors-nav a {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    height: 48px;
+    width: 382px;
+    border-radius: 8px;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+}
+
+.ancors-nav a:hover{
+    background-color: #fff !important;
+    color:  #4338CA ;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .perfil{
+        width: 82%;
+    }
+    .equis{
+        width: 15px;
+        height: 15px;
+    }
+}
