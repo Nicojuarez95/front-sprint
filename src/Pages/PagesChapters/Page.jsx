@@ -19,10 +19,8 @@ export default function Page() {
       .get(`${url}${id}`)
       .then(response => {
         setChapter(response.data.chapter);
-        console.log(response.data.chapter)
         setNext(response.data.next);
-        
-      }
+        }
       )
       .catch((error) => console.error(error));
   }, []); // parametro para que se ejecute el efecto nuevamente cuando llego a la ultima pagina del capitulo(booleno)

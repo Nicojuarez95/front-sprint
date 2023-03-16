@@ -20,6 +20,7 @@ export default function MangaChapters({ info }) {
       setCapitulo(true)
       dispatch(captureState({ buttonState: false }))
   }
+  
   function Cap() {
       setCapitulo(false)
       dispatch(captureState({ buttonState: true }))
@@ -31,8 +32,9 @@ export default function MangaChapters({ info }) {
 
   useEffect(() => {
       setCapitulo(!check)
-
   }, [])
+
+  console.log(chapters)
 
   return (
     <>
