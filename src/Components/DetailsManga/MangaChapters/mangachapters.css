@@ -29,6 +29,7 @@
     letter-spacing: 0.05em;
     text-decoration: none;
     margin: 0 12px;
+    cursor: pointer;
 }
 
 .prueba {
@@ -65,14 +66,7 @@
     border-radius: 8px;
 }
 .puntitos{
-    width: 20%;
-    height: 2vh;
-    background-color: rgb(52, 50, 50);
-    background: #c1c1c1ad;
-    border-radius: 40px;
-    color: black;
-    font-family: 'Times New Roman';
-    font-size: 1rem;
+    cursor: pointer;
 }
 .order-chapter {
     display: flex;
@@ -107,7 +101,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
-
+    cursor: pointer;
 }
 .div-chapter{
     display: flex;
@@ -117,6 +111,9 @@
    
 }
 .btn-chapter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 70px;
     height: 30px;
     background: linear-gradient(153.39deg, #4338CA -13.9%, #5E52F3 58.69%);
@@ -125,10 +122,11 @@
     color: #FFFFFF;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 17px;
     text-decoration: none;
-
+    cursor: pointer;
+    padding: 5px;
 }
 
 @media (min-width:320px) and (max-width:768px) { 

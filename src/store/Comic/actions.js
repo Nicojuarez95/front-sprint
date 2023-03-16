@@ -22,7 +22,7 @@ const read_events = createAsyncThunk(
 const read_manga = createAsyncThunk(
   'read_manga',
   async ({ id }) => {
-      let url = 'http://localhost:8000/mangas/' + id;
+      let url = 'http://localhost:8000/mangas-form/' + id;
 
       try {
           let response = await axios.get(url)

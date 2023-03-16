@@ -20,6 +20,7 @@ export default function MangaChapters({ info }) {
       setCapitulo(true)
       dispatch(captureState({ buttonState: false }))
   }
+  
   function Cap() {
       setCapitulo(false)
       dispatch(captureState({ buttonState: true }))
@@ -31,8 +32,9 @@ export default function MangaChapters({ info }) {
 
   useEffect(() => {
       setCapitulo(!check)
-
   }, [])
+
+  console.log(chapters)
 
   return (
     <>
@@ -50,16 +52,16 @@ export default function MangaChapters({ info }) {
           {chapters?.length > 0 ?
             chapters.map(chapter => (
               <div key={chapter._id} className='sectionChapter'>
-                <img className='selecChapter' src={chapter.manga_id.cover_photo} alt={chapter.title} />
+                <img className='selecChapter' src={info.cover_photo} alt={chapter.title} />
                 <div className='order-chapter'>
                   <p className='p-chapter'>Chapter #{chapter.order}</p>
                   <div className='coment-chapter'>
-                    <button className="puntitos">. . .</button>
-                    <p>169</p>
+                    <a className="puntitos"><img src="/icon_comment.png" alt="" /></a>
+                    <p>{chapter.pages.length}</p>
                   </div>
                 </div>
 
-                <Anchor className='btn-read' to={'/chapters/' + chapter._id}>
+                <Anchor className='btn-read' to={'/chapters/'+ chapter._id+"/0"}>
                   <button className='btn-read'>Read</button>
                 </Anchor>
 

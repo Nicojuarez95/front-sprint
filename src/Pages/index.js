@@ -4,7 +4,7 @@ import NotFound from "./NotFound/NotFound"
 import IndexLayout from "../Layouts/IndexLayouts/IndexLayouts"
 import Auth from "./Auth/Auth";
 import MainLayout from '../Layouts/MainLayouts/MainLayouts'
-import CreateManga from '../Components/CreateManga/CreateManga'
+import MangaForm from '../Components/Mangaform/MangaForm'
 import NewChapter from "./NewChapter/NewChapter";
 import PagesChapter from "./PagesChapters/Page"
 import Mangas from "../Pages/Mangas/Mangas"
@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/mangas-form",
-                element: <CreateManga/>
+                element: <MangaForm/>
             },
             {
                 path: "/mangas",
@@ -67,14 +67,6 @@ export const router = createBrowserRouter([
             {
                 path: "/manga/:id/:page",
                 element: <MangaDetails/>
-            },
-            {
-                path:"/createmanga",
-                element:<CreateManga/>
-            },
-            {
-                path: "/chapters-form", 
-                element:<NewChapter/>
             },
             {
                 path:"/*",

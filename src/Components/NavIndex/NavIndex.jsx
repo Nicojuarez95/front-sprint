@@ -8,14 +8,14 @@ import alertActions from '../../store/Alert/actions.js';
 
 const {open} = alertActions
 
-export default function NavIndex({handleRender}) {
+export default function NavIndex({ handleRender }) {
     let token = localStorage.getItem(`token`)
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
     let url = "http://localhost:8000/auth/signout"
     const store = useSelector(store=>store)
     let dispatch = useDispatch()
 
-    if(!token){
+    if (!token) {
         localStorage.setItem(`user`, JSON.stringify({
             name: "",
             email: "",
@@ -29,11 +29,11 @@ export default function NavIndex({handleRender}) {
     let photo= user.photo
     console.log(JSON.parse(localStorage.getItem(`user`)))
 
-    useEffect(()=>{
-        let url= "http://localhost:8000/auth/signintoken"
-        if(token){
-            let headers = {headers:{'Authorization':`Bearer ${token}`}}
-            axios.post(url,null,headers)
+    useEffect(() => {
+        let url = "http://localhost:8000/auth/signintoken"
+        if (token) {
+            let headers = { headers: { 'Authorization': `Bearer ${token}` } }
+            axios.post(url, null, headers)
         }
     })
 
@@ -67,22 +67,22 @@ export default function NavIndex({handleRender}) {
                 dispatch(open(dataAlert));
           }
         }
-      }
-  
-  return (
+    }
+
+    return (
         <nav>
             <div className='perfil'>
                 {
                     token ?
-                            <div className='perfil1'>
-                                <img id="imagen-nav" src={photo} alt="imagen-perfil" />
+                        <div className='perfil1'>
+                            <img id="imagen-nav" src={photo} alt="imagen-perfil" />
 
-                                <div className='text-nav'>
-                                    <h4>{name}</h4>
-                                    <p>{email}</p>
-                                </div>
+                            <div className='text-nav'>
+                                <h4>{name}</h4>
+                                <p>{email}</p>
                             </div>
-                            : ""
+                        </div>
+                        : ""
                 }
 
                 <img className='equis' src="/union.png" alt="" onClick={handleRender}/>  
@@ -95,8 +95,7 @@ export default function NavIndex({handleRender}) {
                 <Anchor to="#">Favorites</Anchor>
                 { token ? <Anchor to="/author">Author</Anchor> : ""}
                 { token ? <Anchor onClick={handleLogout} to="/">Logout</Anchor> : ""}
-
             </div>
         </nav>
-  )
+    )
 }
