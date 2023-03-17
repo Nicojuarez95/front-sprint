@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import {Link as Anchor} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from '../../store/Alert/actions.js';
+import alertActions from '../../Store/Alert/actions.js';
 const {open} = alertActions
 
 export default function NavIndex({ handleRender }) {
@@ -36,7 +36,7 @@ export default function NavIndex({ handleRender }) {
         }
     })
 
-    async function handleLogout() {
+      async function handleLogout() {
         try {
           await axios.post(url, "", headers);
           let dataAlert = {
@@ -90,10 +90,10 @@ export default function NavIndex({ handleRender }) {
             <div className='ancors-nav'>
                 <Anchor to="/">Home</Anchor>
                 <Anchor to="/mangas">Mangas</Anchor>
-                <Anchor to="/createmanga">My mangas</Anchor>
+                <Anchor to="/mangas-form">My mangas</Anchor>
                 <Anchor to="#">Favorites</Anchor>
                 { token ? <Anchor to="/author">Author</Anchor> : ""}
-                { token ? <Anchor onClick={handleLogout}>Logout</Anchor> : ""}
+                { token ? <Anchor onClick={handleLogout} to="/">Logout</Anchor> : ""}
             </div>
         </nav>
     )

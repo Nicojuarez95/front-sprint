@@ -2,7 +2,7 @@ import { useRef } from "react";
 import "./authorform.css";
 import axios from "axios";
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from "../../store/Alert/actions.js";
+import alertActions from "../../Store/Alert/actions.js";
 const {open} = alertActions
 
 export default function AuthorForm() {

@@ -4,7 +4,7 @@ import { useRef} from 'react'
 import axios from 'axios';
 import {Link as Anchor, useLocation, useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from '../../store/Alert/actions.js';
+import alertActions from '../../Store/Alert/actions.js';
 const {open} = alertActions
 
 export default function FormLogin({handleRender}) {
@@ -92,7 +92,7 @@ export default function FormLogin({handleRender}) {
           >
             Sign up
           </span></p>
-              <p>Go back to <Anchor to={`/`}><span>home page</span></Anchor></p>
+              <p>Go back to <Anchor to={"/"}><span>home page</span></Anchor></p>
             </div>
       </form>
   )

@@ -3,9 +3,9 @@ import './mangas.css'
 import axios from 'axios';
 import CardMangas from '../CardMangas/CardMangas'
 import { useDispatch, useSelector } from "react-redux";
-import actions from "../../store/Text/action.js";
-import eventActions from "../../store/Events/actions.js";
-import actionsChecks from '../../store/Checks/actions.js';
+import actions from "../../Store/Text/action.js";
+import eventActions from "../../Store/Comic/actions.js";
+import actionsChecks from '../../Store/Checks/actions.js';
 
 const { read_events } = eventActions;
 const { captureText } = actions;
@@ -82,7 +82,7 @@ export default function Mangas() {
   };
   
   useEffect(()=>{
-    axios.get("http://localhost:8000/createmanga")
+    axios.get("http://localhost:8000/mangas-form")
     .then(response => {
       setCate(response.data.categories)
     })
@@ -133,6 +133,22 @@ export default function Mangas() {
         </div>
 
         <div className='section-manga'>
+            
+        <h3 className="explore-mangas">Explore</h3>
+            <div className="img-mangas-mobile">
+              <span>
+                <label className="text-mobile-manga">Adventurers</label>
+                <img src="./imagen16.png" alt="" />
+              </span>
+              <span>
+                <label className="text-mobile-manga">Nostalgic</label>
+                <img src="./imagen17.png" alt="" />
+              </span>
+              <span>
+                <label className="text-mobile-manga">Popular</label>
+                <img src="./imagen18.png" alt="" />
+              </span>
+            </div>
 
             <div className="cont-checks">
               <label class="category-button2">
