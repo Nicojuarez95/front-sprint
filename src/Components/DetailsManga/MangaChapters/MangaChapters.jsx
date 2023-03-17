@@ -28,11 +28,11 @@ export default function MangaChapters({ info }) {
 
   useEffect(() => {
       dispatch(captureChapter({ manga_id: info._id, page: pagination}))
-  }, [pagination, capitulo])
+  }, [pagination, dispatch, info._id])
 
   useEffect(() => {
       setCapitulo(!check)
-  }, [])
+  }, [check])
 
   console.log(chapters)
 
@@ -56,7 +56,7 @@ export default function MangaChapters({ info }) {
                 <div className='order-chapter'>
                   <p className='p-chapter'>Chapter #{chapter.order}</p>
                   <div className='coment-chapter'>
-                    <a className="puntitos"><img src="/icon_comment.png" alt="" /></a>
+                    <a className="puntitos" href='/'><img src="/icon_comment.png" alt="" /></a>
                     <p>{chapter.pages.length}</p>
                   </div>
                 </div>

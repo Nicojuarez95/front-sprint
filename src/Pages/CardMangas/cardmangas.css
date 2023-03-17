@@ -1,23 +1,23 @@
  /* carta shonen */
- .kodomoBarr{
+ .comic{
     width: 7px;
     height: 130px;
     background-color:#8883F0;
     margin-top: 22px;
   }
-  .shojoBarr{
+  .shojo{
     width: 7px;
     height: 130px;
     background-color:#00BA88;
     margin-top: 22px;
   }
-  .seinenBarr{
+  .seinen{
     width: 7px;
     height: 130px;
     background-color:#FC9C57;
     margin-top: 22px;
   }
-  .shonenBarr{
+  .shonen{
     width: 7px;
     height: 130px;
     background-color:#EF8481;
@@ -40,18 +40,19 @@
     width: 50%;
     gap: 40px;
   }
-  .kodomo{
+  .style-comic{
     color: #8883F0;
   }
-  .shojo{
+  .style-shojo{
     color: #00BA88;
   }
-  .seinen{
+  .style-seinen{
     color: #FC9C57;
   }
-  .shonen{
+  .style-shonen{
     color: #EF8481;
   }
+
   .text a{
     display: flex;
     justify-content: center;

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { useRef } from 'react';
 import axios from 'axios';
 import './contnewchapter.css'
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, /* useSelector */} from 'react-redux'
 import alertActions from '../../Store/Alert/actions.js';
 const {open} = alertActions
 
@@ -11,7 +11,7 @@ export default function ContNewChapter() {
   let title = useRef()
   let order = useRef()
   let pages = useRef()
-  const store = useSelector(store=>store)
+  // const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
   async function handleSubmit(e){
@@ -40,7 +40,7 @@ export default function ContNewChapter() {
       console.log(err)
       console.log("ocurrio un error")
 
-      let error = err.response.data.message
+      // let error = err.response.data.message
       let dataAlert = {
         icon: 'error',
         title: "Could not create chapter"

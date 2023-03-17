@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./authorform.css";
 import axios from "axios";
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, /* useSelector */} from 'react-redux'
 import alertActions from "../../Store/Alert/actions.js";
 const {open} = alertActions
 
@@ -12,7 +12,7 @@ export default function AuthorForm() {
   const date = useRef();
   const urlProfile = useRef();
   const formRef = useRef();
-  const store = useSelector(store=>store)
+  // const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
 
@@ -28,11 +28,11 @@ export default function AuthorForm() {
       let data = {
         [firstName.current.name]: firstName.current.value,
         [lastName.current.name]: lastName.current.value,
-        ["city"]: city,
-        ["country"]: country,
+        city: city,
+        country: country,
         [date.current.name]: date.current.value,
         [urlProfile.current.name]: urlProfile.current.value,
-        ["active"]: true,
+        active: true,
       };
       
       let url = "http://localhost:8000/authors";

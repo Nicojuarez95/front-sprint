@@ -1,7 +1,7 @@
 import React from 'react'
 import './stats.css'
 
-export default function (props) {
+export default function stats(props) {
   return (
     <div className='rating-stats'>
             <div className='component-rating lineStats'>

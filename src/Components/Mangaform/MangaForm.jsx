@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useRef } from 'react';
 import './MangaForm.css';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, /* useSelector */ } from 'react-redux'
 import alertActions from "../../Store/Alert/actions";
 const { open } = alertActions
 
@@ -14,13 +14,13 @@ export default function CreateManga() {
     let description = useRef();
     let cover_photo = useRef();
     const form = useRef();
-    const store = useSelector(store => store)
+    // const store = useSelector(store => store)
     let dispatch = useDispatch()
 
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const filteredCategory = categories.find((category) => (category.name == categoria))
+        const filteredCategory = categories.find((category) => (category.name === categoria))
 
         let manga = {
             title: title.current.value,

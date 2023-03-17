@@ -23,7 +23,7 @@ export default function Page() {
         }
       )
       .catch((error) => console.error(error));
-  }, []); // parametro para que se ejecute el efecto nuevamente cuando llego a la ultima pagina del capitulo(booleno)
+  }, [id]); // parametro para que se ejecute el efecto nuevamente cuando llego a la ultima pagina del capitulo(booleno)
 
   const handlePrev = () => {
     setIndex(index - 1)

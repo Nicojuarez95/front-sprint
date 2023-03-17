@@ -3,7 +3,7 @@ import './formlogin.css'
 import { useRef} from 'react'
 import axios from 'axios';
 import {Link as Anchor, useLocation, useNavigate} from 'react-router-dom'
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, /* useSelector */} from 'react-redux'
 import alertActions from '../../Store/Alert/actions.js';
 const {open} = alertActions
 
@@ -15,7 +15,7 @@ export default function FormLogin({handleRender}) {
   const navigate = useNavigate();
   const location = useLocation();
   const { pathname } = location;
-  const store = useSelector(store=>store)
+  // const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
  

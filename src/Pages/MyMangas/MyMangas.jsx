@@ -14,58 +14,6 @@ let categoriasCheck= []
 
 export default function Mangas() {
 
-  function returnClassName(value){
-    switch (value){
-      case "640bae73ea123674b00b1a57": 
-      return "kodomo";
-      break;
-      case "640bae73ea123674b00b1a58": 
-      return "shojo";
-      break;
-      case "640bae73ea123674b00b1a59": 
-      return "seinen";
-      break;
-      case "640bae73ea123674b00b1a56": return "shonen";
-      break;
-      default: return "";
-      break;
-    }
-  }
-  function returnStyle(value){
-    switch (value){
-      case "640bae73ea123674b00b1a57": 
-      return "kodomoBarr";
-      break;
-      case "640bae73ea123674b00b1a58": 
-      return "shojoBarr";
-      break;
-      case "640bae73ea123674b00b1a59": 
-      return "seinenBarr";
-      break;
-      case "640bae73ea123674b00b1a56": return "shonenBarr";
-      break;
-      default: return "";
-      break;
-    }
-  }
-  function returnCategory(value){
-    switch (value){
-      case "640bae73ea123674b00b1a57": 
-      return "Comic";
-      break;
-      case "640bae73ea123674b00b1a58": 
-      return "Shojo";
-      break;
-      case "640bae73ea123674b00b1a59": 
-      return "Seinen";
-      break;
-      case "640bae73ea123674b00b1a56": 
-      return "Shonen";
-      break;
-      default: return "";
-      break;
-    }
-  }
   
   const [reload, SetReload] = useState(false);
   const dispatch = useDispatch();
@@ -92,7 +40,7 @@ export default function Mangas() {
   
   function checks(e){
     cate.forEach(cate => {
-      if(cate.name == e.target.value){
+      if(cate.name === e.target.value){
         if(categoriasCheck.includes(cate._id)){
           categoriasCheck = categoriasCheck.filter(e => e !== cate._id)
         } else {
@@ -171,16 +119,12 @@ export default function Mangas() {
             </div>
 
             <div className='cont-cartas'>
-              {data.length ? (
+            {data.length && cate?.length ? (
                 data.map((manga, index) => (
                   <CardMyMangas 
                     key={index} 
-                    style2={returnStyle(manga.category_id)}
-                    style3={returnClassName(manga.category_id)}
-                    category={returnCategory(manga.category_id)}
-                    id={manga._id} 
-                    title={manga.title}
-                    img={manga.cover_photo}
+                    manga={manga}
+                    categories={cate}
                   />
                 ))
               ) : (
@@ -191,7 +135,7 @@ export default function Mangas() {
             <div className='cont-boton'>
               {pages < 2 ? "" : <button className='ancord' onClick={decreasePages} >Prev</button>}
               <p>{pages}</p>
-              {data.length == 6 || data.length == 10 ? <button className='ancord' onClick={increasePages} >Next</button> : ""  }
+              {data.length === 6 || data.length === 10 ? <button className='ancord' onClick={increasePages} >Next</button> : ""  }
             </div>
                 
         </div>

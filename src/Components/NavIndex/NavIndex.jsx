@@ -3,7 +3,7 @@ import './navindex.css'
 import { useEffect } from 'react';
 import axios from 'axios';
 import {Link as Anchor} from 'react-router-dom'
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, /* useSelector */} from 'react-redux'
 import alertActions from '../../Store/Alert/actions.js';
 const {open} = alertActions
 
@@ -11,7 +11,7 @@ export default function NavIndex({ handleRender }) {
     let token = localStorage.getItem(`token`)
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
     let url = "http://localhost:8000/auth/signout"
-    const store = useSelector(store=>store)
+    // const store = useSelector(store=>store)
     let dispatch = useDispatch()
 
     if (!token) {

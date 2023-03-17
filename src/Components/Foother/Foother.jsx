@@ -18,8 +18,8 @@ export default function Foother() {
         <div className='ultimo-cont'>
 
           <div id='ancors-footer'>
-            <a href="">Home</a>
-            <a href="">Comics</a>
+            <a href="/">Home</a>
+            <a href="/mangas">Comics</a>
           </div>
 
           <img id='img-footer' src="/Logomr.png" alt="" />

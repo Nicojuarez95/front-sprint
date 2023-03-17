@@ -4,7 +4,7 @@ import { useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link as Anchor, useLocation } from "react-router-dom";
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, /* useSelector */} from 'react-redux'
 import alertActions from "../../Store/Alert/actions.js";
 const {open} = alertActions
 
@@ -17,7 +17,7 @@ export default function FormRegister(props) {
   let navigate = useNavigate();
   let location = useLocation();
   let { pathname } = location;
-  const store = useSelector(store=>store)
+  // const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
   async function handleSubmit(e) {
