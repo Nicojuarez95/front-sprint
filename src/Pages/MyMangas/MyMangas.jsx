@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './mymangas.css'
 import axios from 'axios';
-import CardMangas from '../CardMangas/CardMangas'
+import CardMyMangas from '../CardMyMangas/CardMyMangas'
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../Store/Text/action.js";
 import eventActions from "../../Store/Mymangas/action.js"
@@ -173,7 +173,7 @@ export default function Mangas() {
             <div className='cont-cartas'>
               {data.length ? (
                 data.map((manga, index) => (
-                  <CardMangas 
+                  <CardMyMangas 
                     key={index} 
                     style2={returnStyle(manga.category_id)}
                     style3={returnClassName(manga.category_id)}

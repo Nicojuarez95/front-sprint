@@ -1,0 +1,194 @@
+.kodomoBarr{
+    width: 7px;
+    height: 130px;
+    background-color:#8883F0;
+    margin-top: 22px;
+  }
+  .shojoBarr{
+    width: 7px;
+    height: 130px;
+    background-color:#00BA88;
+    margin-top: 22px;
+  }
+  .seinenBarr{
+    width: 7px;
+    height: 130px;
+    background-color:#FC9C57;
+    margin-top: 22px;
+  }
+  .shonenBarr{
+    width: 7px;
+    height: 130px;
+    background-color:#EF8481;
+    margin-top: 22px;
+  }
+  .cart-shonen{
+    display: flex;
+    height: 180px;
+    min-width: 28%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);        
+  }
+  .text{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 10px;
+    justify-content: center;
+    width: 50%;
+    gap: 20px;
+  }
+  .kodomo{
+    color: #8883F0;
+  }
+  .shojo{
+    color: #00BA88;
+  }
+  .seinen{
+    color: #FC9C57;
+  }
+  .shonen{
+    color: #EF8481;
+  }
+
+  .cont-botones-card .a1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: #E0DBFF;
+    color: #8883F0;
+    margin-left: 0px;
+    margin-bottom: -40px;
+  }
+
+  .cont-botones-card .a2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: #FBDDDC;
+    color: 
+    #EE8380;
+    margin-left: 0px;
+    margin-bottom: -40px;
+  }
+  .cont-botones-card .a1:hover{
+    background-color: rgb(167, 6, 145);
+  }
+  .cont-botones-card .a2:hover{
+    background-color: red;
+  }
+
+  .img-cart{
+    width: 50%;
+  }
+
+  .imgManga{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:35% 10px 10px 35%;
+  }
+
+  .cont-botones-card{
+    display: flex;
+    gap: 5px;
+  }
+
+  .cont-circulitos{
+    display: flex;
+    gap: 10px;
+    position: relative;
+    top: -42px;
+  }
+
+  .cont-circulitos img{
+    width: 15px;
+  }
+
+  .title{
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: -25px;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  #an-img{
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    margin-left: 0px;
+    margin-bottom: -5px;
+  }
+
+  @media (min-width: 320px) and (max-width: 692px) {
+    .text a{
+        margin-left: 0px;
+        margin-bottom: -20px;
+      }
+    .text{
+        padding-left: 10px;    
+        gap: 30px;
+      }
+      .cart-shonen{
+        width: 85%;
+      }
+      .cont-botones-card{
+        z-index: 50;
+      }
+      .cont-circulitos{
+      top: -32px;
+      }
+      .title{
+        font-size: 15px;
+      }
+     
+}
+
+@media (min-width: 693px) and (max-width: 1100px) {
+    .cart-shonen{
+        width: 65%;
+      } 
+      .text a{
+        margin-left: 0px;
+        margin-bottom: -20px;
+      }
+      .text{
+        padding-left: 10px;    
+        gap: 30px;
+      }
+      .cont-botones-card{
+        z-index: 50;
+      }
+      .cont-circulitos{
+      top: -32px;
+      }
+      .title{
+        font-size: 20px;
+      }
+}
+
+@media (min-width: 1101px) and (max-width: 1500px) {
+    .cart-shonen{
+        width: 45%;
+      }
+}
+
+@media (min-width: 1501px) and (max-width: 1950px) {
+    .cart-shonen{
+        width: 25%;
+      }
+}
+    
+   
