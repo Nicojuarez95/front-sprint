@@ -5,14 +5,17 @@ const read_events = createAsyncThunk(
   "read_events", 
   async ({ inputText, captureChecks, pages }) => {
   try {
+    let token = localStorage.getItem('token')
+    let headers = {headers:{'Authorization':`Bearer ${token}`}}
     let response = await axios.get(
-      "http://localhost:8000/mangas-form/view?title="+inputText.trim()+"&category="+captureChecks+"&page="+pages,
+      "http://localhost:8000/mangas-form/me?title="+inputText.trim()+"&category="+captureChecks+"&page="+pages, headers
     );
     
     return {
-      events: response.data.mangas
+      events: response.data
     };
   } catch (error) {
+    console.log(error)
     return {
       events: [],
     };
@@ -22,7 +25,7 @@ const read_events = createAsyncThunk(
 const read_manga = createAsyncThunk(
   'read_manga',
   async ({ id }) => {
-      let url = 'http://localhost:8000/mangas-form/' + id;
+      let url = 'http://localhost:8000/mangas-form/me' + id;
 
       try {
           let response = await axios.get(url)

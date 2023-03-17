@@ -2,13 +2,17 @@ import React, { Fragment } from 'react'
 import { useRef } from 'react';
 import axios from 'axios';
 import './contnewchapter.css'
-import Swal from 'sweetalert2';
+import {useDispatch, useSelector} from 'react-redux'
+import alertActions from '../../Store/Alert/actions.js';
+const {open} = alertActions
 
 export default function ContNewChapter() {
 
   let title = useRef()
   let order = useRef()
   let pages = useRef()
+  const store = useSelector(store=>store)
+  let dispatch = useDispatch()
 
   async function handleSubmit(e){
     e.preventDefault()   
@@ -25,23 +29,23 @@ export default function ContNewChapter() {
 
     try{
       await axios.post(url,data, headers)
-      Swal.fire({
+      let dataAlert = {
         icon: 'success',
-        title: 'EXITO',
-        text: 'Capítulo creado correctamente',
-        })
-      // form.reset()
+        title: "Chapter created successfully"
+      }
+      dispatch(open(dataAlert))
+      
     }
     catch(err){
       console.log(err)
       console.log("ocurrio un error")
 
       let error = err.response.data.message
-      Swal.fire({
+      let dataAlert = {
         icon: 'error',
-        title: 'No se pudo crear el capitulo',
-        text: error,
-      })
+        title: "Could not create chapter"
+      }
+      dispatch(open(dataAlert))
 
       }
       e.target.reset()

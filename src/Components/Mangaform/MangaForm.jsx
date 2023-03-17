@@ -21,12 +21,12 @@ export default function CreateManga() {
     async function handleSubmit(e) {
         e.preventDefault();
         const filteredCategory = categories.find((category) => (category.name == categoria))
+
         let manga = {
             title: title.current.value,
             description: description.current.value,
             cover_photo: cover_photo.current.value,
             category_id: filteredCategory._id,
-            author_id: "640b33c55b1f46e6dfc8b91c"
         };
 
 

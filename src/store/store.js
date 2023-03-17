@@ -5,6 +5,7 @@ import eventReducer from './Comic/reducer'
 import checksReducer from './Checks/reducer'
 import mangaReducer from './Manga/reduce'
 import captureState from './Capture/reducer'
+import mymangasReducer from './Mymangas/reducer'
 
 export const store = configureStore ({
     reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore ({
         checks: checksReducer,
         manga: mangaReducer,
         checked: captureState,
+        mymangas: mymangasReducer
     }
 })

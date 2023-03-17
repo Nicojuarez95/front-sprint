@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import './mangas.css'
+import './mymangas.css'
 import axios from 'axios';
 import CardMangas from '../CardMangas/CardMangas'
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../../Store/Text/action.js";
-import eventActions from "../../Store/Comic/actions.js";
+import eventActions from "../../Store/Mymangas/action.js"
 import actionsChecks from '../../Store/Checks/actions.js';
 
 const { read_events } = eventActions;
@@ -88,6 +88,7 @@ export default function Mangas() {
     })
     .catch(error => console.log(error))
   },[])
+
   
   function checks(e){
     cate.forEach(cate => {
@@ -125,32 +126,32 @@ export default function Mangas() {
 
   
   return (
-    <div className='cont-manga'>
+    <div className='cont-mangas'>
 
-        <div className='fondo-manga'>   
-            <h2>Mangas</h2>
+        <div className='fondo-mangas'>   
+            <h2>{}</h2>
             <span><img src="./Search.png" alt="" /><input ref={text} className='search' type="search" placeholder='Find your manga here' defaultValue={defaultText} onChange={handleSearch}/></span>
         </div>
 
-        <div className='section-manga'>
+        <div className='section-mangas'>
             
         <h3 className="explore-mangas">Explore</h3>
-            <div className="img-mangas-mobile">
+            <div className="img-mangas-mobiles">
               <span>
-                <label className="text-mobile-manga">Adventurers</label>
+                <label className="text-mobile-mangas">Adventurers</label>
                 <img src="./imagen16.png" alt="" />
               </span>
               <span>
-                <label className="text-mobile-manga">Nostalgic</label>
+                <label className="text-mobile-mangas">Nostalgic</label>
                 <img src="./imagen17.png" alt="" />
               </span>
               <span>
-                <label className="text-mobile-manga">Popular</label>
+                <label className="text-mobile-mangas">Popular</label>
                 <img src="./imagen18.png" alt="" />
               </span>
             </div>
 
-            <div className="cont-checks">
+            <div className="cont-check">
               <label className="category-button2">
                 <input type="checkbox" name="category" value="shonen" onClick={checks}/>
                 <span className="category-label">shonen</span>
@@ -186,13 +187,15 @@ export default function Mangas() {
                 <p>No result founds</p>
               )}
             </div>
+
             <div className='cont-boton'>
               {pages < 2 ? "" : <button className='ancord' onClick={decreasePages} >Prev</button>}
               <p>{pages}</p>
               {data.length == 6 || data.length == 10 ? <button className='ancord' onClick={increasePages} >Next</button> : ""  }
-              
-            </div>      
+            </div>
+                
         </div>
     </div>
   )
 }
+
