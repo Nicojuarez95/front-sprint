@@ -3,9 +3,9 @@ import './mymangas.css'
 import axios from 'axios';
 import CardMyMangas from '../CardMyMangas/CardMyMangas'
 import { useDispatch, useSelector } from "react-redux";
-import actions from "../../Store/Text/action.js";
-import eventActions from "../../Store/Mymangas/action.js"
-import actionsChecks from '../../Store/Checks/actions.js';
+import actions from "../../store/Text/action.js";
+import eventActions from "../../store/Mymangas/action.js"
+import actionsChecks from '../../store/Checks/actions.js';
 
 const { read_events } = eventActions;
 const { captureText } = actions;

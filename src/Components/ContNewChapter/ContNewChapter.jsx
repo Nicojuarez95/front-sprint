@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import axios from 'axios';
 import './contnewchapter.css'
 import {useDispatch, /* useSelector */} from 'react-redux'
-import alertActions from '../../Store/Alert/actions.js';
+import alertActions from '../../store/Alert/actions.js';
 const {open} = alertActions
 
 export default function ContNewChapter() {
