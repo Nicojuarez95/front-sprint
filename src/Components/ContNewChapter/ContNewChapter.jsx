@@ -23,7 +23,7 @@ export default function ContNewChapter() {
       [pages.current.name]: pages.current.value,
     }   
         
-    let url = 'http://localhost:8000/chapters'
+    let url = 'https://minga-vrxh.onrender.com/chapters'
     let token = localStorage.getItem('token')
     let headers = { headers: { 'Authorization': `Bearer ${token}` } }
 
