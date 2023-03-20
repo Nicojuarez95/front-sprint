@@ -23,7 +23,7 @@ export default function ContNewChapter() {
       [pages.current.name]: pages.current.value,
     }   
         
-    let url = 'https://minga-vrxh.onrender.com/chapters'
+    let url = 'http://localhost:8000/chapters'
     let token = localStorage.getItem('token')
     let headers = { headers: { 'Authorization': `Bearer ${token}` } }
 
@@ -59,7 +59,7 @@ export default function ContNewChapter() {
       <div className='cont-dad-chapter'>
         <div className='cont-new-chapter'>
           <h1>New Chapter</h1>
-          <form className='form-new-chapter' onSubmit={handleSubmit}>
+          <form id='form-new-chapter' onSubmit={handleSubmit}>
 
             <input type="text" placeholder='Insert title' className='input-chapter' id='title' ref={title} name="title"/>
             <input type="number" placeholder='Insert order' className='input-chapter' id='order' ref={order} name="order"/>

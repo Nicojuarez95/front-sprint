@@ -32,8 +32,9 @@
     cursor: pointer;
     border: inset black;
 }
-.form-new-chapter{
+#form-new-chapter{
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 40px;
 }

@@ -7,7 +7,7 @@ export default function CardMangas({manga, categories}) {
   return (
     <div className='cart-shonen'>
                 <div className={categoryUsed.name}></div>
-                <div className='text'>
+                <div className='text1'>
                   <div>
                     <h3>{manga.title}</h3>
                     <span className={`style-${categoryUsed.name}`}>{categoryUsed.name}</span>

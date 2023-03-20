@@ -12,6 +12,7 @@ import { createBrowserRouter } from "react-router-dom";
 import AuthorForm from "./AuthorFrom/AuthorForm";
 import MangaDetails from "./MangaDetails/MangaDetails";
 import MyMangas from "./MyMangas/MyMangas";
+import Modal from "../Components/Modale/Modale";
 
 /**
  * @createBrouserRouter recibe un array de objetos cada objeto tiene 2 propiedades..

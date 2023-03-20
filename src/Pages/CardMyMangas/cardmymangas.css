@@ -52,6 +52,7 @@
     color: #EF8481;
   }
 
+
   .cont-botones-card .a1{
     display: flex;
     justify-content: center;
@@ -83,6 +84,9 @@
   }
   .cont-botones-card .a2:hover{
     background-color: red;
+  }
+  .cont-botones-card .a0:hover{
+    background-color: rgb(25, 207, 25);
   }
 
   .img-cart{
@@ -138,20 +142,36 @@
         margin-bottom: -20px;
       }
     .text{
-        padding-left: 10px;    
-        gap: 30px;
+        padding-left: 10px;   
+        justify-content: space-between;
+        gap: 0px;
+        height: 100%;
       }
       .cart-shonen{
         width: 85%;
       }
       .cont-botones-card{
-        z-index: 50;
+        height: 40px;
+        gap: 2px;
+        width: 100%;
       }
       .cont-circulitos{
-      top: -32px;
+        top: -12px;
+        height: 50px;
+        padding-top: 20px;
       }
       .title{
-        font-size: 15px;
+        font-size: 17px;
+        height: 50px;
+        align-items: flex-start !important;
+      }
+      .cont-botones-card .a1{
+        width: 50%;
+        height: 35px;
+      }
+      .cont-botones-card .a2{
+        width: 50%;
+        height: 35px;
       }
      
 }
@@ -165,30 +185,101 @@
         margin-bottom: -20px;
       }
       .text{
-        padding-left: 10px;    
-        gap: 30px;
+        padding-left: 10px;   
+        justify-content: space-between;
+        gap: 0;
+        height: 90%;
       }
       .cont-botones-card{
-        z-index: 50;
+        align-items: center;
+        height: 60px;
+        gap: 2px;
+        width: 100%;
       }
       .cont-circulitos{
-      top: -32px;
+        top: -32px;
+        height: 50px;
+        padding-top: 20px;
       }
       .title{
         font-size: 20px;
+        align-items: flex-start !important;
       }
+      .cont-cartas{
+        justify-content: center;
+      }
+      .cont-botones-card .a1{
+        width: 50%;
+        height: 35px;
+      }
+      .cont-botones-card .a2{
+        width: 50%;
+        height: 35px;
+      }
+      .cont-circulitos{
+        top: -7px;
+        }
 }
 
-@media (min-width: 1101px) and (max-width: 1500px) {
+@media (min-width: 1101px) and (max-width: 4500px) {
     .cart-shonen{
-        width: 45%;
+        width: 30%;
       }
+      .cont-botones-card{
+        padding-top: 40px;
+        height: 60px;
+        gap: 12px;
+        width: 100%;
+        justify-content: center;
+      }
+      .cont-botones-card .a1{
+        width: 40%;
+        height: 35px;
+      }
+      .cont-botones-card .a2{
+        width: 40%;
+        height: 35px;
+      }
+      .cont-circulitos{
+        top: -12px;
+        }
+      .text{
+        position: relative;
+        gap: 60px;
+      }
+      .title{
+        font-size: 15px;
+        align-items: flex-start !important;
+        position: absolute;
+      }
+      
 }
 
-@media (min-width: 1501px) and (max-width: 1950px) {
+@media (min-width: 1451px) and (max-width: 2150px) {
     .cart-shonen{
         width: 25%;
       }
+      .cont-botones-card{
+        padding-top: 40px;
+        height: 60px;
+        gap: 2px;
+        width: 100%;
+      }
+      .title{
+        font-size: 15px;
+        align-items: flex-start !important;
+      }
+      .text{
+        position: relative;
+        gap: 60px;
+      }
 }
-    
+
+@media (min-width: 1101px) and (max-width: 2100px) {
+    .title{
+      font-size: 15px;
+      align-items: flex-start !important;
+      position: absolute;
+    }
+}
    

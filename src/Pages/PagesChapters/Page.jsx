@@ -8,7 +8,7 @@ import './Page.css';
 export default function Page() {
   const navigate = useNavigate();
   const { id, page} = useParams();
-  const url = 'https://minga-vrxh.onrender.com/chapters/';
+  const url = 'http://localhost:8000/chapters/';
   const [chapter, setChapter] = useState({});
   const [next, setNext] = useState('');
   let [index, setIndex] = useState(Number(page));

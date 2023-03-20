@@ -30,8 +30,8 @@ export default function FormRegister(props) {
       [photo.current.name]: photo.current.value,
     };
     
-
-    let url = "https://minga-vrxh.onrender.com/auth/signup";
+    console.log(data)
+    let url = "http://localhost:8000/auth/signup";
 
     try {
       await axios.post(url, data);
@@ -64,7 +64,7 @@ export default function FormRegister(props) {
   }
 
   return (
-    <form ref={formregister} onSubmit={handleSubmit}>
+    <form className="formulario" ref={formregister} onSubmit={handleSubmit}>
       <fieldset>
         <legend>Name</legend>
         <input ref={name} type="text" id="name" name="name" required />

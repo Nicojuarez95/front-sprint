@@ -30,7 +30,7 @@ export default function CreateManga() {
         };
 
 
-        const url = 'https://minga-vrxh.onrender.com/mangas-form';
+        const url = 'http://localhost:8000/mangas-form';
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
 
@@ -54,7 +54,7 @@ export default function CreateManga() {
 
     async function renderCategory() {
         try {
-            const response = await axios.get("https://minga-vrxh.onrender.com/mangas-form");
+            const response = await axios.get("http://localhost:8000/mangas-form");
             setCategories(response.data.categories);
         } catch (error) {
             console.log(error);
@@ -66,7 +66,7 @@ export default function CreateManga() {
     return (
         <div className='content-form'>
             <h1>New Manga</h1>
-            <form ref={form} onSubmit={handleSubmit}>
+            <form id='form-create-manga' ref={form} onSubmit={handleSubmit}>
                 <fieldset className='fieldsetMove'>
                     <input className='inputMove' type='text' placeholder='Insert title' ref={title} />
                 </fieldset>
@@ -85,9 +85,11 @@ export default function CreateManga() {
                 <fieldset className='fieldsetMove'>
                     <input className='inputMove' type='text' placeholder='Insert cover photo' ref={cover_photo} />
                 </fieldset>
+                <div className='cont-boton-manga'>
                 <button className='btn-manga' type='submit'>
                     Send
                 </button>
+                </div>
             </form>
         </div >
     );

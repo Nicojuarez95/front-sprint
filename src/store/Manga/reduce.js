@@ -38,7 +38,6 @@ const reducer = createReducer(
                 let newState = {
                     chapter: [],
                     manga: []
-
                 }
                 return newState
             }
