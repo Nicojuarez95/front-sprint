@@ -25,7 +25,7 @@ export default function ContNewChapter() {
       manga_id
     }   
         
-    let url = 'https://minga-vrxh.onrender.comchapters'
+    let url = 'https://minga-vrxh.onrender.com/chapters'
     let token = localStorage.getItem('token')
     let headers = { headers: { 'Authorization': `Bearer ${token}` } }
 

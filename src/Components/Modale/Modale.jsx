@@ -30,7 +30,7 @@ export default function Modal({setRender, setReload, reload}) {
 
         console.log(manga)
 
-        const url = 'https://minga-vrxh.onrender.commangas-form/'+id._id;
+        const url = 'https://minga-vrxh.onrender.com/mangas-form/'+id._id;
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
 

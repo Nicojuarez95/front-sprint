@@ -8,7 +8,7 @@ const read_events = createAsyncThunk(
     let token = localStorage.getItem('token')
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
     let response = await axios.get(
-      "https://minga-vrxh.onrender.commangas-form/me?category="+captureChecks+"&page="+pages, headers
+      "https://minga-vrxh.onrender.com/mangas-form/me?category="+captureChecks+"&page="+pages, headers
     );
     
     return {
@@ -25,7 +25,7 @@ const read_events = createAsyncThunk(
 const read_manga = createAsyncThunk(
   'read_manga',
   async ({ id }) => {
-      let url = 'https://minga-vrxh.onrender.commangas-form/me' + id;
+      let url = 'https://minga-vrxh.onrender.com/mangas-form/me' + id;
 
       try {
           let response = await axios.get(url)
@@ -43,7 +43,7 @@ const read_manga = createAsyncThunk(
 const read_chapters = createAsyncThunk(
   'read_chapters',
   async ({ id, page }) => {
-      let url = 'https://minga-vrxh.onrender.comchapters?manga_id='+id+'&page='+ page;
+      let url = 'https://minga-vrxh.onrender.com/chapters?manga_id='+id+'&page='+ page;
 
       try {
           let response = await axios.get(url)

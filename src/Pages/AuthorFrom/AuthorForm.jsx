@@ -35,7 +35,7 @@ export default function AuthorForm() {
         active: true,
       };
       
-      let url = "https://minga-vrxh.onrender.comauthors";
+      let url = "https://minga-vrxh.onrender.com/authors";
       try {
         await axios.post(url, data, headers);
         let dataAlert = {
