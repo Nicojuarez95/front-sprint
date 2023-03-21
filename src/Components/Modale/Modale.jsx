@@ -1,7 +1,10 @@
 import React, { useRef } from 'react'
 import './modale.css'
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import alertActions from "../../store/Alert/actions.js";
+const {open} = alertActions
 
 export default function Modal({setRender, setReload, reload}) {
     const id = useSelector(store => store.manga.manga)
@@ -9,6 +12,7 @@ export default function Modal({setRender, setReload, reload}) {
     const description = useRef()
     const cover_photo = useRef()
     const formregister = useRef();
+    let dispatch = useDispatch()
 
     const close = () => {
         setRender(false)
@@ -32,7 +36,11 @@ export default function Modal({setRender, setReload, reload}) {
 
         try {
             await axios.put(url, manga, headers);
-            
+            let dataAlert = {
+                icon: 'success',
+                title: "Saved!"
+              }
+              dispatch(open(dataAlert))
         } catch (error) {
            console.log(error)
         }
