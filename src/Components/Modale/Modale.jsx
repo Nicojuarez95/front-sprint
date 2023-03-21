@@ -44,7 +44,7 @@ export default function Modal({setRender, setReload, reload}) {
         } catch (error) {
            console.log(error)
         }
-
+        
         setRender(false)
         setReload(!reload)
     }
