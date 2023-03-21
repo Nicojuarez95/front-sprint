@@ -16,7 +16,7 @@ export default function CardMangas({manga, categories, setReload, reload}) {
   let dispatch = useDispatch()
   const [render, setRender] = useState(false)
   const id = useSelector(store => store.manga.manga)
-
+  
   async function handleEdit(e){
     await dispatch(captureId({manga_id: e.target.id}))
     setRender(!render)
@@ -32,14 +32,15 @@ export default function CardMangas({manga, categories, setReload, reload}) {
 
     try {
       await axios.delete(url, { headers });
-      let dataAlert = {
-        icon: 'success',
-        title: "Manga removed"
-      }
-      dispatch(open(dataAlert))
+      
     } catch (error) {
       console.log(error);
     }
+    let dataAlert = {
+      icon: 'success',
+      title: "Manga removed"
+    }
+    dispatch(open(dataAlert))
     setReload(!reload)
   }
   
@@ -50,8 +51,8 @@ export default function CardMangas({manga, categories, setReload, reload}) {
                 <div className='text'>
 
                   <div className='cont-circulitos'>
-                    <Anchor id='an-img' to={'#'+manga._id+"/1"}><img src="./mas.png" alt="" /></Anchor>
-                    <Anchor id='an-img' to={'#'+manga._id+"/1"}><img src="./lapiz.png" alt="" /></Anchor>
+                    <Anchor id='an-img' to={`/chapters-form/`+manga._id}><img src="./mas.png" alt="" /></Anchor>
+                    <Anchor id='an-img' to={'/edite/'+manga._id}><img src="./lapiz.png" alt="" /></Anchor>
                   </div>
                   
                   <div className='title'>

@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
                 element: <MyMangas/>
             },
             {
-                path: "/chapters-form", 
+                path: "/chapters-form/:manga_id", 
                 element: <NewChapter/>
             },
             {

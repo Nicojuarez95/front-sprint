@@ -161,13 +161,79 @@
     background-color: #6560bb;
   }
 
+  .text-card-create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    background-color: rgba(173, 173, 173, 0.26);
+    border-radius: 10px 
+    0px 0px 10px;
+  }
+  .text-card-create p{
+    font-size: 2.3rem;
+    font-weight: 500;
+  }
+  .img-cart-create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: rgba(173, 173, 173, 0.26);
+    border-radius: 0px 10px 10px 0px;
+  }
+  .imgMangaCreate{
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .imgMangaCreate:hover{
+    width: 100%;
+    height: 100%;
+  }
+  .tituloMyMangas{
+    font-size: 7rem;
+    background-color: rgba(0, 0, 0, 0.281);
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
 @media (min-width: 320px) and (max-width: 867px) {
     .cont-cartas{
         gap: 30px;
         justify-content: center;
     }
-  
-}  
+    .fondo-mangas{
+    background: url(../../../public/response.png);
+    }
+    .tituloMyMangas{
+      font-size: 3.5rem;
+    }
+    .text-card-create{
+      width: 30%;
+    }
+    .img-cart-create{
+      width: 70%;
+    }
+    .text-card-create p{
+      font-size: 1rem;
+      text-align: center;
+    }
+    .imgMangaCreate{
+      width: 80%;
+      height: 75%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+  }
 
 @media (min-width: 320px) and (max-width: 567px) {
   .explore-mangas {

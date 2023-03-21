@@ -83,12 +83,33 @@
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
+    background-color: rgb(122, 230, 14);
+    color: rgb(0, 0, 0);
   }
   .save:active{
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(1, 136, 12);
   }
   .save:hover{
-    background-color: #5f5f5f;
+    background-color: rgb(94, 187, 1);
+    color: rgb(0, 0, 0);
+  }
+
+  
+  .save2{
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: crimson;
+    color: white;
+  }
+  .save2:active{
+    background-color: rgb(165, 8, 40);
+  }
+  .save2:hover{
+    background-color: rgb(184, 9, 44);
     color: white;
   }
 

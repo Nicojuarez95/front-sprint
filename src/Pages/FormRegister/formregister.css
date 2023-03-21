@@ -1,9 +1,11 @@
 .formulario{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
     margin-top: 30px;
-    width: 56%;
+    width: 100%;
 }
 
 fieldset{

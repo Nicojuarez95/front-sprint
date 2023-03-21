@@ -3,12 +3,11 @@ import './mymangas.css'
 import axios from 'axios';
 import CardMyMangas from '../CardMyMangas/CardMyMangas'
 import { useDispatch, useSelector } from "react-redux";
-import actions from "../../store/Text/action.js";
 import eventActions from "../../store/Mymangas/action.js"
 import actionsChecks from '../../store/Checks/actions.js';
+import { Link as Anchor } from 'react-router-dom';
 
 const { read_events } = eventActions;
-const { captureText } = actions;
 const { captureChecks} = actionsChecks
 let categoriasCheck= []
 
@@ -16,16 +15,11 @@ export default function Mangas() {
   
   const [reload, setReload] = useState(false);
   const dispatch = useDispatch();
-  const text = useRef("");
   const data = useSelector((store) => store.events.events);
   const [cate, setCate] = useState([]);
   const categorias = useSelector((store => store.checks.category))
   const [pages, setPages] = useState(1);
   
-  const handleSearch = () => {
-    setReload(!reload);
-    dispatch(captureText({ inputText: text.current.value }));
-  };
   
   useEffect(()=>{
     axios.get("http://localhost:8000/mangas-form")
@@ -75,8 +69,7 @@ export default function Mangas() {
     <div className='cont-mangas'>
 
         <div className='fondo-mangas'>   
-            <h2>My mangas</h2>
-            {/* <span><img src="./Search.png" alt="" /><input ref={text} className='search' type="search" placeholder='Find your manga here' defaultValue={defaultText} onChange={handleSearch}/></span> */}
+            <h2 className='tituloMyMangas'>My mangas</h2>
         </div>
 
         <div className='section-mangas'>
@@ -117,6 +110,17 @@ export default function Mangas() {
             </div>
 
             <div className='cont-cartas'>
+              <div className='cart-shonen'>
+
+                <div className='text-card-create'>
+                  <p>Create new manga</p>
+                </div>
+
+                <div className='img-cart-create'>
+                    <Anchor className='imgMangaCreate' to={"/mangas-form"}><img className='imgMangaCreate' src="./pluscreate.png" alt="" /></Anchor>
+                </div>
+              </div>
+
             {data.length && cate?.length ? (
                 data.map((manga, index) => (
                   <CardMyMangas 

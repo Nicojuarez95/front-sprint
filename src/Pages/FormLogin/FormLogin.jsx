@@ -59,7 +59,7 @@ export default function FormLogin({handleRender}) {
 
 
   return (
-    <form ref={form} onSubmit={handleSubmit}>
+    <form className='form-login' ref={form} onSubmit={handleSubmit}>
             <fieldset>
               <legend>Email</legend>
               <input ref={email} type="email" id='email' name='email' required />

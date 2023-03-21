@@ -62,7 +62,7 @@ export default function Modal({setRender, setReload, reload}) {
                 </div>
                 <div className='saveCancel'>
                     <input type="submit" className='save' value="Save"/>
-                    <input type="submit" className='save' value="Cancel" onClick={close}/>
+                    <input type="submit" className='save2' value="Cancel" onClick={close}/>
                 </div>
             </form>
         </div>

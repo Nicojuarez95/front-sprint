@@ -2,16 +2,17 @@ import React, { Fragment } from 'react'
 import { useRef } from 'react';
 import axios from 'axios';
 import './contnewchapter.css'
-import {useDispatch, /* useSelector */} from 'react-redux'
+import { useParams } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
 import alertActions from '../../store/Alert/actions.js';
 const {open} = alertActions
 
-export default function ContNewChapter() {
 
+export default function ContNewChapter() {
+  const {manga_id} = useParams()
   let title = useRef()
   let order = useRef()
   let pages = useRef()
-  // const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
   async function handleSubmit(e){
@@ -21,6 +22,7 @@ export default function ContNewChapter() {
       [title.current.name]: title.current.value,
       [order.current.name]: order.current.value,
       [pages.current.name]: pages.current.value,
+      manga_id
     }   
         
     let url = 'http://localhost:8000/chapters'
@@ -36,17 +38,23 @@ export default function ContNewChapter() {
       dispatch(open(dataAlert))
       
     }
-    catch(err){
-      console.log(err)
-      console.log("ocurrio un error")
-
-      // let error = err.response.data.message
-      let dataAlert = {
-        icon: 'error',
-        title: "Could not create chapter"
+    catch(error){
+      if (typeof error.response.data.message === "string") {
+        let dataAlert = {
+          icon: 'error',
+          title: error.response.data.message
+        }
+        dispatch(open(dataAlert))
+      } else {
+        let dataAlert = {
+          icon: 'error',
+          title: "",
+        }
+        error.response.data.message.forEach((err) => {
+          dataAlert.title += err + '\n'
+        });
+        dispatch(open(dataAlert));
       }
-      dispatch(open(dataAlert))
-
       }
       e.target.reset()
     }
