@@ -29,7 +29,7 @@ export default function Mangas() {
   };
   
   useEffect(()=>{
-    axios.get("http://localhost:8000/mangas-form")
+    axios.get("https://minga-vrxh.onrender.commangas-form")
     .then(response => {
       setCate(response.data.categories)
     })

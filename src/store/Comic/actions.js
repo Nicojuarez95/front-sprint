@@ -6,7 +6,7 @@ const read_events = createAsyncThunk(
   async ({ inputText, captureChecks, pages }) => {
   try {
     let response = await axios.get(
-      "http://localhost:8000/mangas-form/view?title="+inputText.trim()+"&category="+captureChecks+"&page="+pages,
+      "https://minga-vrxh.onrender.commangas-form/view?title="+inputText.trim()+"&category="+captureChecks+"&page="+pages,
     );
     
     return {
@@ -22,7 +22,7 @@ const read_events = createAsyncThunk(
 const read_manga = createAsyncThunk(
   'read_manga',
   async ({ id }) => {
-      let url = 'http://localhost:8000/mangas-form/' + id;
+      let url = 'https://minga-vrxh.onrender.commangas-form/' + id;
 
       try {
           let response = await axios.get(url)
@@ -40,7 +40,7 @@ const read_manga = createAsyncThunk(
 const read_chapters = createAsyncThunk(
   'read_chapters',
   async ({ id, page }) => {
-      let url = 'http://localhost:8000/chapters?manga_id='+id+'&page='+ page;
+      let url = 'https://minga-vrxh.onrender.comchapters?manga_id='+id+'&page='+ page;
 
       try {
           let response = await axios.get(url)

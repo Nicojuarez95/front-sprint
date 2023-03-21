@@ -5,7 +5,7 @@ let captureId = createAsyncThunk(
     'captureManga',
     async({ manga_id }) =>{
         try{
-            let response = await axios.get('http://localhost:8000/mangas-form/' + manga_id)
+            let response = await axios.get('https://minga-vrxh.onrender.commangas-form/' + manga_id)
             return {
                 manga:response.data.manga
             }
@@ -24,7 +24,7 @@ let deleteManga = createAsyncThunk(
         const token = getState().auth.token;
         const headers = { Authorization: `Bearer ${token}` };
         const response = await axios.delete(
-          `http://localhost:8000/mangas-form/${mangaId}`,
+          `https://minga-vrxh.onrender.commangas-form/${mangaId}`,
           { headers }
         );
         return { mangaId: mangaId, response: response.data };

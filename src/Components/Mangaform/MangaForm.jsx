@@ -30,7 +30,7 @@ export default function CreateManga() {
         };
 
 
-        const url = 'http://localhost:8000/mangas-form';
+        const url = 'https://minga-vrxh.onrender.commangas-form';
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
 
@@ -54,7 +54,7 @@ export default function CreateManga() {
 
     async function renderCategory() {
         try {
-            const response = await axios.get("http://localhost:8000/mangas-form");
+            const response = await axios.get("https://minga-vrxh.onrender.commangas-form");
             setCategories(response.data.categories);
         } catch (error) {
             console.log(error);
