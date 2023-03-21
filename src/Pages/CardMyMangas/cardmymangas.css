@@ -1,0 +1,285 @@
+.comic{
+    width: 7px;
+    height: 130px;
+    background-color:#8883F0;
+    margin-top: 22px;
+  }
+  .shojo{
+    width: 7px;
+    height: 130px;
+    background-color:#00BA88;
+    margin-top: 22px;
+  }
+  .seinen{
+    width: 7px;
+    height: 130px;
+    background-color:#FC9C57;
+    margin-top: 22px;
+  }
+  .shonen{
+    width: 7px;
+    height: 130px;
+    background-color:#EF8481;
+    margin-top: 22px;
+  }
+  .cart-shonen{
+    display: flex;
+    height: 180px;
+    min-width: 28%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);        
+  }
+  .text{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 10px;
+    justify-content: center;
+    width: 50%;
+    gap: 20px;
+  }
+  .style-kodomo{
+    color: #8883F0;
+  }
+  .style-shojo{
+    color: #00BA88;
+  }
+  .style-seinen{
+    color: #FC9C57;
+  }
+  .style-shonen{
+    color: #EF8481;
+  }
+
+
+  .cont-botones-card .a1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: #E0DBFF;
+    color: #8883F0;
+    margin-left: 0px;
+    margin-bottom: -40px;
+  }
+
+  .cont-botones-card .a2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: #FBDDDC;
+    color: 
+    #EE8380;
+    margin-left: 0px;
+    margin-bottom: -40px;
+  }
+  .cont-botones-card .a1:hover{
+    background-color: rgb(167, 6, 145);
+  }
+  .cont-botones-card .a2:hover{
+    background-color: red;
+  }
+  .cont-botones-card .a0:hover{
+    background-color: rgb(25, 207, 25);
+  }
+
+  .img-cart{
+    width: 50%;
+  }
+
+  .imgManga{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius:35% 10px 10px 35%;
+  }
+
+  .cont-botones-card{
+    display: flex;
+    gap: 5px;
+  }
+
+  .cont-circulitos{
+    display: flex;
+    gap: 10px;
+    position: relative;
+    top: -42px;
+  }
+
+  .cont-circulitos img{
+    width: 15px;
+  }
+
+  .title{
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: -25px;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  #an-img{
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    margin-left: 0px;
+    margin-bottom: -5px;
+  }
+
+  @media (min-width: 320px) and (max-width: 692px) {
+    .text a{
+        margin-left: 0px;
+        margin-bottom: -20px;
+      }
+    .text{
+        padding-left: 10px;   
+        justify-content: space-between;
+        gap: 0px;
+        height: 100%;
+      }
+      .cart-shonen{
+        width: 85%;
+      }
+      .cont-botones-card{
+        height: 40px;
+        gap: 2px;
+        width: 100%;
+      }
+      .cont-circulitos{
+        top: -12px;
+        height: 50px;
+        padding-top: 20px;
+      }
+      .title{
+        font-size: 17px;
+        height: 50px;
+        align-items: flex-start !important;
+      }
+      .cont-botones-card .a1{
+        width: 50%;
+        height: 35px;
+      }
+      .cont-botones-card .a2{
+        width: 50%;
+        height: 35px;
+      }
+     
+}
+
+@media (min-width: 693px) and (max-width: 1100px) {
+    .cart-shonen{
+        width: 65%;
+      } 
+      .text a{
+        margin-left: 0px;
+        margin-bottom: -20px;
+      }
+      .text{
+        padding-left: 10px;   
+        justify-content: space-between;
+        gap: 0;
+        height: 90%;
+      }
+      .cont-botones-card{
+        align-items: center;
+        height: 60px;
+        gap: 2px;
+        width: 100%;
+      }
+      .cont-circulitos{
+        top: -32px;
+        height: 50px;
+        padding-top: 20px;
+      }
+      .title{
+        font-size: 20px;
+        align-items: flex-start !important;
+      }
+      .cont-cartas{
+        justify-content: center;
+      }
+      .cont-botones-card .a1{
+        width: 50%;
+        height: 35px;
+      }
+      .cont-botones-card .a2{
+        width: 50%;
+        height: 35px;
+      }
+      .cont-circulitos{
+        top: -7px;
+        }
+}
+
+@media (min-width: 1101px) and (max-width: 4500px) {
+    .cart-shonen{
+        width: 30%;
+      }
+      .cont-botones-card{
+        padding-top: 40px;
+        height: 60px;
+        gap: 12px;
+        width: 100%;
+        justify-content: center;
+      }
+      .cont-botones-card .a1{
+        width: 40%;
+        height: 35px;
+      }
+      .cont-botones-card .a2{
+        width: 40%;
+        height: 35px;
+      }
+      .cont-circulitos{
+        top: -12px;
+        }
+      .text{
+        position: relative;
+        gap: 60px;
+      }
+      .title{
+        font-size: 15px;
+        align-items: flex-start !important;
+        position: absolute;
+      }
+      
+}
+
+@media (min-width: 1451px) and (max-width: 2150px) {
+    .cart-shonen{
+        width: 25%;
+      }
+      .cont-botones-card{
+        padding-top: 40px;
+        height: 60px;
+        gap: 15px;
+        width: 100%;
+      }
+      .title{
+        font-size: 15px;
+        align-items: flex-start !important;
+      }
+      .text{
+        position: relative;
+        gap: 60px;
+      }
+}
+
+@media (min-width: 1101px) and (max-width: 2100px) {
+    .title{
+      font-size: 15px;
+      align-items: flex-start !important;
+      position: absolute;
+    }
+}
+   

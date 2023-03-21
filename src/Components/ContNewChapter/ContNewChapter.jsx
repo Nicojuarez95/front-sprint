@@ -2,13 +2,18 @@ import React, { Fragment } from 'react'
 import { useRef } from 'react';
 import axios from 'axios';
 import './contnewchapter.css'
-import Swal from 'sweetalert2';
+import { useParams } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import alertActions from '../../store/Alert/actions.js';
+const {open} = alertActions
+
 
 export default function ContNewChapter() {
-
+  const {manga_id} = useParams()
   let title = useRef()
   let order = useRef()
   let pages = useRef()
+  let dispatch = useDispatch()
 
   async function handleSubmit(e){
     e.preventDefault()   
@@ -17,29 +22,39 @@ export default function ContNewChapter() {
       [title.current.name]: title.current.value,
       [order.current.name]: order.current.value,
       [pages.current.name]: pages.current.value,
+      manga_id
     }   
         
     let url = 'http://localhost:8000/chapters'
+    let token = localStorage.getItem('token')
+    let headers = { headers: { 'Authorization': `Bearer ${token}` } }
+
     try{
-      await axios.post(url,data)
-      Swal.fire({
+      await axios.post(url,data, headers)
+      let dataAlert = {
         icon: 'success',
-        title: 'EXITO',
-        text: 'Capítulo creado correctamente',
-        })
-      // form.reset()
+        title: "Chapter created successfully"
+      }
+      dispatch(open(dataAlert))
+      
     }
-    catch(err){
-      console.log(err)
-      console.log("ocurrio un error")
-
-      let error = err.response.data.message
-      Swal.fire({
-        icon: 'error',
-        title: 'No se pudo crear el capitulo',
-        text: error,
-      })
-
+    catch(error){
+      if (typeof error.response.data.message === "string") {
+        let dataAlert = {
+          icon: 'error',
+          title: error.response.data.message
+        }
+        dispatch(open(dataAlert))
+      } else {
+        let dataAlert = {
+          icon: 'error',
+          title: "",
+        }
+        error.response.data.message.forEach((err) => {
+          dataAlert.title += err + '\n'
+        });
+        dispatch(open(dataAlert));
+      }
       }
       e.target.reset()
     }
@@ -52,7 +67,7 @@ export default function ContNewChapter() {
       <div className='cont-dad-chapter'>
         <div className='cont-new-chapter'>
           <h1>New Chapter</h1>
-          <form className='form-new-chapter' onSubmit={handleSubmit}>
+          <form id='form-new-chapter' onSubmit={handleSubmit}>
 
             <input type="text" placeholder='Insert title' className='input-chapter' id='title' ref={title} name="title"/>
             <input type="number" placeholder='Insert order' className='input-chapter' id='order' ref={order} name="order"/>
