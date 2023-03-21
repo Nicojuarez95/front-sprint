@@ -11,6 +11,7 @@ import Mangas from "../Pages/Mangas/Mangas"
 import { createBrowserRouter } from "react-router-dom";
 import AuthorForm from "./AuthorFrom/AuthorForm";
 import MangaDetails from "./MangaDetails/MangaDetails";
+import EditChapter from "./EditChapter/EditChapter";
 
 /**
  * @createBrouserRouter recibe un array de objetos cada objeto tiene 2 propiedades..
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
             {
                 path: "/manga/:id/:page",
                 element: <MangaDetails/>
+            },
+            {
+                path:"/edit/:manga_id",
+                element:<EditChapter/>  
             },
             {
                 path:"/*",

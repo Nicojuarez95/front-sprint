@@ -16,14 +16,14 @@ export default function MangaChapters({ info }) {
     let chapters = useSelector(store => store.manga.chapter)
     let check = useSelector(store => store.checked.checked)
 
-    function Manga() {
+  async function Manga() {
       setCapitulo(true)
-      dispatch(captureState({ buttonState: false }))
+      await dispatch(captureState({ buttonState: false }))
   }
   
-  function Cap() {
+  async function Cap() {
       setCapitulo(false)
-      dispatch(captureState({ buttonState: true }))
+      await dispatch(captureState({ buttonState: true }))
   }
 
   useEffect(() => {
