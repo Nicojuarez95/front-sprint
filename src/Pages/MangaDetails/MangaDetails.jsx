@@ -5,10 +5,10 @@ import MangaPortada from '../../Components/DetailsManga/MangaPortada/MangaPortad
 import InfoCatYCompany from '../../Components/DetailsManga/InfoCatYCompany/InfoCatYCompany'
 import ButtonsIcons from '../../Components/DetailsManga/ButtonsIcons/ButtonsIcons.jsx'
 import Stats from '../../Components/DetailsManga/Stats/Stats.jsx'
-import MangaChapters from '../../Components/DetailsManga/MangaChapters/MangaChapters.jsx'
+import MangaChapters from '../../Components/DetailsManga/MangaChapters/MangaChapters'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router'
-import actions from '../../Store/Manga/actions'
+import actions from '../../store/Manga/actions'
 
 const {captureManga,delete_chapter} = actions
 

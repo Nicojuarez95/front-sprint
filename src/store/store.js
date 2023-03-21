@@ -5,6 +5,7 @@ import eventReducer from './Comic/reducer'
 import checksReducer from './Checks/reducer'
 import mangaReducer from './Manga/reduce'
 import captureState from './Capture/reducer'
+import authorReducer from './profile/reducer'
 
 export const store = configureStore ({
     reducer: {
@@ -14,5 +15,7 @@ export const store = configureStore ({
         checks: checksReducer,
         manga: mangaReducer,
         checked: captureState,
-    }
+        author: authorReducer,
+    },
+    devTools: true,
 })

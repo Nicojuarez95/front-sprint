@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './mangachapters.css';
 import { Link as Anchor, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import actions from '../../../Store/Manga/actions'
-import action from '../../../Store/Capture/actions'
+import actions from '../../../store/Manga/actions'
+import action from '../../../store/Capture/actions'
 
 const { captureChapter } = actions;
 const { captureState } = action;
@@ -35,7 +35,7 @@ export default function MangaChapters({ info }) {
   }, [])
 
   console.log(chapters)
-
+  
   return (
     <>
       <div className='details-btns'>
@@ -60,7 +60,7 @@ export default function MangaChapters({ info }) {
                     <p>{chapter.pages.length}</p>
                   </div>
                 </div>
-
+              {console.log(chapter)}
                 <Anchor className='btn-read' to={'/chapters/'+ chapter._id+"/0"}>
                   <button className='btn-read'>Read</button>
                 </Anchor>

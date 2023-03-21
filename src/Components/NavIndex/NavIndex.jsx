@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import {Link as Anchor} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
-import alertActions from '../../Store/Alert/actions.js';
+import alertActions from '../../store/Alert/actions.js';
 const {open} = alertActions
 
 export default function NavIndex({ handleRender }) {
