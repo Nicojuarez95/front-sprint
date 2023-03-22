@@ -42,7 +42,6 @@ export default function EditProfile() {
                 confirmButtonText: 'Sí, actualizar',
                 cancelButtonText: 'Cancelar',
             });
-            console.log(result)
             if (result.isConfirmed) {
                 dispatch(update_author({ data: data }));
                 setReload(!reload);
@@ -68,10 +67,8 @@ export default function EditProfile() {
         });
     
         if (result.isConfirmed) {
-            // El usuario ha confirmado la eliminación, enviar los datos al servidor
-            await dispatch(update_author({ data: data }));
+        dispatch(update_author({ data: data }));
             setReload(!reload);
-    
             setTimeout(() => {
                 navigate('/');
             }, 500);

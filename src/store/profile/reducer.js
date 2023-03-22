@@ -5,10 +5,10 @@ const {read_author, update_author} = authorAction
 
 const initialState = {author : []}
 
-const reducer = createReducer(
+const reducer = createReducer( 
     initialState,
     (builder)=>builder
-    .addCase(
+    .addCase( 
         read_author.fulfilled,
         (state,action)=>{
             let newState={
