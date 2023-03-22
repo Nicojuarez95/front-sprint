@@ -6,7 +6,7 @@ const captureAllChapter = createAsyncThunk("captureAllChapter", async ({ manga_i
     try{
         let response = await axios.get('http://localhost:8000/chapters?manga_id=' + manga_id)
         return {
-            response: { chapter: response.data.allChapter },
+            response: { chapters: response.data.allChapter },
             message: "Edited chapter"
         }
     } catch (error) {
