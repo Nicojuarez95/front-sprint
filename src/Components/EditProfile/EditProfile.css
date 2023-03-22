@@ -11,31 +11,61 @@
     height: 90%;
     margin: 0;
 }
-#imgProfile{
-    visibility: hidden;
-} 
+#profile-img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    margin-top: 2rem;
+}
+
 .inputAuthorForm {
     width: 80%;
     height: 2.5rem;
     border-bottom: 1px solid black;
 }
+
 .btndelete{
-    width: 50%;
-    background: pink;
+    width: 18rem;
+    height: 2.5rem;
     border-radius: 40px;
-    border: solid 1px red;
+    border: solid 1px #EE8380;;
     font-size: 1rem;
-    color: red;
+    color: #EE8380;
+    
     padding: 0;
 }
 
 .btnsave{
-    width: 50%;
+    width: 18rem;
+    height: 2.5rem;
     padding: 0;
-    background: rgb(140, 232, 140);
-    border-radius: 40px;
-    border: solid 1px green;
-    font-size: 80%;
-    color: rgb(3, 78, 3);
+    background: #34D399;
+    color: white;
+    border: solid 1px #34D399;
+    border-radius: 50px;
+    border: solid 1px #34D399 ;
     font-size: 1rem;
+}
+@media (min-width: 320px) and (max-width: 748px) {
+    .btnsave , .btndelete{
+        width: 10rem;
+        height: 1.8rem;
+    }
+    #profile-img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+    
+}
+@media (min-width: 748px) and (max-width: 1024px) {
+    .btnsave , .btndelete{
+        width: 8rem;
+        height: 1.6rem;
+    }
+    #profile-img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
 }

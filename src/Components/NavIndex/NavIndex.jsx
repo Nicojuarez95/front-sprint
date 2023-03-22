@@ -1,11 +1,13 @@
 import React from 'react'
 import './navindex.css'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import {Link as Anchor} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import alertActions from '../../store/Alert/actions.js';
-const {open} = alertActions
+import authorAction from '../../store/profile/action.js'
+const {open} = alertActions;
+const {read_author } = authorAction;
 
 export default function NavIndex({ handleRender }) {
     let token = localStorage.getItem(`token`)
@@ -13,6 +15,7 @@ export default function NavIndex({ handleRender }) {
     let url = "http://localhost:8000/auth/signout"
     const store = useSelector(store=>store)
     let dispatch = useDispatch()
+    let [isOpen , setIsOpen] = useState(false);
 
     if (!token) {
         localStorage.setItem(`user`, JSON.stringify({
@@ -47,6 +50,7 @@ export default function NavIndex({ handleRender }) {
           
           localStorage.setItem("token", "");
           localStorage.setItem("user", "");
+          setIsOpen(!isOpen)
           handleRender();
         } catch (error) {
             if (typeof error.response.data.message === "string") {
@@ -67,6 +71,13 @@ export default function NavIndex({ handleRender }) {
           }
         }
     }
+    const author = useSelector(store => store.author.author)
+    useEffect (() => {
+      if(author) {
+        dispatch(read_author())
+      }
+    }, [isOpen] )
+
 
     return (
         <nav>
@@ -93,6 +104,7 @@ export default function NavIndex({ handleRender }) {
                 <Anchor to="/mangas-form">My mangas</Anchor>
                 <Anchor to="#">Favorites</Anchor>
                 { token ? <Anchor to="/author">Author</Anchor> : ""}
+                {token && author?.active ? <Anchor to="/authors/profile">Author-Profile </Anchor> : ""}
                 { token ? <Anchor onClick={handleLogout} to="/">Logout</Anchor> : ""}
             </div>
         </nav>

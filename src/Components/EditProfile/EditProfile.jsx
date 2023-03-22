@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import authorAction from '../../store/profile/action.js'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2';
 import './EditProfile.css'
 
 const { read_author, update_author } = authorAction
@@ -11,50 +12,70 @@ export default function EditProfile() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const editForm = useRef(); //formRef
-    const [reload, setReload] = useState(false)
-    
-    const handleSave = (event) => {
-        event.preventDefault()
-        // setShowAlert(true) // Mostrar la alerta cuando se hace clic en Save
-    }
-
+    const [reload, setReload] = useState(false);
+    const [ showAlert, setShowAlert] = useState(false);
 
     const handleAccept = async (event) => {
 
         event.preventDefault();
-        const cityCountry = editForm.current.city_country.value
+        const cityCountry = editForm.current[2].value
         const array = cityCountry.split(',')
 
         const data = {
-            name: editForm.current.name.value,
-            last_name: editForm.current.last_name.value,
+            name: editForm.current[0].value,
+            last_name: editForm.current[1].value,
             city: array[0],
             country: array[1].trim(),
-            date: editForm.current.date.value,
-            photo: editForm.current.photo.value
+            date: editForm.current[3].value,
+            photo: editForm.current[4].value
         };
 
-        await dispatch(update_author({ data: data }))
-        setReload(!reload)
-        // setShowAlert(false) // Ocultar la alerta
-        const handleDelete = (event) => {
-            event.preventDefault()
-            // setShowAlertDelete(true) // Mostrar la alerta cuando se hace clic en Delete Account
+        setShowAlert(false);
+        if (!showAlert) {
+            const result = await Swal.fire({
+                title: '¿Are you sure?',
+                text: 'You are about to update your data. Are you sure to continue?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, actualizar',
+                cancelButtonText: 'Cancelar',
+            });
+            console.log(result)
+            if (result.isConfirmed) {
+                dispatch(update_author({ data: data }));
+                setReload(!reload);
+                setShowAlert(true)
+            }
+
         }
-        const handleYes = async (event) => {
-            event.preventDefault();
-            const data = {
-                active: false
-            };
-            await dispatch(update_author({ data: data }))
-            setReload(!reload)
-            // setShowAlertDelete(false) // Ocultar la alerta
+    };
+    async function handleClose(event) {
+        event.preventDefault();
+        const data = {
+            active: false
+        };
+        const result = await Swal.fire({
+            title: '¿Are you sure?',
+            text: 'You are about to delete your account. Are you sure to continue?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar',
+        });
+    
+        if (result.isConfirmed) {
+            // El usuario ha confirmado la eliminación, enviar los datos al servidor
+            await dispatch(update_author({ data: data }));
+            setReload(!reload);
+    
             setTimeout(() => {
                 navigate('/');
             }, 500);
-
-        };
-
+        }
     };
     let author = useSelector(store => store.author.author)
     const authorDate = author?.date?.split('T')[0]
@@ -79,19 +100,17 @@ export default function EditProfile() {
     return (
         <>
             <div className='editProfile'>
-                <form className='formEdit'>
-                    <img id='imgProfile' src="./default-profile.png" alt="profile" />
+                <img id="profile-img" src={author?.photo} alt=""/>
+                <form ref={editForm} className='formEdit'>
                     <input name="name" className="inputAuthorForm" type="text" defaultValue={author?.name} required />
                     <input name="last_name" className="inputAuthorForm" type="text" defaultValue={author?.last_name} required />
                     <input name="city_country" className="inputAuthorForm" type="text" defaultValue={inputValue} required />
                     <input className='inputAuthorForm' type="Date" name='date' defaultValue={authorDate} />
                     <input name="photo" className="inputAuthorForm" type="text" defaultValue={author?.photo} required />
-                    <input className='btnsave' onClick={handleSave} type="submit" value="Save" />
-                    <input className='btnsave' onAccept={handleAccept} type="submit" value="Save" />
-                    <input className='btndelete' type="submit" value="Delete Acount" />
+                    <button className='btnsave' onClick={handleAccept}> save</button>
+                    <button className='btndelete' onClick={handleClose} > Delete Acount </button>
                 </form>
             </div>
         </>
     )
-}
-//  <input name="date" className="inputAuthorForm" type="date" defaultValue={authorDate} required />
+    }

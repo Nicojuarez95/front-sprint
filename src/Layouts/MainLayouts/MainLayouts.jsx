@@ -8,7 +8,7 @@ export default function MainLayouts() {
     <>
     <Header/>
     <Outlet/> 
-    {/* <Foother/> */}
+    <Foother/>
     </>
   )
 }

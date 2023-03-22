@@ -7,12 +7,11 @@
     width: 50%;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 7rem;
 }
-
-#profile-img {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50px;
+#foto {
+    width: 10%;
+    font-size: 0.7rem;
 }
 
 .data-author {
@@ -28,4 +27,19 @@
 #icon1 {
     height: 1rem;
     width: 1rem;
+}
+@media (min-width: 320px) and (max-width: 748px) {
+    .profile {
+        margin-top: 2rem;
+    }
+    #foto {
+        display: none;
+
+    }
+}
+@media (min-width: 748px) and (max-width: 1024px) {
+    #foto {
+        display: none;
+
+    }
 }

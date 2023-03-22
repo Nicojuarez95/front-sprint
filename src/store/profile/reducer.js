@@ -10,20 +10,20 @@ const reducer = createReducer(
     (builder)=>builder
     .addCase(
         read_author.fulfilled,
-        (state,actions)=>{
+        (state,action)=>{
             let newState={
                 ...state,
-                author:actions.payload.author
+                author:action.payload.author
             }
             return newState
         }
     )
     .addCase(
         update_author.fulfilled,
-        (state,actions)=>{
+        (state,action)=>{
             let newState ={
                 ...state,
-                author:actions.payload.author
+                author:action.payload.author
             }
             return newState
         }

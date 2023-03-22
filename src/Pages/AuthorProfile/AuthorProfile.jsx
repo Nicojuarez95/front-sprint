@@ -20,7 +20,7 @@ export default function Authorprofile() {
         <>
             <div className='contenedor'>
                 <div id='profileBackground'>
-                    <h1>Profile</h1>
+                    <h1 id='tituloAuthor'>AUTHOR PROFILE</h1>
                 </div>
                 <div className='sectionProfile'>
                     <EditProfile />
