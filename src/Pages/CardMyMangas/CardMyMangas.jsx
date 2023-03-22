@@ -26,7 +26,7 @@ export default function CardMangas({manga, categories, setReload, reload}) {
     const mangaId = e.target.id;
     await dispatch(deleteManga({ manga_id: mangaId }));
 
-    const url = `https://minga-vrxh.onrender.com/mangas-form/${mangaId}`;
+    const url = `http://localhost:8000/mangas-form/${mangaId}`;
     const token = localStorage.getItem('token');
     const headers = { 'Authorization': `Bearer ${token}` };
 
