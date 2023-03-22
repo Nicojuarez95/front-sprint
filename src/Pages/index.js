@@ -6,10 +6,12 @@ import Auth from "./Auth/Auth";
 import MainLayout from '../Layouts/MainLayouts/MainLayouts'
 import MangaForm from '../Components/Mangaform/MangaForm'
 import NewChapter from "./NewChapter/NewChapter";
-import PagesChapter from "./PagesChapters/Page"
+import PagesChapter from "./PagesChapters/Page";
+import AuthorProfile from "./AuthorProfile/AuthorProfile";
 import Mangas from "../Pages/Mangas/Mangas"
 import { createBrowserRouter } from "react-router-dom";
 import AuthorForm from "./AuthorFrom/AuthorForm";
+import MangaDetails from "./MangaDetails/MangaDetails";
 
 /**
  * @createBrouserRouter recibe un array de objetos cada objeto tiene 2 propiedades..
@@ -64,9 +66,17 @@ export const router = createBrowserRouter([
                 element: <AuthorForm/>
             },
             {
-                path: "/*",
-                element: <NotFound/>  
-            }
+                path: "/manga/:id/:page",
+                element: <MangaDetails/>
+            },
+            {
+                path: "/authors/profile",
+                element: <AuthorProfile/>
+            },
+            {
+                path:"/*",
+                element:<NotFound/>  
+            }             
         ]
     },
     {

@@ -62,7 +62,7 @@ export default function FormLogin({handleRender}) {
     <form ref={form} onSubmit={handleSubmit}>
             <fieldset>
               <legend>Email</legend>
-              <input ref={email} type="email" id='email' name='mail' required />
+              <input ref={email} type="email" id='email' name='email' required />
               <img src="./Profile.png" alt="" />
             </fieldset>
             
@@ -92,7 +92,7 @@ export default function FormLogin({handleRender}) {
           >
             Sign up
           </span></p>
-              <p>Go back to <Anchor to={`/`}><span>home page</span></Anchor></p>
+              <p>Go back to <Anchor to={"/"}><span>home page</span></Anchor></p>
             </div>
       </form>
   )
