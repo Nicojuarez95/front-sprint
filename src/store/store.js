@@ -7,6 +7,7 @@ import mangaReducer from './Manga/reduce'
 import captureState from './Capture/reducer'
 import mymangasReducer from './Mymangas/reducer'
 import mangaEdit from './MangaEdit/reduce'
+import modalAction from './Modale/reduce'
 
 export const store = configureStore ({
     reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore ({
         manga: mangaReducer,
         checked: captureState,
         mymangas: mymangasReducer,
-        mangaedit: mangaEdit
+        mangaedit: mangaEdit,
+        modal: modalAction
     }
 })

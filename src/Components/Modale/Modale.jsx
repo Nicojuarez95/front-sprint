@@ -20,6 +20,7 @@ export default function Modal({setRender, setReload, reload}) {
 
     async function saveEdit(e){
         e.preventDefault()
+        const confirmed = window.confirm('Are you sure you want to edit this manga?');
 
         let manga = {
             title: title.current.value || id.title,
@@ -28,7 +29,7 @@ export default function Modal({setRender, setReload, reload}) {
             category_id: id.category_id
         };
 
-        console.log(manga)
+        if (confirmed) {
 
         const url = 'http://localhost:8000/mangas-form/'+id._id;
         let token = localStorage.getItem('token')
@@ -43,7 +44,7 @@ export default function Modal({setRender, setReload, reload}) {
               dispatch(open(dataAlert))
         } catch (error) {
            console.log(error)
-        }
+        }}else{}
         
         setRender(false)
         setReload(!reload)

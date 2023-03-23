@@ -136,6 +136,7 @@
     margin-bottom: -5px;
   }
 
+
   @media (min-width: 320px) and (max-width: 692px) {
     .text a{
         margin-left: 0px;
