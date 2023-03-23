@@ -4,8 +4,8 @@ import { useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link as Anchor, useLocation } from "react-router-dom";
-import {useDispatch, useSelector} from 'react-redux'
-import alertActions from "../../Store/Alert/actions.js";
+import {useDispatch, /* useSelector */} from 'react-redux'
+import alertActions from "../../store/Alert/actions.js";
 const {open} = alertActions
 
 export default function FormRegister(props) {
@@ -17,7 +17,7 @@ export default function FormRegister(props) {
   let navigate = useNavigate();
   let location = useLocation();
   let { pathname } = location;
-  const store = useSelector(store=>store)
+  // const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
   async function handleSubmit(e) {
@@ -30,7 +30,7 @@ export default function FormRegister(props) {
       [photo.current.name]: photo.current.value,
     };
     
-
+    console.log(data)
     let url = "http://localhost:8000/auth/signup";
 
     try {
@@ -64,7 +64,7 @@ export default function FormRegister(props) {
   }
 
   return (
-    <form ref={formregister} onSubmit={handleSubmit}>
+    <form className="formulario" ref={formregister} onSubmit={handleSubmit}>
       <fieldset>
         <legend>Name</legend>
         <input ref={name} type="text" id="name" name="name" required />

@@ -19,13 +19,11 @@ export default function Page() {
       .get(`${url}${id}`)
       .then(response => {
         setChapter(response.data.chapter);
-        console.log(response.data.chapter)
         setNext(response.data.next);
-        
-      }
+        }
       )
       .catch((error) => console.error(error));
-  }, []); // parametro para que se ejecute el efecto nuevamente cuando llego a la ultima pagina del capitulo(booleno)
+  }, [id]); // parametro para que se ejecute el efecto nuevamente cuando llego a la ultima pagina del capitulo(booleno)
 
   const handlePrev = () => {
     setIndex(index - 1)
@@ -44,8 +42,6 @@ const handleNext = () => {
 }
 }
 console.log(chapter)
-console.log(id)
-console.log(page)
 
 return (
   <div className="mover">

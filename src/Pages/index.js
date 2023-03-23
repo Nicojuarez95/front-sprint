@@ -4,13 +4,15 @@ import NotFound from "./NotFound/NotFound"
 import IndexLayout from "../Layouts/IndexLayouts/IndexLayouts"
 import Auth from "./Auth/Auth";
 import MainLayout from '../Layouts/MainLayouts/MainLayouts'
-import CreateManga from '../Components/CreateManga/CreateManga'
+import MangaForm from '../Components/Mangaform/MangaForm'
 import NewChapter from "./NewChapter/NewChapter";
 import PagesChapter from "./PagesChapters/Page"
 import Mangas from "../Pages/Mangas/Mangas"
 import { createBrowserRouter } from "react-router-dom";
 import AuthorForm from "./AuthorFrom/AuthorForm";
 import MangaDetails from "./MangaDetails/MangaDetails";
+import MyMangas from "./MyMangas/MyMangas";
+import Modal from "../Components/Modale/Modale";
 
 /**
  * @createBrouserRouter recibe un array de objetos cada objeto tiene 2 propiedades..
@@ -46,14 +48,18 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/mangas-form",
-                element: <CreateManga/>
+                element: <MangaForm/>
             },
             {
                 path: "/mangas",
                 element: <Mangas/>
             },
             {
-                path: "/chapters-form", 
+                path: "/mymangas",
+                element: <MyMangas/>
+            },
+            {
+                path: "/chapters-form/:manga_id", 
                 element: <NewChapter/>
             },
             {

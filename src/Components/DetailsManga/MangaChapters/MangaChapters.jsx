@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './mangachapters.css';
 import { Link as Anchor, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import actions from '../../../Store/Manga/actions'
-import action from '../../../Store/Capture/actions'
+import actions from '../../../store/Manga/actions'
+import action from '../../../store/Capture/actions'
 
 const { captureChapter } = actions;
 const { captureState } = action;
@@ -16,23 +16,25 @@ export default function MangaChapters({ info }) {
     let chapters = useSelector(store => store.manga.chapter)
     let check = useSelector(store => store.checked.checked)
 
-    function Manga() {
+  async function Manga() {
       setCapitulo(true)
-      dispatch(captureState({ buttonState: false }))
+      await dispatch(captureState({ buttonState: false }))
   }
-  function Cap() {
+  
+  async function Cap() {
       setCapitulo(false)
-      dispatch(captureState({ buttonState: true }))
+      await dispatch(captureState({ buttonState: true }))
   }
 
   useEffect(() => {
       dispatch(captureChapter({ manga_id: info._id, page: pagination}))
-  }, [pagination, capitulo])
+  }, [pagination, dispatch, info._id])
 
   useEffect(() => {
       setCapitulo(!check)
+  }, [check])
 
-  }, [])
+  console.log(chapters)
 
   return (
     <>
@@ -50,16 +52,16 @@ export default function MangaChapters({ info }) {
           {chapters?.length > 0 ?
             chapters.map(chapter => (
               <div key={chapter._id} className='sectionChapter'>
-                <img className='selecChapter' src={chapter.manga_id.cover_photo} alt={chapter.title} />
+                <img className='selecChapter' src={info.cover_photo} alt={chapter.title} />
                 <div className='order-chapter'>
                   <p className='p-chapter'>Chapter #{chapter.order}</p>
                   <div className='coment-chapter'>
-                    <button className="puntitos">. . .</button>
-                    <p>169</p>
+                    <a className="puntitos" href='/'><img src="/icon_comment.png" alt="" /></a>
+                    <p>{chapter.pages.length}</p>
                   </div>
                 </div>
 
-                <Anchor className='btn-read' to={'/chapters/' + chapter._id}>
+                <Anchor className='btn-read' to={'/chapters/'+ chapter._id+"/0"}>
                   <button className='btn-read'>Read</button>
                 </Anchor>
 
