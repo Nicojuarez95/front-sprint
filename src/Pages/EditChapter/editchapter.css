@@ -1,4 +1,12 @@
-.contEditChapter{
+.EditChapter {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+
+/* .contEditChapter{
     display: flex;
     width: 100vw;
     background-color: #FAFCFC;
@@ -78,4 +86,4 @@
     .editChapter1{
         width: 100vw;
     }
-}
+} */
