@@ -12,11 +12,12 @@ const { getInfo } = chapterActions
 
 export default function EditChapterForm({ chapterInfo, setSelectedChapter, selectedChapter, title }) {
 
-    let { order } = useSelector(store => store.editchapter)
+    // let { order } = useSelector(store => store.editchapter)
     let editModalState = useSelector(store => store.modalState.state)
     let deleteModalState = useSelector(store => store.modalDeleteState.state)
+    // console.log(deleteModalState)
 
-    const [orderToEdit, setOrderToEdit] = useState(order)
+    // const [orderToEdit, setOrderToEdit] = useState(order)
     const [data, setData] = useState(null)
     const [newData, setNewData] = useState(null)
     const [reload, setReload] = useState(false)
@@ -27,13 +28,16 @@ export default function EditChapterForm({ chapterInfo, setSelectedChapter, selec
 
     let infoChapter = chapterInfo?.length > 0 ? Object.keys(chapterInfo[0]) : []
 
-    useEffect(() => {
-        if (chapterInfo?.length > 0) {
-            let chapter = chapterInfo.find(data => data.order === orderToEdit)
-            setSelectedChapter(chapter)
-            dispatch(getInfo({ order: orderToEdit, chapter }))
-        }
-    }, [orderToEdit, reload])
+    useEffect(() =>{
+        dispatch(getInfo())
+    })
+    // useEffect(() => {
+    //     if (chapterInfo?.length > 0) {
+    //         let chapter = chapterInfo.find(data => data.order === orderToEdit)
+    //         setSelectedChapter(chapter)
+    //         dispatch(getInfo({ order: orderToEdit, chapter }))
+    //     }
+    // }, [orderToEdit, reload])
 
     function handleSend(event) {
         event.preventDefault()
@@ -61,14 +65,14 @@ export default function EditChapterForm({ chapterInfo, setSelectedChapter, selec
             
             <p className='titleChapter-toEdit'>{title}</p>
 
-            <select className='labelsEdit' name='' id='' onChange={(e) => setOrderToEdit(Number(e.target.value))}>
+            {/* <select className='labelsEdit' name='' id='' onChange={(e) => setOrderToEdit(Number(e.target.value))}>
                 {data === null && <option disabled selected value="#">select chapter</option>}
                 {chapterInfo?.map(chapter => {
                     return (
                         <option key={chapter._id} value={chapter.order}>{chapter.order}</option>
                     )
                 })}
-            </select>
+            </select> */}
 
             <select name='' className='labelsEdit' id="" onChange={(e) => setData(e.target.value)}>
 
@@ -89,9 +93,9 @@ export default function EditChapterForm({ chapterInfo, setSelectedChapter, selec
 
             <button className='btn-edit' disabled={newData === null ? true: false} onClick={(event) => handleSend(event)}>Edit</button>
 
-            <button className='btn-delete' disabled={orderToEdit === null ? true : false} onClick={(event) => handleDelete(event)}>Delete</button>
+            {/* <button className='btn-delete' disabled={orderToEdit === null ? true : false} onClick={(event) => handleDelete(event)}>Delete</button> */}
 
-            {editModalState ? <EditChapterModal selectedChapter={selectedChapter} data={data} newData={newData}/>: ""}
+            {/* {editModalState ? <EditChapterModal selectedChapter={selectedChapter} data={data} newData={newData}/>: ""} */}
             {deleteModalState ? <DeleteChapterModal selectedChapter={selectedChapter} /> : ""}
 
             <Toaster />       
