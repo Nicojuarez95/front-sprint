@@ -28,8 +28,9 @@ export default function EditChapterForm() {
     }, []);
 
     let chapters = useSelector(store => store.chapters.chapters)
-    console.log(chapters)                                                               
+    // console.log(chapters)
     let manga = useSelector(store => store.mangas.manga.title)
+    // console.log(manga)
     
     let chapterSelected = useRef()
     function handleChangeChapter() {
@@ -71,7 +72,7 @@ export default function EditChapterForm() {
             data = ''
         }
 
-        let url = 'http://localhost:8080/api/chapters/' + chapter_id;
+        let url = 'http://localhost:8000/chapters/' + chapter_id;
         let token = localStorage.getItem('token');
         let headers = { headers: { 'Authorization': `Bearer ${token}` } };
 
@@ -124,7 +125,7 @@ export default function EditChapterForm() {
     async function handleYes(event) {
         event.preventDefault();
 
-        let url = 'http://localhost:8080/api/chapters/' + chapter_id;
+        let url = 'http://localhost:8000/chapters/' + chapter_id;
         let token = localStorage.getItem('token');
         let headers = { headers: { 'Authorization': `Bearer ${token}` } };
 

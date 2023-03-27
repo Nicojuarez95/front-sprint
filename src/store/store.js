@@ -7,8 +7,9 @@ import modalReducer from './RenderEditModal/reducer'
 import modalDeleteReducer from './RenderDeleteModal/reducer'
 import mangaReducer from './Manga/reduce'
 import captureState from './Capture/reducer'
-import editReducer from './EditChapters/reducer'
-import chapterReducer from './Chapters/reducers'
+// import editReducer from './EditChapters/reducer'
+import chapterReducer from './Chapters/reducer'
+import mangasReducer from './Mangas/reducer'
 
 export const store = configureStore ({
     reducer: {
@@ -19,8 +20,9 @@ export const store = configureStore ({
         checked: captureState,
         manga: mangaReducer,
         chapters: chapterReducer,
-        editChapter: editReducer,
+        // editChapter: editReducer,
         modalState: modalReducer,
         modalDeleteState: modalDeleteReducer,
+        mangas: mangasReducer,
     }
 })

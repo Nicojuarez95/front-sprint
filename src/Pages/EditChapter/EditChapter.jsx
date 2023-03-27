@@ -1,11 +1,11 @@
 import React from 'react'
+import "./editchapter.css"
 import EditChapterForm from '../../Components/EditChapterForm/EditChapterForm'
 import Chapter from '../../Components/Chapter/Chapter'
-import "./editcahpter.css"
 
 export default function EditChapter() {
   return (
-    <div>
+    <div className='editChapterPage'>
         <EditChapterForm/>
         <Chapter/>
     </div>
