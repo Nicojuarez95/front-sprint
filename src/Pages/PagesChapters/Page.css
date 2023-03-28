@@ -13,7 +13,7 @@
 }
 .imgChapter {
     height: 70vh;
-    width: 50vw;
+    width: 30vw;
 }
 
 .div-chapter2 {
@@ -32,8 +32,10 @@
 
 .contenedor-capitulos {
     height: 70vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
+    object-fit: cover;
 }
 
 .boton-back {
@@ -62,7 +64,6 @@
 .posi {
     position: absolute;
     height: 50vh;
-    width: 50vw;
 }
 
 .div-chapter3 {
@@ -103,4 +104,24 @@
 
 .flecha:hover {
     width: 3rem;
+}
+@media (min-width: 320px) and (max-width: 425px) {
+    .imgChapter {
+        width: 100vw;
+        object-fit: cover;
+    }
+    .contenedor-capitulos {
+        width: 100vw;
+        display: flex;
+        justify-content: flex-start;
+        
+        
+    }
+    .posi {
+        width: 100vw;
+        display: flex ;
+    }
+    .boton-next {
+        left: 7.3rem;
+    }
 }
