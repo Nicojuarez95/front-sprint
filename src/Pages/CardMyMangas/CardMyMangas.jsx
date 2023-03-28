@@ -18,23 +18,33 @@ export default function CardMangas({manga, categories, setReload, reload}) {
   const id = useSelector(store => store.manga.manga)
   
   async function handleEdit(e){
-    await dispatch(captureId({manga_id: e.target.id}))
+      await dispatch(captureId({manga_id: e.target.id}))
     setRender(!render)
   }
 
-  async function handleDelete(e){
+  async function handleDelete(e) {
     const mangaId = e.target.id;
-    await dispatch(deleteManga({ manga_id: mangaId }));
-
-    const url = `http://localhost:8000/mangas-form/${mangaId}`;
-    const token = localStorage.getItem('token');
-    const headers = { 'Authorization': `Bearer ${token}` };
-
-    try {
-      await axios.delete(url, { headers });
-      
-    } catch (error) {
-      console.log(error);
+    const confirmed = window.confirm('Are you sure you want to delete this manga?');
+  
+    if (confirmed) {
+      await dispatch(deleteManga({ manga_id: mangaId }));
+  
+      const url = `http://localhost:8000/mangas-form/${mangaId}`;
+      const token = localStorage.getItem('token');
+      const headers = { 'Authorization': `Bearer ${token}` };
+  
+      try {
+        await axios.delete(url, { headers });
+        let dataAlert = {
+          icon: 'success',
+          title: "Manga removed"
+        }
+        dispatch(open(dataAlert))
+        setReload(!reload)
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
     }
     let dataAlert = {
       icon: 'success',
@@ -52,7 +62,7 @@ export default function CardMangas({manga, categories, setReload, reload}) {
 
                   <div className='cont-circulitos'>
                     <Anchor id='an-img' to={`/chapters-form/`+manga._id}><img src="./mas.png" alt="" /></Anchor>
-                    <Anchor id='an-img' to={'/edite/'+manga._id}><img src="./lapiz.png" alt="" /></Anchor>
+                    <Anchor id='an-img' to={'/edit/'+manga._id}><img src="./lapiz.png" alt="" /></Anchor>
                   </div>
                   
                   <div className='title'>

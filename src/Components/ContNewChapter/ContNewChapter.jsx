@@ -39,26 +39,9 @@ export default function ContNewChapter() {
       
     }
     catch(error){
-      if (typeof error.response.data.message === "string") {
-        let dataAlert = {
-          icon: 'error',
-          title: error.response.data.message
-        }
-        dispatch(open(dataAlert))
-      } else {
-        let dataAlert = {
-          icon: 'error',
-          title: "",
-        }
-        error.response.data.message.forEach((err) => {
-          dataAlert.title += err + '\n'
-        });
-        dispatch(open(dataAlert));
-      }
-      }
-      e.target.reset()
+      console.log(error)
     }
-        
+  }    
 
 
 

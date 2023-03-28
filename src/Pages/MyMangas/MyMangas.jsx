@@ -139,7 +139,7 @@ export default function Mangas() {
             <div className='cont-boton'>
               {pages < 2 ? "" : <button className='ancord' onClick={decreasePages} >Prev</button>}
               <p>{pages}</p>
-              {data.length >= 6 || data.length === 10 ? <button className='ancord' onClick={increasePages} >Next</button> : ""  }
+              {data.length == 5 || data.length === 10 ? <button className='ancord' onClick={increasePages} >Next</button> : ""  }
             </div>
                 
         </div>

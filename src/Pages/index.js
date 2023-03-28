@@ -13,6 +13,10 @@ import AuthorForm from "./AuthorFrom/AuthorForm";
 import MangaDetails from "./MangaDetails/MangaDetails";
 import MyMangas from "./MyMangas/MyMangas";
 import Modal from "../Components/Modale/Modale";
+<<<<<<< HEAD
+=======
+import EditChapter from "./EditChapter/EditChapter";
+>>>>>>> 1f4cfbf76d45941f360ff283d2578884614ce027
 
 /**
  * @createBrouserRouter recibe un array de objetos cada objeto tiene 2 propiedades..
@@ -73,6 +77,13 @@ export const router = createBrowserRouter([
             {
                 path: "/manga/:id/:page",
                 element: <MangaDetails/>
+<<<<<<< HEAD
+=======
+            },
+            {
+                path:"/edit/:manga_id",
+                element:<EditChapter/>  
+>>>>>>> 1f4cfbf76d45941f360ff283d2578884614ce027
             },
             {
                 path:"/*",

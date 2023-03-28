@@ -1,0 +1,18 @@
+.sectionEdit1 {
+    min-height: 40vh;
+    min-width: 50vw;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.title-edit {
+    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 30px;
+    text-align: center;
+}
