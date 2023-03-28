@@ -17,7 +17,6 @@ export default function FormRegister(props) {
   let navigate = useNavigate();
   let location = useLocation();
   let { pathname } = location;
-  // const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
   async function handleSubmit(e) {

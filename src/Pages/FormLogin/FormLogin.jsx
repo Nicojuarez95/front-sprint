@@ -15,7 +15,6 @@ export default function FormLogin({handleRender}) {
   const navigate = useNavigate();
   const location = useLocation();
   const { pathname } = location;
-  // const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
  
