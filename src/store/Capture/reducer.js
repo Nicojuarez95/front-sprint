@@ -1,5 +1,4 @@
 import { createReducer } from "@reduxjs/toolkit";
-// import { act } from "react-dom/test-utils";
 import actions from './actions'
 const { captureState} = actions
 

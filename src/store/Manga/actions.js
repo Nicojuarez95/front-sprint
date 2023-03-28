@@ -5,7 +5,7 @@ let captureManga = createAsyncThunk(
     'captureManga',
     async({ manga_id }) =>{
         try{
-            let response = await axios.get('http://localhost:8000/mangas-form/' + manga_id)
+            let response = await axios.get('http://localhost:8000/mangas/' + manga_id)
             return {
                 manga:response.data.manga
             }

@@ -62,7 +62,7 @@ export default function CardMangas({manga, categories, setReload, reload}) {
 
                   <div className='cont-circulitos'>
                     <Anchor id='an-img' to={`/chapters-form/`+manga._id}><img src="./mas.png" alt="" /></Anchor>
-                    <Anchor id='an-img' to={'/edite/'+manga._id}><img src="./lapiz.png" alt="" /></Anchor>
+                    <Anchor id='an-img' to={'/edit/'+manga._id}><img src="./lapiz.png" alt="" /></Anchor>
                   </div>
                   
                   <div className='title'>
