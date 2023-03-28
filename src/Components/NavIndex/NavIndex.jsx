@@ -10,7 +10,7 @@ const {open} = alertActions
 export default function NavIndex({ handleRender }) {
     let token = localStorage.getItem(`token`)
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
-    let url = "http://localhost:8000/auth/signout"
+    let url = "https://minga-host.onrender.com/auth/signout"
     // const store = useSelector(store=>store)
     let dispatch = useDispatch()
 
@@ -29,7 +29,7 @@ export default function NavIndex({ handleRender }) {
     console.log(JSON.parse(localStorage.getItem(`user`)))
 
     useEffect(() => {
-        let url = "http://localhost:8000/auth/signintoken"
+        let url = "https://minga-host.onrender.com/auth/signintoken"
         if (token) {
             let headers = { headers: { 'Authorization': `Bearer ${token}` } }
             axios.post(url, null, headers)

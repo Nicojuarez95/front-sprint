@@ -5,7 +5,7 @@ const read_mangas = createAsyncThunk(
     "read_mangas",
     async ({ page, inputText, categories, order, headers }) => {
         try{
-            let response = await axios.get("http://localhost:8000/mangas/?page="+page+"&title="+inputText.trim()+"&category="+categories+"&order="+order,headers)
+            let response = await axios.get("https://minga-host.onrender.com/mangas/?page="+page+"&title="+inputText.trim()+"&category="+categories+"&order="+order,headers)
             console.log(response)
             return { mangas: response.data.mangas}
             
@@ -20,7 +20,7 @@ const read_manga = createAsyncThunk(
     async ({ id }) => {
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
-        let url = 'http://localhost:8000/mangas/' + id;
+        let url = 'https://minga-host.onrender.com/mangas/' + id;
         try {
             let response = await axios.get(url, headers)
             return {

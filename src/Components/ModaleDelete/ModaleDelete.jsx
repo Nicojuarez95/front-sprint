@@ -23,7 +23,7 @@
 //         // if (confirmed) {
 //           await dispatch(deleteManga({ manga_id: mangaId }));
       
-//           const url = `http://localhost:8000/mangas-form/${mangaId}`;
+//           const url = `https://minga-host.onrender.com/mangas-form/${mangaId}`;
 //           const token = localStorage.getItem('token');
 //           const headers = { 'Authorization': `Bearer ${token}` };
       

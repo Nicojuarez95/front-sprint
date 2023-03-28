@@ -31,7 +31,7 @@ export default function FormRegister(props) {
     };
     
     console.log(data)
-    let url = "http://localhost:8000/auth/signup";
+    let url = "https://minga-host.onrender.com/auth/signup";
 
     try {
       await axios.post(url, data);

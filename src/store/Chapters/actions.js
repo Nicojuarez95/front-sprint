@@ -7,7 +7,7 @@ const read_chapters = createAsyncThunk(
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
         
-        let url = 'http://localhost:8000/chapters?manga_id=' + id + '&page=' + page + '&quantity=' + quantity;
+        let url = 'https://minga-host.onrender.com/chapters?manga_id=' + id + '&page=' + page + '&quantity=' + quantity;
 
     
 
@@ -34,7 +34,7 @@ const get_chapter = createAsyncThunk(
 
             let token = localStorage.getItem('token')
             let headers = { headers: { 'Authorization': `Bearer ${token}` } }
-            let url = 'http://localhost:8000/chapters/' + id;
+            let url = 'https://minga-host.onrender.com/chapters/' + id;
             try {
                 let response = await axios.get(url, headers)
                 return {

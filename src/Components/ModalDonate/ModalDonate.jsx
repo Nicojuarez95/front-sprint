@@ -59,7 +59,7 @@ export default function ModalDonate() {
                   id={btn.id}
                   onClick={() => {
                     axios
-                      .post('http://localhost:8000/payment', btn)
+                      .post('https://minga-host.onrender.com/payment', btn)
                       .then((res) => (window.location.href = res.data.response.body.init_point));
                   }}
                 >

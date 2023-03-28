@@ -6,9 +6,9 @@ const get_chapters = createAsyncThunk(
     async({ inputId, inputPage, quantity }) => {
         let url 
         if(quantity === 0){
-            url = 'http://localhost:8000/chapters?manga_id='+inputId+'&quantity='+quantity
+            url = 'https://minga-host.onrender.com/chapters?manga_id='+inputId+'&quantity='+quantity
         }else if(inputPage){
-            url = 'http://localhost:8000/chapters?manga_id='+inputId+'&page='+inputPage
+            url = 'https://minga-host.onrender.com/chapters?manga_id='+inputId+'&page='+inputPage
         }
         console.log(url)
         try {
