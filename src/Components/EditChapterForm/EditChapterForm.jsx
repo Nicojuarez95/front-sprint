@@ -23,7 +23,7 @@ export default function EditChapterForm() {
     
     let dispatch = useDispatch()
     useEffect(() => {
-        dispatch(read_chapters({ id: manga_id, limit: 0}))
+        dispatch(read_chapters({ id: manga_id, quantity: 100}))
         dispatch(read_manga({ id: manga_id}))
     }, []);
 

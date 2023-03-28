@@ -3,16 +3,13 @@ import axios from "axios";
 
 const read_chapters = createAsyncThunk(
     'read_chapters',
-    async ({ id, page, limit }) => {
+    async ({ id, page, quantity }) => {
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
-        let url = ''
-        if (page) {
-            url = 'http://localhost:8000/chapters?manga_id=' + id + '&page=' + page;
-        }
-        if (limit === 0) {
-            url = 'http://localhost:8000/chapters?manga_id=' + id + '&limit=' + limit;
-        }
+        
+        let url = 'http://localhost:8000/chapters?manga_id=' + id + '&page=' + page + '&quantity=' + quantity;
+
+    
 
         try {
             let response = await axios.get(url, headers)
