@@ -105,7 +105,6 @@ export default function NavIndex({ handleRender }) {
                 <Anchor to="#">Favorites</Anchor>
                 { token ? <Anchor to="/author">Author</Anchor> : ""}
                 {token && author?.active ? <Anchor to="/authors/profile">Author-Profile </Anchor> : ""}
-
                 { token ? <Anchor onClick={handleLogout} to="/">Logout</Anchor> : ""}
             </div>
         </nav>
