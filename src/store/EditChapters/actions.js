@@ -6,7 +6,7 @@ const readAll = createAsyncThunk(
     'read_one_chapter',
     async ({ manga_id }) => {
         try {
-            let response = await axios.get("https://minga-host.onrender.com/chapters/all/" + manga_id)
+            let response = await axios.get("http://localhost:8000/chapters/all/" + manga_id)
             return {
                 chapters: response.data.chapters,
                 title: response.data.chapters[0]?.manga_id.title
@@ -23,7 +23,7 @@ const deleteChapter = createAsyncThunk(
     'delete_one_chapter',
     async ({ _id, headers }) => {
         try {
-            let response = await axios.delete("https://minga-host.onrender.com/chapters/" + _id, headers)
+            let response = await axios.delete("http://localhost:8000/chapters/" + _id, headers)
             // toast.success('Chapter deleted successfully')
             return { _id: _id }
         } catch (error) {
@@ -46,7 +46,7 @@ const editChapter = createAsyncThunk(
     'edit_one_chapter',
     async ({ _id, data, headers }) => {
         try {
-            let response = await axios.put("https://minga-host.onrender.com/chapters/" + _id, data, headers)
+            let response = await axios.put("http://localhost:8000/chapters/" + _id, data, headers)
             // toast.success('Chapter edited successfully')
             return {
                 chapter: response.data.chapter
@@ -87,7 +87,7 @@ const getInfo = createAsyncThunk(
 
 // const readAll = createAsyncThunk("readAll", async ({manga_id})=>{
 //     try {
-//         let response = await axios.get("https://minga-host.onrender.com/chapters/all/" + manga_id)
+//         let response = await axios.get("http://localhost:8000/chapters/all/" + manga_id)
 //         return { chapters: response.data.chapter }
 //     } catch (error){
 //         return { chapters: [] }
@@ -99,7 +99,7 @@ const getInfo = createAsyncThunk(
 //     let headers = {headers: {'Authorization': `Bearer ${token}`}}
 //     try{
 //         console.log("hola")
-//         let response = await axios.put(`https://minga-host.onrender.com/chapters/${manga_id}`, {headers})
+//         let response = await axios.put(`http://localhost:8000/chapters/${manga_id}`, {headers})
 //         return {
 //             chapters: response.data.allChapter,
 //             message: "Edited chapter"
@@ -116,7 +116,7 @@ const getInfo = createAsyncThunk(
 //     let token = localStorage.getItem('token')
 //     let headers = {headers: {'Authorization': `Bearer ${token}`}}
 //     try{
-//         let response = await axios.delete("https://minga-host.onrender.com/chapters/" + chapter_id, headers)
+//         let response = await axios.delete("http://localhost:8000/chapters/" + chapter_id, headers)
 //         return {delete: 'delete', response: response.data}
 //     } catch (error) {
 //         console.log(error)

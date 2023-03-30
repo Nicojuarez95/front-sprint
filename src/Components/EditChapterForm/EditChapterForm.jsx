@@ -72,7 +72,7 @@ export default function EditChapterForm() {
             data = ''
         }
 
-        let url = 'https://minga-host.onrender.com/chapters/' + chapter_id;
+        let url = 'http://localhost:8000/chapters/' + chapter_id;
         let token = localStorage.getItem('token');
         let headers = { headers: { 'Authorization': `Bearer ${token}` } };
 
@@ -125,7 +125,7 @@ export default function EditChapterForm() {
     async function handleYes(event) {
         event.preventDefault();
 
-        let url = 'https://minga-host.onrender.com/chapters/' + chapter_id;
+        let url = 'http://localhost:8000/chapters/' + chapter_id;
         let token = localStorage.getItem('token');
         let headers = { headers: { 'Authorization': `Bearer ${token}` } };
 

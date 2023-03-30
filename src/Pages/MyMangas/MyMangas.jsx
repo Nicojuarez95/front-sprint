@@ -22,7 +22,7 @@ export default function Mangas() {
   
   
   useEffect(()=>{
-    axios.get("https://minga-host.onrender.com/mangas-form")
+    axios.get("http://localhost:8000/mangas-form")
     .then(response => {
       setCate(response.data.categories)
     })

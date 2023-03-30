@@ -31,7 +31,7 @@ export default function Modal({setRender, setReload, reload}) {
 
         if (confirmed) {
 
-        const url = 'https://minga-host.onrender.com/mangas-form/'+id._id;
+        const url = 'http://localhost:8000/mangas-form/'+id._id;
         let token = localStorage.getItem('token')
         let headers = { headers: { 'Authorization': `Bearer ${token}` } }
 
