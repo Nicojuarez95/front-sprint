@@ -8,11 +8,11 @@ const read_events = createAsyncThunk(
     let response = await axios.get(
       "http://localhost:8000/mangas-form/view?title="+inputText.trim()+"&category="+captureChecks+"&page="+pages,
     );
+    
     return {
       events: response.data.mangas
     };
   } catch (error) {
-    console.log(error)
     return {
       events: [],
     };
@@ -40,7 +40,7 @@ const read_manga = createAsyncThunk(
 const read_chapters = createAsyncThunk(
   'read_chapters',
   async ({ id, page }) => {
-      let url = 'http://localhost:8000/chapters?'+'manga_id='+id+'&page='+ page;
+      let url = 'http://localhost:8000/chapters?manga_id='+id+'&page='+ page;
 
       try {
           let response = await axios.get(url)

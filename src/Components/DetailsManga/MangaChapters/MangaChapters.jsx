@@ -16,23 +16,23 @@ export default function MangaChapters({ info }) {
     let chapters = useSelector(store => store.manga.chapter)
     let check = useSelector(store => store.checked.checked)
 
-    function Manga() {
+  async function Manga() {
       setCapitulo(true)
-      dispatch(captureState({ buttonState: false }))
+      await dispatch(captureState({ buttonState: false }))
   }
   
-  function Cap() {
+  async function Cap() {
       setCapitulo(false)
-      dispatch(captureState({ buttonState: true }))
+      await dispatch(captureState({ buttonState: true }))
   }
 
   useEffect(() => {
       dispatch(captureChapter({ manga_id: info._id, page: pagination}))
-  }, [pagination, capitulo])
+  }, [pagination, dispatch, info._id])
 
   useEffect(() => {
       setCapitulo(!check)
-  }, [])
+  }, [check])
 
   console.log(chapters)
   
@@ -56,7 +56,7 @@ export default function MangaChapters({ info }) {
                 <div className='order-chapter'>
                   <p className='p-chapter'>Chapter #{chapter.order}</p>
                   <div className='coment-chapter'>
-                    <a className="puntitos"><img src="/icon_comment.png" alt="" /></a>
+                    <a className="puntitos" href='/'><img src="/icon_comment.png" alt="" /></a>
                     <p>{chapter.pages.length}</p>
                   </div>
                 </div>

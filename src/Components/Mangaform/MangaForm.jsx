@@ -14,19 +14,19 @@ export default function CreateManga() {
     let description = useRef();
     let cover_photo = useRef();
     const form = useRef();
-    const store = useSelector(store => store)
+    // const store = useSelector(store => store)
     let dispatch = useDispatch()
 
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const filteredCategory = categories.find((category) => (category.name == categoria))
+        const filteredCategory = categories.find((category) => (category.name === categoria))
+
         let manga = {
             title: title.current.value,
             description: description.current.value,
             cover_photo: cover_photo.current.value,
             category_id: filteredCategory._id,
-            author_id: "640b33c55b1f46e6dfc8b91c"
         };
 
 
@@ -66,7 +66,7 @@ export default function CreateManga() {
     return (
         <div className='content-form'>
             <h1>New Manga</h1>
-            <form ref={form} onSubmit={handleSubmit}>
+            <form id='form-create-manga' ref={form} onSubmit={handleSubmit}>
                 <fieldset className='fieldsetMove'>
                     <input className='inputMove' type='text' placeholder='Insert title' ref={title} />
                 </fieldset>
@@ -85,9 +85,11 @@ export default function CreateManga() {
                 <fieldset className='fieldsetMove'>
                     <input className='inputMove' type='text' placeholder='Insert cover photo' ref={cover_photo} />
                 </fieldset>
+                <div className='cont-boton-manga'>
                 <button className='btn-manga' type='submit'>
                     Send
                 </button>
+                </div>
             </form>
         </div >
     );

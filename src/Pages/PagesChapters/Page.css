@@ -13,7 +13,8 @@
 }
 .imgChapter {
     height: 70vh;
-    width: 30vw;
+    width: 50vw;
+    object-fit: contain;
 }
 
 .div-chapter2 {

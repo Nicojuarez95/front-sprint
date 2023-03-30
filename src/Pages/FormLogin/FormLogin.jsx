@@ -134,10 +134,6 @@ export default function FormLogin({ handleRender }) {
 
       <input id='sign-up' type="submit" value="Sign in" />
 
-      {/* <div className='div-google'>
-              <img src="./Google.png" alt="" />
-              <input type="submit" value="Sign in with Google" />
-            </div> */}
       <GoogleLogin
         className="google"
         image="./google.png"

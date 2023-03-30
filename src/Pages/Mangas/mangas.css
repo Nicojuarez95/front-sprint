@@ -1,11 +1,11 @@
-.cont-mangas{
+.cont-manga{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(241, 241, 241);
 }
 
-.fondo-mangas{
+.fondo-manga{
     background: url(../../../public/mangas.png);
     height: 60vh;
     width: 100%;
@@ -18,11 +18,11 @@
     padding-top: 80px;
 }
 
-.fondo-mangas h2 {
+.fondo-manga h2 {
     font-weight: 500;
 }
 
-.fondo-mangas span{
+.fondo-manga span{
     background-color: white;
     display: flex;
     border-radius: 10px;
@@ -30,7 +30,7 @@
     width: 60vw;
 }
 
-.fondo-mangas span input{
+.fondo-manga span input{
     border: none;
     border-radius: 10px;
     font-size: 24px;
@@ -47,7 +47,6 @@
     width: 90%;
     min-height: 50vh;
     position: static;
-    z-index: 100;
     border-radius: 1rem;
     margin-top: -50px;
     padding-bottom: 20px;
@@ -69,29 +68,6 @@
     align-items: center;
 }
 
-.category-button {
-    display: inline-block;
-    padding: 14px 23px;
-    border-radius: 20px;
-    background-color: #999999;
-    color: white;
-    font-weight: 400;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .category-button input[type="checkbox"] {
-    display: none;
-  }
-  
-  .category-button input[type="checkbox"]:checked + .category-label {
-    text-decoration: underline;
-  }
-  
-  .category-label {
-    display: inline-block;
-    vertical-align: middle;
-  }
   .category-button2 {
     display: inline-block;
     padding: 14px 23px;

@@ -21,17 +21,17 @@ export default function MangaDetails() {
   useEffect(() => {
     dispatch(captureManga({ manga_id: _id.id, page: _id.page}))
     dispatch(delete_chapter)
-  },[])
+  },[_id, dispatch])
 
   return (
     <div>
       <Header/>
 
-      { manga.length!=0? <MangaPortada info={manga}/>: null }
-      { manga.length!=0? <InfoCatYCompany info={manga}/>: null}
+      { manga.length!==0? <MangaPortada info={manga}/>: null }
+      { manga.length!==0? <InfoCatYCompany info={manga}/>: null}
       <ButtonsIcons/>
       <Stats chapterCount={265}/>
-      { manga.length!=0? <MangaChapters info={manga}/> :null }
+      { manga.length!==0? <MangaChapters info={manga}/> :null }
 
       
     </div>

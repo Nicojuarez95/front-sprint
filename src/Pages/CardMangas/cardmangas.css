@@ -1,23 +1,23 @@
  /* carta shonen */
- .kodomoBarr{
+ .comic{
     width: 7px;
     height: 130px;
     background-color:#8883F0;
     margin-top: 22px;
   }
-  .shojoBarr{
+  .shojo{
     width: 7px;
     height: 130px;
     background-color:#00BA88;
     margin-top: 22px;
   }
-  .seinenBarr{
+  .seinen{
     width: 7px;
     height: 130px;
     background-color:#FC9C57;
     margin-top: 22px;
   }
-  .shonenBarr{
+  .shonen{
     width: 7px;
     height: 130px;
     background-color:#EF8481;
@@ -31,7 +31,7 @@
     border-radius: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.03);        
   }
-  .text{
+  .text1{
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -40,19 +40,20 @@
     width: 50%;
     gap: 40px;
   }
-  .kodomo{
+  .style-comic{
     color: #8883F0;
   }
-  .shojo{
+  .style-shojo{
     color: #00BA88;
   }
-  .seinen{
+  .style-seinen{
     color: #FC9C57;
   }
-  .shonen{
+  .style-shonen{
     color: #EF8481;
   }
-  .text a{
+
+  .text1 a{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +63,7 @@
     background-color: #D1FBF0;
     color: #00BA88;
     margin-left: 0px;
-    margin-bottom: -40px;
+    margin-bottom: -20px;
   }
   .text a:hover{
     background-color: #9cd8c8;

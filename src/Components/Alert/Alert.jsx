@@ -2,7 +2,6 @@ import { useSelector } from "react-redux"
 import Swal from "sweetalert2"
 
 
-
 export default function Alert() {
 
     const Toast = Swal.mixin({
@@ -28,7 +27,6 @@ export default function Alert() {
           })
     }
     
-
   return (
     <></>
   )

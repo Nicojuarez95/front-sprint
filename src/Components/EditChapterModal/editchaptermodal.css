@@ -1,0 +1,71 @@
+.sectionEdit1 .form-edit .edit-modal {
+    position: fixed;
+    top: 10vh;
+    width: 400px;
+    height:150px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    color: #000000;
+    gap: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    text-align: center;
+
+
+}
+
+.sectionEdit1 .form-edit .edit-modal>h2 {
+    text-align: center;
+}
+
+.sectionEdit1 .form-edit .edit-modal .modal-btns {
+    display: flex;
+    gap: 55px;
+    justify-content: center;
+}
+
+.sectionEdit1 .form-edit .edit-modal .modal-btns .btn-handlesend{
+    text-decoration: none;
+    background: rgb(41, 202, 108);
+    width: 92px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 95.19%;
+    cursor: pointer;
+}
+.sectionEdit1 .form-edit .edit-modal .modal-btns .btn-handlecancel{
+    text-decoration: none;
+    background: rgb(209, 210, 243);
+    width: 92px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+    color: #2341e7;
+    font-weight: 100;
+    font-size: 13px;
+    line-height: 95.19%;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sectionEdit1 .form-edit .edit-modal {
+        width: 80%;
+    }
+}

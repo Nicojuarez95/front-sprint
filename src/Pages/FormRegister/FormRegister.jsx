@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link as Anchor, useLocation } from "react-router-dom";
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import alertActions from "../../store/Alert/actions.js";
 import { GoogleLogin } from "react-google-login";
 import {gapi} from 'gapi-script';
@@ -19,7 +19,6 @@ export default function FormRegister(props) {
   let navigate = useNavigate();
   let location = useLocation();
   let { pathname } = location;
-  const store = useSelector(store=>store)
   let dispatch = useDispatch()
 
   async function handleSubmit(e) {
@@ -32,7 +31,7 @@ export default function FormRegister(props) {
       [photo.current.name]: photo.current.value,
     };
     
-
+    console.log(data)
     let url = "http://localhost:8000/auth/signup";
 
     try {
@@ -118,7 +117,7 @@ const onFailure = () => {
   console.log("Something went wrong")
 }
   return (
-    <form ref={formregister} onSubmit={handleSubmit}>
+    <form className="formulario" ref={formregister} onSubmit={handleSubmit}>
       <fieldset>
         <legend>Name</legend>
         <input ref={name} type="text" id="name" name="name" required />
@@ -155,12 +154,7 @@ const onFailure = () => {
       </div>
 
       <input id="sign-up" type="submit" value="Sign up" />
-
-      {/* <div className="div-google">
-        <img src="./Google.png" alt="" />
-        <input type="submit" value="Sign up with Google" />
-      </div> */}
-       <GoogleLogin
+      <GoogleLogin
           className="google"
           image="./google.png"
           text="Sign in with Google"

@@ -1,0 +1,15 @@
+@media screen and (max-width: 768px) {
+    .editChapterPage{
+    background-color: #EBEBEB !important;
+    }
+}
+.editChapterPage{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    background-color: white;
+    padding-top: 7rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+} 
+

@@ -13,7 +13,7 @@ export default function NavIndex({ handleRender }) {
     let token = localStorage.getItem(`token`)
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
     let url = "http://localhost:8000/auth/signout"
-    const store = useSelector(store=>store)
+    // const store = useSelector(store=>store)
     let dispatch = useDispatch()
     let [isOpen , setIsOpen] = useState(false);
 
@@ -101,8 +101,9 @@ export default function NavIndex({ handleRender }) {
             <div className='ancors-nav'>
                 <Anchor to="/">Home</Anchor>
                 <Anchor to="/mangas">Mangas</Anchor>
-                <Anchor to="/mangas-form">My mangas</Anchor>
-                <Anchor to="#">Favorites</Anchor>
+                <Anchor to="/mangas-form">Create manga</Anchor>
+                <Anchor to="/mymangas">My mangas</Anchor>
+                {/* <Anchor to="#">Favorites</Anchor> */}
                 { token ? <Anchor to="/author">Author</Anchor> : ""}
                 {token && author?.active ? <Anchor to="/authors/profile">Author-Profile </Anchor> : ""}
                 { token ? <Anchor onClick={handleLogout} to="/">Logout</Anchor> : ""}
