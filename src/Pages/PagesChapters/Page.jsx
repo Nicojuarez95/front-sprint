@@ -4,21 +4,41 @@ import axios from "axios";
 import { useNavigate, useParams} from "react-router-dom";
 import './Page.css';
 
+import Comment from '../../Components/Comment/Comment';
+import { useDispatch, useSelector } from 'react-redux';
+import modalActions from '../../store/RenderCommentsModal/actions';
+import commentsActions from '../../store/Comments/actions';
+import { Link as Anchor } from 'react-router-dom'
 
 export default function Page() {
   const navigate = useNavigate();
   const { id, page} = useParams();
   const url = 'http://localhost:8000/chapters/';
-  const [chapter, setChapter] = useState({});
+  const [chapter, setChapters] = useState({});
   const [next, setNext] = useState('');
   let [index, setIndex] = useState(Number(page));
 
+  let dispatch = useDispatch()
+  let modalState = useSelector(store => store.commentsModal.state)
+  const { renderModal } = modalActions
+
+  let comments = useSelector(store => store.comments.comments)
+  useEffect(() => {
+    axios
+      .get(`${url}${id}`)
+      .then((response) => {
+        setChapters(response.data.chapter);
+        setNext(response.data.next)
+      })
+
+      .catch((error) => console.error(error));
+  }, [comments]);
 
   useEffect(() => { // no puede definir una funcion asincrona, la funcion la tengo q definir afuera y ejecutarla adentro
     axios
       .get(`${url}${id}`)
       .then(response => {
-        setChapter(response.data.chapter);
+        setChapters(response.data.chapter);
         setNext(response.data.next);
         }
       )
@@ -29,7 +49,7 @@ export default function Page() {
     setIndex(index - 1)
     navigate(`/chapters/${id}/${index - 1}`)
     if (index <= 0) {
-        navigate(`/mangas/`)
+        navigate(`/mangas/${chapter.manga_id}/1`)
     }
 }
 
@@ -42,6 +62,20 @@ const handleNext = () => {
 }
 }
 console.log(chapter)
+
+function handleRender() {
+  dispatch(renderModal({ state: true }))
+}
+
+let token = localStorage.getItem('token')
+let headers = { headers: { 'Authorization': `Bearer ${token}` } }
+const { getComments } = commentsActions
+useEffect(() => { // me actualiza toda la cantidad de comentarios
+  let url = 'http://localhost:8000/comments?chapter_id=' + id
+  setTimeout(() => {
+    axios.get(url, headers).then(res => dispatch(getComments({ comments: res.data.comments })))
+  }, 100)
+}, [])
 
 return (
   <div className="mover">
@@ -64,8 +98,9 @@ return (
     <div className="div-chapter3">
       <div className="chapter3">
         <p className="parrafo-chapter3">
-          <img className="comment" src='/icon_comment.png' alt="" /> numero del capítulo
+          <img className="comment" src='/icon_comment.png' alt="" onClick={handleRender}/> Comments {comments.length}
         </p>
+        {modalState ? <Comment /> : ""}
       </div>
     </div>
   </div>

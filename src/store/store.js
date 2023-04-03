@@ -12,6 +12,8 @@ import mangaEdit from './MangaEdit/reduce'
 import modalAction from './Modale/reduce'
 import chapterReducer from './Chapters/reducer'
 import mangasReducer from './Mangas/reducer'
+import renderCommentsModal from './RenderCommentsModal/reducer'
+import getComents from './Comments/reducer'
 
 export const store = configureStore ({
     reducer: {
@@ -28,5 +30,7 @@ export const store = configureStore ({
         modalState: modalReducer,
         modalDeleteState: modalDeleteReducer,
         mangas: mangasReducer,
+        commentsModal: renderCommentsModal,
+        comments: getComents,
     }
 })
