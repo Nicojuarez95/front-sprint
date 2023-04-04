@@ -44,6 +44,7 @@ export default function FormLogin({handleRender}) {
         name: res.data.user.name,
         email: res.data.user.email,
         photo: res.data.user.photo,
+        id: res.data.user._id
       }))
       form.current.reset()
       navigate("/")
